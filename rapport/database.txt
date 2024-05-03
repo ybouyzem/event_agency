@@ -1,0 +1,119 @@
+//table client
+create table client(
+	id int primary key AUTO_INCREMENT not null,
+    nomComplet varchar(50),
+    ville varchar(50),
+    telephonr int,
+    email varchar(50),
+    motDePasse varchar(50)
+);
+
+//table gestionnaire
+
+CREATE TABLE gestionnaire (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    type CHAR(1) CHECK (type IN ('P', 'A')),
+    proprietaire VARCHAR(50),
+    nom VARCHAR(50),
+    ville VARCHAR(50),
+    adresse VARCHAR(50),
+    telephone INT,
+    detail VARCHAR(200),
+    email VARCHAR(50),
+    motDePasse VARCHAR(50)
+);
+
+//table service
+create table service (
+    id int primary key AUTO_INCREMENT not null,
+    id_gestionnaire int,
+    titre varchar(5),
+    image varchar(200),
+    detail varchar(200),
+    prix decimal(50, 2),
+    deplacement varchar(5) check (deplacement in ("oui", "non")),
+    foreign key (id_gestionnaire) references gestionnaire(id)
+);
+
+
+//table categories
+CREATE TABLE categories (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(50)
+);
+
+
+//table service_categories
+CREATE TABLE service_categories (
+    id int primary key AUTO_INCREMENT not null,
+    id_service INT,
+    id_categorie INT,
+    FOREIGN KEY (id_service) REFERENCES service(id),
+    FOREIGN KEY (id_categorie) REFERENCES categories(id)
+);
+
+//table favoris
+CREATE TABLE favoris (
+    id INT PRIMARY KEY AUTO_INCREMENT not null,
+    id_client INT,
+    id_service INT,
+    FOREIGN KEY (id_client) REFERENCES client(id),
+    FOREIGN KEY (id_service) REFERENCES service(id)
+);
+
+
+//table pack
+CREATE TABLE pack (
+    id INT PRIMARY KEY AUTO_INCREMENT not null,
+    titre VARCHAR(50),
+    description VARCHAR(255),
+    prix DECIMAL(50, 2)
+);
+
+
+//table pack_services
+CREATE TABLE pack_services (
+    id int primary key AUTO_INCREMENT not null,
+    id_pack INT,
+    id_service INT,
+    FOREIGN KEY (id_pack) REFERENCES pack(id),
+    FOREIGN KEY (id_service) REFERENCES service(id)
+);
+
+
+//table promotion
+create table promotion (
+	id int primary key AUTO_INCREMENT not null,
+    id_service int,
+    id_gestionnaire int,
+    reduction decimal(50,2),
+    date_debut date,
+    date_fin date,
+    foreign key (id_service) references service(id),
+    foreign key (id_gestionnaire) references gestionnaire(id)  
+);
+
+//table reservation
+CREATE TABLE reservation (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    statut varchar(50),
+    id_client INT,
+    id_service INT,
+    id_pack INT,
+    id_promotion INT,
+    date_reservation DATETIME,
+    FOREIGN KEY (id_client) REFERENCES client(id),
+    FOREIGN KEY (id_service) REFERENCES service(id),
+    FOREIGN KEY (id_pack) REFERENCES pack(id),
+    FOREIGN KEY (id_promotion) REFERENCES promotion(id)
+);
+
+//table avis
+CREATE TABLE avis (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_service INT,
+    rating INT,
+    commentaire varchar(20),
+    FOREIGN KEY (id_service) REFERENCES service(id)
+);
+
