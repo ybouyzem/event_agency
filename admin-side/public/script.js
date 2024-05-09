@@ -1,15 +1,20 @@
+const windowPathname = window.location.pathname;
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
-allSideMenu.forEach(item=> {
-	const li = item.parentElement;
-
-	item.addEventListener('click', function () {
+window.onload = function() {
+	const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 		allSideMenu.forEach(i=> {
 			i.parentElement.classList.remove('active');
-		})
-		li.classList.add('active');
-	})
-});
+		});
+		allSideMenu.forEach(items=> {
+			const li = items.parentElement;
+			const sidebarlink = new URL(items.href).pathname;
+			if (windowPathname == sidebarlink)
+				li.classList.add('active');
+		});
+};
+
+
 
 
 

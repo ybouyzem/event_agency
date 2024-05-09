@@ -8,11 +8,14 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="login.css" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+
     <title>Sign in & Sign up Form</title>
   </head>
+
   <body>
     <header class="header">
-      <a href="index.html" class="logo"><span>H</span>adat</a>
+      <a href="/index" class="logo"><span>H</span>adat</a>
     </header>
     <div class="container">
       <div class="forms-container">

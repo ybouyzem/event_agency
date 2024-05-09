@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
-  --theme-color: #f39c12;
+  --theme-color: #3c91e6;
     --container: 142rem;
     --primary: #3056d3;
     --text-dark: #212b36;
@@ -183,8 +183,10 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  /* background-image: linear-gradient(-45deg, #333 0%, #000 100%); */
+  /* background-image: linear-gradient(-45deg, #333 0%, #000 40%); */
   background-color: var(--theme-color);
+  /* background-image: url(img/manager.png); */
+  /* background-size: contain; */
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
