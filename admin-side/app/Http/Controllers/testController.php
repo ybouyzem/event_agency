@@ -22,7 +22,7 @@ class testController extends Controller
         return view("reservations");
     }
     public function services()
-{
-    return view('services');
-}
+    {
+        return view('services');
+    }
 }

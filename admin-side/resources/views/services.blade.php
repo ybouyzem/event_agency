@@ -10,8 +10,8 @@
     <title>Document</title>
 </head>
 <body>
-    @include('partials.navside-bar')
-    yes services
+    {{-- NAVBAR AND SIDEBAR --}}
+	<x-navside-bar/>
     <script src="script.js"></script>
 </body>
 </html>
