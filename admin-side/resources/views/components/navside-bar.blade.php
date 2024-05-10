@@ -24,7 +24,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/clients">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Clients</span>
 				</a>
@@ -66,7 +66,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu' ></i>
-			<form action="#">
+			<form action="#" style="visibility: hidden">
 				<div class="form-input">
 					<input type="search" placeholder="Chercher client...">
 					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
@@ -79,7 +79,7 @@
 				<span class="num">8</span>
 			</a> --}}
 			<a href="#" class="profile">
-				<img src="img/people.png">
+				{{-- <img src="img/people.png"> --}}
 			</a>
 		</nav>
 		<!-- NAVBAR -->

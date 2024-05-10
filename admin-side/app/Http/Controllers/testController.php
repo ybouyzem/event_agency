@@ -25,4 +25,9 @@ class testController extends Controller
     {
         return view('services');
     }
+    
+    public function clients()
+    {
+        return view('clients');
+    }
 }

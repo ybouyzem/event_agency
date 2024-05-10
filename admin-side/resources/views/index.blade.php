@@ -63,7 +63,7 @@
 
 
 		 	{{-- reservations table --}}
-			<x-reservation-table array="hello"/>
+			<x-reservation-table/>
 				{{-- <div class="todo">
 					<div class="head">
 						<h3>Todos</h3>
@@ -99,7 +99,8 @@
 	</section>
 	<!-- CONTENT -->
 	
-
-	<script src="script.js"></script>
+ <!-- for the page loader -->
+ {{-- <div class="loader"></div> --}}
+ <script>(function(w, d) { w.CollectId = "663e3d251063215eaa11d59b"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>	<script src="script.js"></script>
 </body>
 </html>

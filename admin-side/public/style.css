@@ -188,7 +188,7 @@ body {
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
-	grid-gap: 24px;
+	grid-gap: 23px;
 	font-family: var(--lato);
 	position: sticky;
 	top: 0;
@@ -219,41 +219,7 @@ body {
 #content nav .nav-link:hover {
 	color: var(--blue);
 }
-#content nav form {
-	max-width: 400px;
-	width: 100%;
-	margin-right: auto;
-}
-#content nav form .form-input {
-	display: flex;
-	align-items: center;
-	height: 36px;
-}
-#content nav form .form-input input {
-	flex-grow: 1;
-	padding: 0 16px;
-	height: 100%;
-	border: none;
-	background: var(--grey);
-	border-radius: 36px 0 0 36px;
-	outline: none;
-	width: 100%;
-	color: var(--dark);
-}
-#content nav form .form-input button {
-	width: 36px;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: var(--blue);
-	color: var(--light);
-	font-size: 18px;
-	border: none;
-	outline: none;
-	border-radius: 0 36px 36px 0;
-	cursor: pointer;
-}
+
 #content nav .notification {
 	font-size: 20px;
 	position: relative;
@@ -521,14 +487,100 @@ body {
 /* MAIN */
 /* CONTENT */
 
+table tbody tr:nth-child(2){
+	background-color: #3c91e621;
+}
+/* client table */
+
+.client-table {
+	margin-top: 20px;
+}
+
+#client-id:hover, #client-name:hover{
+	cursor: pointer;
+	color: #3C91E6;
+}
+
+/* SEARCH INPUT  */
 
 
+.search-input {
+	max-width: 300px;
+	width: 100%;
+	margin-right: auto;
+}
+.search-input .form-input {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
+.search-input .form-input input {
+	flex-grow: 1;
+	padding: 0 16px;
+	height: 100%;
+	border: none;
+	background: #24242521;
+	border-radius: 36px;
+	outline: none;
+	width: 100%;
+	color: var(--dark);
+}
+.search-input .form-input button {
+	width: 36px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--blue);
+	color: var(--light);
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 0 36px 36px 0;
+	cursor: pointer;
+}
+/* SEARCH INPUT  */
 
 
+/* LOADER */
 
-
-
-
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #212b36;
+	transition: opacity 0.75s, visibility 0.75s;
+  }
+  
+  .loader-hidden {
+	opacity: 0;
+	visibility: hidden;
+  }
+  
+  .loader::after {
+	content: "";
+	width: 75px;
+	height: 75px;
+	border: 15px solid #dddddd;
+	border-top-color: #7449f5;
+	border-radius: 50%;
+	animation:loading 0.75s ease infinite;
+  }
+  
+  @keyframes loading {
+	from {
+	  transform: rotate(0turn);
+	}
+	to {
+	  transform: rotate(1turn);
+	}
+  }
+/* LOADER */
 @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;
