@@ -14,7 +14,7 @@ class testController extends Controller
 
     public function login()
     {
-        return view("login");
+        return view("se-connecter");
     }
 
     public function reservations()
