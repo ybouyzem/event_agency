@@ -9,6 +9,7 @@
     ></script>
     	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  
     <link rel="stylesheet" href="login.css" />
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 
@@ -28,11 +29,12 @@
             <h2 class="title">Se connecter</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" required/>
+              <input type="email" placeholder="Email" oninput="validateEmail(this)" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Mot de passe" required />
+              <input type="password" placeholder="Mot de passe"  oninput="checkPasswordStrength(this)" required />
+              <span id="password-strength"></span>
             </div>
             <input type="submit" value="Se Connecter" class="btn solid" />
             <p class="social-text">Ou Inscrivez-vous sur Google</p>
@@ -51,7 +53,8 @@
               </a> --}}
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <form method="POST" action="{{ route('signup') }}" class="sign-up-form">
+            @csrf
             <h2 class="title">S'inscrire</h2>
             <div class="input-field">
                 <i class="fas fa-user"></i>
@@ -75,15 +78,16 @@
             </div>
             <div class="input-field">
                 <i class="bx bxs-phone"></i>
-              <input type="number" placeholder="numero telephone" name="telephone" required/>
+              <input type="number" placeholder="numero telephone" name="telephone" oninput="validatePhoneNumber(this)" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" name="email" required/>
+              <input type="email" placeholder="Email" name="email" oninput="validateEmail(this)" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Mot de passe" name="motPasse"/>
+              <input type="password" placeholder="Mot de passe" name="motPasse" oninput="checkPasswordStrengthSignup(this)" required/>
+              <span id="password-strength-signup"></span>
             </div>
             <input type="submit" class="btn" value="S'inscrire" />
             <p class="social-text">Ou Inscrivez-vous sur Google</p>
@@ -120,9 +124,9 @@
         <div class="panel right-panel">
           <div class="content">
             <h3>Un de nous ?</h3>
-            <p>Welcom If you have an account, click here.</p>
+            <p>Bienvenue Si vous avez un compte, cliquez ici.</p>
             <button class="btn transparent" id="sign-in-btn">
-              Sign in
+              Se connecter
             </button>
           </div>
           
@@ -133,4 +137,5 @@
     
   </body>
   <script src="login.js"></script>
+  <script src="input-requirements.js"></script>
 </html>
