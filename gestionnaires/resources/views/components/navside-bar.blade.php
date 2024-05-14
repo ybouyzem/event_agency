@@ -18,7 +18,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="/services">
+				<a href="/services-gestionnaire">
 					<i class='bx bxs-doughnut-chart' ></i>
 					<span class="text">Services</span>
 				</a>
@@ -50,7 +50,7 @@
 				</a>
 			</li> -->
 			<li>
-				<a href="/" class="logout">
+				<a href="{{ route('logout') }}" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -79,7 +79,13 @@
 				<span class="num">8</span>
 			</a> --}}
 			<a href="#" class="profile">
-				{{-- <img src="img/people.png"> --}}
+				
+				{{-- @if(auth()->check() && auth()->user()->role === 'gestionnaire') --}}
+				<p>Nom: {{ session('gestionnaire')->nom }}</p>
+				<!-- Add more properties as needed -->
+			{{-- @endif --}}
+			
+							{{-- <img src="img/people.png"> --}}
 			</a>
 		</nav>
 		<!-- NAVBAR -->

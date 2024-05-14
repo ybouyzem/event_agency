@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Categorie;
 class ServiceController extends Controller
 {
-    public function allCategories()
+    public function allServices()
     {
-        $categories = Category::all();
-        return view("services", compact("categories"));
+        // $categories = Category::all();
+        return view("services-gestionnaire");
     }
+
+    
 }

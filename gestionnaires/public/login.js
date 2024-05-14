@@ -10,3 +10,9 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
+
+function closePopup() {
+  var elt = document.getElementById("ok-button");
+  elt.parentElement.parentElement.style.visibility="hidden";
+}

@@ -9,6 +9,7 @@
     ></script>
     	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
   
     <link rel="stylesheet" href="login.css" />
     <link rel="icon" href="img/logo.png" type="image/x-icon">
@@ -24,17 +25,37 @@
             <span class="text">ADAT</span>
         </a>
       <div class="forms-container">
+      @if(session('success'))
+        <div class="alert-container">
+          <div class="popup" id="popup">
+            <img src="img/verifier.png">
+            <h2>Merci!</h2>
+            <p> <span style="font-weight: 500">votre compte a été créé avec succès!</span><br> vous pouvez maintenant vous connecter à votre compte.</p>
+            <button type="button" onclick="closePopup()" id="ok-button">OK</button>
+          </div>
+        </div>
+      @elseif(session('error'))
+        <div class="alert-container">
+          <div class="popup" id="popup">
+            <img src="img/error.png">
+            <h2>Oups!</h2>
+            <p> <span style="font-weight: 500">Quelque chose s'est mal passé!</span><br> veuillez réessayer.</p>
+            <button type="button" onclick="closePopup()" id="ok-button" class="error-ok">OK</button>
+          </div>
+        </div>
+        @endif
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form  method="POST" action="{{ route('signin') }}" class="sign-in-form">
+            @csrf
             <h2 class="title">Se connecter</h2>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" oninput="validateEmail(this)" required/>
+              <input type="email" placeholder="Email" oninput="validateEmail(this)" name="email" required/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Mot de passe"  oninput="checkPasswordStrength(this)" required />
-              <span id="password-strength"></span>
+              <input type="password" placeholder="Mot de passe"  oninput="checkPasswordStrength(this)" name="motPasse" required />
+              {{-- <span id="password-strength"></span> --}}
             </div>
             <input type="submit" value="Se Connecter" class="btn solid" />
             <p class="social-text">Ou Inscrivez-vous sur Google</p>
@@ -53,7 +74,7 @@
               </a> --}}
             </div>
           </form>
-          <form method="POST" action="" class="sign-up-form">
+          <form method="POST" action="{{ route('signup') }}" class="sign-up-form">
             @csrf
             <h2 class="title">S'inscrire</h2>
             <div class="input-field">
@@ -63,12 +84,12 @@
             <div class="radio-container">
                 <label class="radio-field">
                     <span>Prestataire</span>
-                    <input type="radio" name="type" required/>
+                    <input type="radio" name="type" value="Prestataire" required/>
                     <span class="checkmark"></span>
                 </label>
                 <label class="radio-field">
                     <span>Agence</span>
-                    <input type="radio" name="type" required/>
+                    <input type="radio" name="type" value="Agence" required/>
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -136,6 +157,11 @@
 
     
   </body>
+  <script>
+    setTimeout(function() {
+        document.getElementById("successMessage").style.display = "none";
+    }, 3000); // 3 seconds
+  </script>
   <script src="login.js"></script>
   <script src="input-requirements.js"></script>
 </html>

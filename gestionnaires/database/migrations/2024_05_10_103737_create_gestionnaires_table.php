@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gestionnaire', function (Blueprint $table) {
             $table->id();
-            $table->char('type', 1)->check('type', ['P', 'A']);
+            $table->string('type', 50);
             $table->string('proprietaire', 50);
             $table->string('nom', 50);
             $table->string('ville', 50);
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('telephone');
             $table->string('detail', 200);
             $table->string('email', 50);
-            $table->string('motDePasse', 50);
+            $table->string('motDePasse', 200);
             $table->timestamps();
         });
 
