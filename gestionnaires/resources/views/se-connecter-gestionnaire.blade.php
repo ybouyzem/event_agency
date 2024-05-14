@@ -53,7 +53,7 @@
               </a> --}}
             </div>
           </form>
-          <form method="POST" action="{{ route('signup') }}" class="sign-up-form">
+          <form method="POST" action="" class="sign-up-form">
             @csrf
             <h2 class="title">S'inscrire</h2>
             <div class="input-field">

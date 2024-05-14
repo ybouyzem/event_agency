@@ -16,7 +16,7 @@ function checkPasswordStrength(input) {
     let score = 0;
 
     if (password.length < 8) {
-        strengthBadge.textContent = 'Weak ' + strengthEmoji.weak;
+        strengthBadge.textContent = 'Faible ' + strengthEmoji.weak;
         strengthBadge.style.color = strengthColor.weak;
         return;
     }
@@ -38,10 +38,10 @@ function checkPasswordStrength(input) {
     }
 
     if (score < 3) {
-        strengthBadge.textContent = 'Good ' + strengthEmoji.good;
+        strengthBadge.textContent = 'Bien ' + strengthEmoji.good;
         strengthBadge.style.color = strengthColor.good;
     } else if (score === 3) {
-        strengthBadge.textContent = 'Strong ' + strengthEmoji.strong;
+        strengthBadge.textContent = 'Fort ' + strengthEmoji.strong;
         strengthBadge.style.color = strengthColor.strong;
     }
 }
@@ -65,7 +65,7 @@ function checkPasswordStrengthSignup(input) {
     let score = 0;
 
     if (password.length < 8) {
-        strengthBadge.textContent = 'Weak ' + strengthEmoji.weak;
+        strengthBadge.textContent = 'Faible ' + strengthEmoji.weak;
         strengthBadge.style.color = strengthColor.weak;
         return;
     }
@@ -87,10 +87,10 @@ function checkPasswordStrengthSignup(input) {
     }
 
     if (score < 3) {
-        strengthBadge.textContent = 'Good ' + strengthEmoji.good;
+        strengthBadge.textContent = 'Bien ' + strengthEmoji.good;
         strengthBadge.style.color = strengthColor.good;
     } else if (score === 3) {
-        strengthBadge.textContent = 'Strong ' + strengthEmoji.strong;
+        strengthBadge.textContent = 'Fort ' + strengthEmoji.strong;
         strengthBadge.style.color = strengthColor.strong;
     }
 }

@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 use App\Models\Gestionnaire;
 
 class GestionnaireController extends Controller
-{  
+{
+    public function login()
+    {
+        return view("se-connecter-gestionnaire");
+    }
+
     public function signup(GestionnaireRequest $request)
     {
         $validatedData = $request->validated();
