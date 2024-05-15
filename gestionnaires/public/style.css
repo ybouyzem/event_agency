@@ -412,6 +412,7 @@ body {
 #content main .table-data .order table {
 	width: 100%;
 	border-collapse: collapse;
+	overflow-y: scroll;
 }
 #content main .table-data .order table th {
 	padding-left: 5px;
@@ -498,7 +499,7 @@ body {
 /* MAIN */
 /* CONTENT */
 
-table tbody tr:nth-child(2){
+table tbody tr:nth-child(even) {
 	background-color: #3c91e621;
 }
 /* client table  && service table*/
@@ -512,14 +513,31 @@ table tbody tr:nth-child(2){
 	color: #3C91E6;
 }
 
+#ajouter-service-form {
+	visibility: hidden;
+	display: none;
+}
+
+.ajouter-annuler {
+	display: flex;
+}
+
+
 /* SEARCH INPUT  */
 
 
 .search-input {
-	max-width: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-width: 500px;
 	width: 100%;
 	margin-right: auto;
 }
+
+.search-input button {
+	margin-left: 100px;
+}
+
 .search-input .form-input {
 	display: flex;
 	align-items: center;
@@ -585,7 +603,7 @@ table tbody tr:nth-child(2){
 
   /* MODIFIER AND SUPPRIMER BUTTONS */
 
-  .modifer-button, .supprimer-button, .ajouter-button{
+  .modifer-button, .supprimer-button, .ajouter-button, #annuler-button button{
 	width: 105px;
 	display: flex;
 	border-radius: 4px;
@@ -613,7 +631,7 @@ table tbody tr:nth-child(2){
 	cursor: pointer;
   }
 
-  .modifer-button i, .supprimer-button i{
+  .modifer-button i, .supprimer-button i, #annuler-button button{
 	font-weight: 500;
 	padding-right: 3px;
   }
@@ -628,12 +646,11 @@ table tbody tr:nth-child(2){
 	margin-top: 7px;
   }
 
-  .ajouter-button {
+  .ajouter-button , #annuler-button button{
 	width: fit-content;
-	height: fit-content;
+	height: 35px;
 	padding: 12px;
 	background-color: var(--blue);
-	margin-bottom: 5px;
   }
 
   .modifer-button:hover{
@@ -648,6 +665,13 @@ table tbody tr:nth-child(2){
 	color:rgb(203, 0, 0);
 	background-color: white;
 	margin-top: 7px;
+  }
+
+  #annuler-button button{
+	background-color: #AAAAAA;
+	color: white;
+	margin-right: 20px;
+
   }
 
 /* MODIFIER AJOUTER FORM */

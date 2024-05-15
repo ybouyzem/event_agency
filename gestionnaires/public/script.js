@@ -87,5 +87,19 @@ window.addEventListener('resize', function () {
 })
 
 
+function showAjouterService()
+{
+	var ajouterServiceForm = document.getElementById('ajouter-service-form');
+	ajouterServiceForm.style.visibility="visible";
+	ajouterServiceForm.style.display="grid";
+	document.getElementById('ajouter-service').style.visibility="hidden";
+}
 
+function annulerService()
+{
+	var ajouterServiceForm = document.getElementById('ajouter-service-form');
+	ajouterServiceForm.style.visibility="hidden";
+	ajouterServiceForm.style.display="none";
 
+	document.getElementById('ajouter-service').style.visibility="visible";
+}

@@ -1,7 +1,7 @@
 @props(['categories', 'services'])
 <div class="table-data">
     <div class="order">
-        <form  method="POST" action="{{ route('ajouter-service') }}" class="modifier">
+        <form  method="POST" action="{{ route('ajouter-service') }}" class="modifier" id="ajouter-service-form">
             @csrf
             {{-- <label class="input-field">
                 <input type="text" readonly value="Identifiant (2)" style="color:rgba(128, 128, 128, 0.717)">
@@ -46,11 +46,16 @@
             </label>
             <label class="input-field">
                 <span>Image</span>
-                <input type="file" name="image">
+                <input type="file" name="image" required>
             </label>
-            <label class="ajouter-button">
-                <i class='bx bxs-message-square-add'></i>
-                <input type="submit" value="Ajouter" >
+            <label class="ajouter-annuler">
+                <label id="annuler-button">
+                    <button onclick="annulerService()"><i class='bx bx-undo'></i> Annuler</button>           
+                </label>
+                <label class="ajouter-button">
+                    <i class='bx bxs-message-square-add'></i>
+                    <input type="submit" value="Ajouter" >
+                </label>
             </label>
         </form>
 
@@ -63,7 +68,10 @@
             <div class="form-input">
                 <input type="search" placeholder="Chercher service..." id="search-input">
             </div>
+            <button class="ajouter-button" id="ajouter-service" onclick="showAjouterService()"><i class='bx bxs-message-square-add'></i>Ajouter Service</button>
         </form>
+            
+            
         <table class="table">
             <thead>
                 <tr class="thead">
