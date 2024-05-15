@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css">
         	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script>
     <title>Document</title>
 </head>
 <body>
@@ -27,7 +31,7 @@
                 </ul>
             </div>
         </div>
-        <x-services-table :services="$services" />
+        <x-services-table :categories="$categories" :services="$services" />
     </main>
     <script src="search-input.js"></script>
     <script src="sort-filter-service.js"></script>

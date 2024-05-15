@@ -11,6 +11,7 @@ Route::match(['get', 'post'], '/se-connecter-gestionnaire/login', [GestionnaireC
 Route::match(['get', 'post'], '/index-gestionnaire', [GestionnaireController::class, 'index'])->name('index-gestionnaire');
 Route::get('/se-connecter-gestionnaire/logout', [GestionnaireController::class, 'logout'])->name('logout');
 Route::match(['get', 'post'], '/services-gestionnaire', [ServiceController::class, 'allServices']);
+Route::match(['get', 'post'], '/services-gestionnaire/add', [ServiceController::class, 'ajouterService'])->name('ajouter-service');
 
 // Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
 //     ->name('index-gestionnaire')
