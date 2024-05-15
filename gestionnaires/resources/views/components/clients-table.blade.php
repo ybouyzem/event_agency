@@ -13,7 +13,7 @@
         </form>
 
         @if (!@empty($clients))
-            <table class="client-table">
+            <table class="table">
                 <thead>
                     <tr class="thead">
                         <th id="client-id">Identifiant <i class="bx bx-chevron-up"></i></th>
@@ -23,7 +23,7 @@
                         <th>Email</th>
                     </tr>
                 </thead>
-                <tbody class="clients">
+                <tbody class="items">
                     @foreach ($clients as $client)
                         <tr>
                             <td>{{$client->id}}</td>

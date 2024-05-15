@@ -1,6 +1,6 @@
 document.getElementById("search-input").addEventListener("keyup", function() {
         let searchValue = this.value.toLowerCase();
-        let rows = document.querySelectorAll(".clients tr");
+        let rows = document.querySelectorAll(".items tr");
 
         rows.forEach(function(row) {
             let cells = row.querySelectorAll("td");

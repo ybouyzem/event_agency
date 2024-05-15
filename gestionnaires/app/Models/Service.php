@@ -13,6 +13,7 @@ class Service extends Model
 
     protected $fillable = [
         'id_gestionnaire',
+        'id_categorie',
         'titre',
         'image',
         'detail',
