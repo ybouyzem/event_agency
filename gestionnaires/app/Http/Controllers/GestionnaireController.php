@@ -80,7 +80,7 @@ class GestionnaireController extends Controller
         session()->forget('gestionnaire');
 
     // Redirect to the login page
-        return redirect()->route('authentification')->with('success', 'Logged out successfully');
+        return redirect()->route('authentification');
     }
 
     

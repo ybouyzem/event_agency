@@ -14,21 +14,29 @@
         <table class="client-table">
             <thead>
                 <tr class="thead">
+                    <th></th>
                     <th id="client-id">Identifiant <i class="bx bx-chevron-up"></i></th>
-                    <th id="client-name">Nom Complet <i class="bx bx-chevron-up"></i></th>
-                    <th>Ville</th>
-                    <th>Telephone</th>
-                    <th>Email</th>
+                    <th id="client-name">Titre <i class="bx bx-chevron-up"></i></th>
+                    <th>Catégorie</th>
+                    <th>Prix debut</th>
+                    <th>Prix final</th>
+                    <th>Deplacement</th>
+                    <td></td>
                 </tr>
             </thead>
             <tbody class="clients">
-                @foreach ($clients as $client)
+                @foreach ($services as $service)
                     <tr>
-                        <td>{{$client->id}}</td>
-                        <td><p>{{$client->nomComplet}}</p></td>
-                        <td>{{$client->ville}}</td>
-                        <td>{{$client->telephone}}</td>
-                        <td>{{$client->email}}</td>
+                        <td>{{$service->id}}</td>
+                        <td><p>{{$service->titre}}</p></td>
+                        <td>{{$service->image}}</td>
+                        <td>{{$service->prix_debut}}</td>
+                        <td>{{$service->prix_fin}}</td>
+                        <td>{{$service->deplacement}}</td>
+                        <td>
+                            <button value="modifier" class="modifer-button"></button>
+                            <button value="supprimer" class="supprimer-button"></button>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
