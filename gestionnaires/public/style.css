@@ -513,12 +513,12 @@ table tbody tr:nth-child(even) {
 	color: #3C91E6;
 }
 
-#ajouter-service-form {
+#modifier-service-form {
 	visibility: hidden;
 	display: none;
 }
 
-.ajouter-annuler {
+.modifier-annuler, .ajouter-annuler {
 	display: flex;
 }
 
@@ -674,6 +674,10 @@ table tbody tr:nth-child(even) {
 
   }
 
+  #ajouter-service {
+	margin-left: 40%;
+  }
+
 /* MODIFIER AJOUTER FORM */
 
 .modifier {
@@ -763,7 +767,7 @@ datalist option:checked {
 	margin-bottom: 10px;
 	margin-top: 10px;
 	max-width: 380px;
-	width: 50%;
+	width: fit-content;
 	height: 25px;
   
 	cursor: pointer;

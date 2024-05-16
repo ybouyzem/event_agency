@@ -76,7 +76,6 @@ class GestionnaireController extends Controller
     public function logout()
     {
         // Clear the session
-        session()->forget('gestionnaire_id');
         session()->forget('gestionnaire');
 
     // Redirect to the login page

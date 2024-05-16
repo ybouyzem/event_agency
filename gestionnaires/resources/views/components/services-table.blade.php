@@ -1,7 +1,7 @@
 @props(['categories', 'services'])
 <div class="table-data">
     <div class="order">
-        <form  method="POST" action="{{ route('ajouter-service') }}" class="modifier" id="ajouter-service-form">
+        <form  method="POST" action="" class="modifier" id="modifier-service-form">
             @csrf
             {{-- <label class="input-field">
                 <input type="text" readonly value="Identifiant (2)" style="color:rgba(128, 128, 128, 0.717)">
@@ -48,9 +48,9 @@
                 <span>Image</span>
                 <input type="file" name="image" required>
             </label>
-            <label class="ajouter-annuler">
+            <label class="modifier-annuler">
                 <label id="annuler-button">
-                    <button onclick="annulerService()"><i class='bx bx-undo'></i> Annuler</button>           
+                    <button onclick="annulerModifierService()"><i class='bx bx-undo'></i> Annuler</button>           
                 </label>
                 <label class="ajouter-button">
                     <i class='bx bxs-message-square-add'></i>
@@ -68,10 +68,8 @@
             <div class="form-input">
                 <input type="search" placeholder="Chercher service..." id="search-input">
             </div>
-            <button class="ajouter-button" id="ajouter-service" onclick="showAjouterService()"><i class='bx bxs-message-square-add'></i>Ajouter Service</button>
+            <a href="{{route('ajouterServicePage')}}" class="ajouter-button" id="ajouter-service"><i class='bx bxs-message-square-add'></i>Ajouter Service</a>
         </form>
-            
-            
         <table class="table">
             <thead>
                 <tr class="thead">
@@ -98,8 +96,8 @@
                         <td>{{$service->detail}}</td>
                         <td>{{$service->deplacement}}</td>
                         <td>
-                            <button class="modifer-button"><i class='bx bxs-edit'></i> modifier</button>
-                            <button class="supprimer-button"><i class='bx bx-message-square-x'></i> supprimer</button>
+                            <button class="modifer-button" onclick="showModifierService()"><i class='bx bxs-edit'></i> modifier</button>
+                            <button class="supprimer-button" data-service-id="{{ $service->id }}" onclick="supprimerService({{ $service->id }})"><i class='bx bx-message-square-x'></i> supprimer</button>
                         </td>
                     </tr>
                 @endforeach

@@ -17,6 +17,7 @@ switchMode.addEventListener('change', function () {
 
 // for the sidebar menu
 const windowPathname = window.location.pathname;
+console.warn(windowPathname);
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 window.onload = function() {
@@ -27,7 +28,10 @@ window.onload = function() {
 		allSideMenu.forEach(items=> {
 			const li = items.parentElement;
 			const sidebarlink = new URL(items.href).pathname;
+			
 			if (windowPathname == sidebarlink)
+				li.classList.add('active');
+			else if (windowPathname == "/services-gestionnaire/ajouter")
 				li.classList.add('active');
 		});
 };
@@ -87,19 +91,30 @@ window.addEventListener('resize', function () {
 })
 
 
-function showAjouterService()
+function showModifierService()
 {
-	var ajouterServiceForm = document.getElementById('ajouter-service-form');
+	var ajouterServiceForm = document.getElementById('modifier-service-form');
 	ajouterServiceForm.style.visibility="visible";
 	ajouterServiceForm.style.display="grid";
-	document.getElementById('ajouter-service').style.visibility="hidden";
 }
 
-function annulerService()
+function annulerAjouterService()
 {
-	var ajouterServiceForm = document.getElementById('ajouter-service-form');
+	window.location.href = '/services-gestionnaire';
+}
+
+function annulerModifierService()
+{
+	var ajouterServiceForm = document.getElementById('modifier-service-form');
 	ajouterServiceForm.style.visibility="hidden";
 	ajouterServiceForm.style.display="none";
 
 	document.getElementById('ajouter-service').style.visibility="visible";
 }
+	function supprimerService(serviceId) {
+		if (confirm('Êtes-vous sûr de vouloir supprimer ce service ?')) {
+			window.location.href = '/services-gestionnaire/supprimer/' + serviceId;
+		}
+	}
+	
+

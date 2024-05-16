@@ -24,7 +24,13 @@ public function allServices()
         ->get();
 
     return view('services-gestionnaire', ['services' => $services], ['categories' => $categories]);
-} 
+}
+
+public function ajouterServicePage()
+{
+    $categories = DB::table("categorie")->get();
+    return view('ajouter-service-page', ['categories' => $categories]);
+}
 
 public function ajouterService(Request $request)
 {
@@ -51,6 +57,24 @@ public function ajouterService(Request $request)
     $service->save();
 
     // Redirect back with a success message
-    return redirect()->back()->with('success', 'Service ajouté avec succès.');
+    return redirect()->route('allServices');
 }
+
+public function supprimerService($serviceId)
+{
+    $service = Service::find($serviceId);
+    if (!$service) {
+        return response()->json(['error' => 'Service not found'], 404);
+    }
+
+    $service->delete();
+    return redirect()->back();
+}
+
+
+public function modifierService()
+{
+
+}
+
 }
