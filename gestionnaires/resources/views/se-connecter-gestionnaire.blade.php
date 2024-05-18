@@ -20,7 +20,7 @@
   <body>
 
     <div class="container">
-        <a href="/index" class="brand">
+        <a href="{{route('index')}}" class="brand">
             <img src="img/logo.png" class="logo">
             <span class="text">ADAT</span>
         </a>
@@ -164,4 +164,8 @@
   </script>
   <script src="login.js"></script>
   <script src="input-requirements.js"></script>
+      <!-- for the page loader -->
+      <div class="loader"></div>
+      <!--JS file-->
+      <script src="loader.js"></script>
 </html>

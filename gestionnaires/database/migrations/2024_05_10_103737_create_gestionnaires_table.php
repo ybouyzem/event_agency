@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('gestionnaire', function (Blueprint $table) {
             $table->id();
             $table->string('type', 50);
+            $table->string('service', 50);
             $table->string('proprietaire', 50);
             $table->string('nom', 50);
             $table->string('ville', 50);

@@ -1,18 +1,4 @@
-//for the mode of the website
-const switchMode = document.getElementById('switch-mode');
 
-// Check if there is a mode saved in local storage
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// Set the initial mode based on the local storage value
-document.body.classList.toggle('dark', isDarkMode);
-switchMode.checked = isDarkMode;
-
-switchMode.addEventListener('change', function () {
-	const isDarkMode = this.checked;
-	localStorage.setItem('darkMode', isDarkMode); // Save the mode in local storage
-	document.body.classList.toggle('dark', isDarkMode);
-});
 
 
 // for the sidebar menu

@@ -17,6 +17,7 @@ class Gestionnaire extends Model implements Authenticatable
 
     protected $fillable = [
         'type',
+        'service',
         'proprietaire',
         'nom',
         'ville',

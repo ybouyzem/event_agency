@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GestionnaireController;
 use App\Http\Middleware\CheckGestionnaire;
 
+
+Route::get("/", [IndexController::class,"index"])->name("index");
 Route::match(['get', 'post'], '/se-connecter-gestionnaire', [GestionnaireController::class, 'authentification'])->name('authentification');
 Route::match(['get', 'post'], '/se-connecter-gestionnaire/add', [GestionnaireController::class, 'signup'])->name('signup');
 Route::match(['get', 'post'], '/se-connecter-gestionnaire/login', [GestionnaireController::class, 'signin'])->name('signin');
@@ -15,6 +18,7 @@ Route::match(['get', 'post'], '/services-gestionnaire/ajouter', [ServiceControll
 Route::match(['get', 'post'], '/services-gestionnaire/add', [ServiceController::class, 'ajouterService'])->name('ajouter-service');
 Route::match(['get', 'delete'], '/services-gestionnaire/supprimer/{serviceId}', [ServiceController::class, 'supprimerService']);
 Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [ServiceController::class, 'modifierService'])->name('modifier-service');
+Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 
 
 // Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
