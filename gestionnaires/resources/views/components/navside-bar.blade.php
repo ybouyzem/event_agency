@@ -1,12 +1,19 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="/index" class="brand">
+		<a href="/index-gestionnaire" class="brand">
 			<img src="img/logo.png" class="logo">
 			<span class="text">ADAT</span>
 		</a>
 		<ul class="side-menu top">
+			<li>
+				<a href="/profile" style="background-color: rgb(13, 91, 160); color:white;">
+					<i class='bx bxs-user-circle' ></i>
+					<span class="text">Profile</span>
+					<i class='bx bx-right-arrow-alt' ></i>
+				</a>
+			</li>
 			<li class="active">
-				<a href="/index">
+				<a href="/index-gestionnaire">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -17,12 +24,14 @@
 					<span class="text">Reservations</span>
 				</a>
 			</li>
-			<li>
-				<a href="/services-gestionnaire">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Services</span>
-				</a>
-			</li>
+			@if (session('gestionnaire') && session('gestionnaire')->type == "Agence")
+				<li>
+					<a href="/services-gestionnaire">
+						<i class='bx bxs-doughnut-chart' ></i>
+						<span class="text">Services</span>
+					</a>
+				</li>
+			@endif
 			<li>
 				<a href="/clients">
 					<i class='bx bxs-message-dots' ></i>

@@ -26,7 +26,7 @@
       margin: 0;
       font-family: 'Prompt', sans-serif;
       color: white;
-      background: #4e4ec9;
+      background: #3c91e6;
       overflow-x: hidden;
       height: 100vh;
     }
@@ -41,11 +41,11 @@
     }
 
     .blue {
-      background: #3c31dd;
+      background: #3c91e6;
     }
 
     .dark {
-      background: #0f0f10;
+      background: #222;
     }
 
     /* Curved bg with plain CSS */
@@ -67,7 +67,7 @@
       height: 100%;
       transform: translate(85%, 60%);
       /* background-color: hsl(216, 21%, 16%); */
-      background-color: #4e4ec9;
+      background-color: #3c91e6;
     }
 
     .curve::after {
@@ -77,7 +77,7 @@
       border-radius: 100% 50%;
       width: 55%;
       height: 100%;
-      background-color: #0f0f10;
+      background-color: #222;
       transform: translate(-4%, 40%);
       z-index: -1;
     }

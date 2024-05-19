@@ -76,12 +76,35 @@
     </section>
 
     <section class="filter-section">
-      <input type="text" name="text" class="search-input" placeholder="Write a message">
+      <div class="type-gestionnaire">
+        <div>
+          <label>
+            <input type="radio" name="radio" checked="">
+            <span>Tous</span>
+          </label>
+          <label>
+            <input type="radio" name="radio">
+            <span>Agences</span>
+          </label>
+          <label>
+            <input type="radio" name="radio">
+            <span>Prestataires</span>
+          </label>
+        </div>
+      </div>
+      <div class="city-filter">
+        <label for="">Choisis Services :</label>
+        <select name="" id="">
+          <option value="" selected>Tous les Services</option>
+          <option value="">A</option>
+          <option value="">B</option>
+        </select>
+      </div>
     </section>
     {{-- slider of agences and prestataires --}}
     <x-slider-agences/>
     <!-- service section starts  -->
-    <section class="service" id="service">
+    {{-- <section class="service" id="service">
       <h1 class="heading">Nos <span>services</span></h1>
 
       <div class="box-container">
@@ -97,7 +120,7 @@
           ?>
         
       </div>
-    </section>
+    </section> --}}
 
     <!-- contact section starts  -->
     <section class="contact" id="contact">
@@ -122,7 +145,7 @@
         </form>
     </section>
     <!-- about section starts  -->
-    <section class="about" id="about">
+    {{-- <section class="about" id="about">
       <h1 class="heading"><span>À PROPOS</span> DE NOUS</h1>
 
       <div class="row">
@@ -145,7 +168,7 @@
           <a href="#" class="btn">Rejoins-nous</a>
         </div>
       </div>
-    </section>
+    </section> --}}
     <!-- footer section starts  -->
     <section class="footer">
       <div class="box-container">
@@ -195,6 +218,5 @@
     <!--JS file-->
     <script src="loader.js"></script>
     <script src="script.js"></script>
-
   </body>
 </html>

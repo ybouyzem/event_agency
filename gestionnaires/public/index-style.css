@@ -56,7 +56,7 @@ section {
   left: 0;
   right: 0;
   z-index: 10000;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,7 +113,7 @@ ul li:hover ul.dropdown {
   width: 170px;
   display: block;
   opacity: 100%;
-  background-color: #fff;
+  background-color: #ffffff;
   list-style: none;
 }
 
@@ -149,7 +149,7 @@ ul li:hover ul.dropdown li {
 
 
 .home {
-  height: fit-content;
+  height: 100vh;
   margin-bottom:10px;
   background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgb(0, 0, 0)),url('img/event.jpeg');
   background-size: cover;
@@ -341,6 +341,12 @@ ul li:hover ul.dropdown li {
   font-size: 1.6rem;
 }
 
+.contact {
+  background-image: url(img/back-contact.jpg);
+  /* background-color: #dfdfdf; */
+  background-size: cover;
+}
+
 .contact form {
   max-width: 70rem;
   margin: 1rem auto;
@@ -356,24 +362,24 @@ ul li:hover ul.dropdown li {
 .contact form .inputBox input,
 .contact form textarea {
   width: 100%;
-  background: #333;
+  background: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
   margin: 0.7rem 0;
   font-size: 1.5rem;
-  color: #fff;
+  color: #222;
   text-transform: none;
 }
 
 .contact form .inputBox input::placeholder,
 .contact form textarea::placeholder {
-  color: #eee;
+  color: #222;
   text-transform: capitalize;
 }
 
 .contact form .inputBox input:focus,
 .contact form textarea:focus {
-  background: #444;
+  background: #dbe9ff;
 }
 
 .contact form .inputBox input {
@@ -385,7 +391,7 @@ ul li:hover ul.dropdown li {
 }
 
 .footer {
-  background: #111;
+  background: #fff;
 }
 
 .footer .box-container {
@@ -397,14 +403,14 @@ ul li:hover ul.dropdown li {
 .footer .box-container .box h3 {
   font-size: 2.5rem;
   padding: 1rem 0;
-  color: #fff;
+  color: var(--text-dark);
 }
 
 .footer .box-container .box a {
   display: block;
   font-size: 1.5rem;
   padding: 1rem 0;
-  color: #eee;
+  color: var(--text-dark);
 }
 
 .footer .box-container .box a i {
@@ -414,13 +420,13 @@ ul li:hover ul.dropdown li {
 
 .footer .box-container .box a:hover i {
   padding-right: 1.5rem;
-  color: #f39c12;
+  color: var(--primary);
 }
 
 .footer .credit {
   text-align: center;
-  border-top: 0.1rem solid var(--theme-color);
-  color: #fff;
+  border-top: 0.1rem solid var(--primary);
+  color: var(--text-dark);
   padding: 2rem;
   padding-top: 2.5rem;
   margin-top: 1rem;
@@ -700,34 +706,124 @@ html::-webkit-scrollbar-thumb {
 .filter-section {
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto;
   margin: 30px;
+  background: rgb(237, 237, 237);;
   /* background-color: #222; */
   border: 2px solid none;
   border-radius: 25px;
   /* box-shadow: inset 2px 2px 10px rgba(5, 5, 5, 0.612); */
 }
 
-.search-input {
-  font-weight: 500;
-  font-size: .8vw;
-  color: #fff;
-  background-color: rgb(28,28,30);
-  box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
-  border-radius: 0.4vw;
-  border: none;
-  outline: none;
-  padding: 0.4vw;
-  max-width: 190px;
-  transition: .4s;
+.type-gestionnaire div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
 }
 
-.search-input:hover {
-  box-shadow: 0 0 0 .15vw rgba(135, 207, 235, 0.186);
+.type-gestionnaire input[type="radio"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-.search-input:focus {
-  box-shadow: 0 0 0 .15vw skyblue;
+.type-gestionnaire input[type="radio"]:checked + span {
+  box-shadow: 0 0 0 0.0625em #0043ed;
+  background-color: #dee7ff;
+  z-index: 1;
+  color: #0043ed;
 }
+
+.type-gestionnaire div label span {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em .75em;
+  position: relative;
+  margin-left: .0625em;
+  box-shadow: 0 0 0 0.0625em #b5bfd9;
+  letter-spacing: .05em;
+  color: #3e4963;
+  text-align: center;
+  transition: background-color .5s ease;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.type-gestionnaire div label:first-child span {
+  border-radius: .375em 0 0 .375em;
+}
+
+.type-gestionnaire div label:last-child span {
+  border-radius: 0 .375em .375em 0;
+}
+
+/* FILTER CITY */
+
+
+.city-filter {
+  width: 200px;
+}
+.city-filter select{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.city-filter select{
+  height: 35px;
+  padding: 0 20px;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 7px;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.city-filter select option{
+  display: none;
+  padding: 20px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.city-filter select option{
+  display: block;
+}
+.city-filter .content .search{
+  position: relative;
+}
+
+.city-filter select option{
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 7px;
+}
+.city-filter select option::-webkit-scrollbar{
+  width: 7px;
+}
+.city-filter select option::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.city-filter select option::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.city-filter select option::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+
 
 /* START AGENCE SLIDER  */
 
@@ -745,6 +841,8 @@ html::-webkit-scrollbar-thumb {
 .slider-container {
   display: flex;
   overflow: hidden;
+  z-index: 500;
+
 }
 
 .slider-track {
@@ -867,13 +965,20 @@ html::-webkit-scrollbar-thumb {
 .card-agence .content .product-name {
   font-weight: 700;
   color: #666666;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 .card-agence .content .product-name span {
   font-weight: 700;
   color: #141414;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.card-agence .content .product-name:last-child span {
+  font-weight:bolder;
+  color: rgb(243, 155, 170);
+  font-size: 1.4rem;
+
 }
 
 .card-agence .content .rating {

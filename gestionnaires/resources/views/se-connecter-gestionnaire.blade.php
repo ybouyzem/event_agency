@@ -11,7 +11,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
   
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="{{asset('login.css')}}" />
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 
     <title>Se Connecter</title>
@@ -21,7 +21,7 @@
 
     <div class="container">
         <a href="{{route('index')}}" class="brand">
-            <img src="img/logo.png" class="logo">
+            <img src="{{asset('img/logo.png')}}" class="logo">
             <span class="text">ADAT</span>
         </a>
       <div class="forms-container">
@@ -162,7 +162,7 @@
         document.getElementById("successMessage").style.display = "none";
     }, 3000); // 3 seconds
   </script>
-  <script src="login.js"></script>
+  <script src="{{asset('login.js')}}"></script>
   <script src="input-requirements.js"></script>
       <!-- for the page loader -->
       <div class="loader"></div>
