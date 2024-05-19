@@ -7,7 +7,7 @@
       <li><a href="index.php">accueil</a></li>
       <li><a href="events.php">prestataires</a></li>
       <li>
-        <a href="events.php">agences</a>
+        <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
           <li><a href="agence1.php">Agence 1</a></li>
           <li><a href="agence2.php">Agence 2</a></li>

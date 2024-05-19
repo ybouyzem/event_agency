@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hadat</title>
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!--font awesome-->
     <link
@@ -75,7 +76,7 @@
     </section>
 
     <section class="filter-section">
-     
+      <input type="text" name="text" class="search-input" placeholder="Write a message">
     </section>
     {{-- slider of agences and prestataires --}}
     <x-slider-agences/>

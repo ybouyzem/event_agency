@@ -10,15 +10,15 @@
     --light-dark: #637381;
     --box-shadow: 0 3.9rem 2.3rem -2.7rem rgba(0, 0, 0, 0.04);
     --box-border: rgba(48, 86, 211, 0.09);
-    --btn-border: #d4deff;
+    --btn-border: #acaeb2;
     --devider: 0.1rem solid #f2f2f2;
     --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     --text-dark: #212b36;
     --light-dark: #637381;
     --box-shadow: 0 3.9rem 2.3rem -2.7rem rgba(0, 0, 0, 0.04);
     --box-border: rgba(48, 86, 211, 0.09);
-    --btn-border: #d4deff;
-    --devider: 0.1rem solid #f2f2f2;
+    --btn-border: #9aa4c8;
+    --devider: 0.1rem solid #a49494;
     --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -43,7 +43,7 @@ html {
 }
 
 body {
-  background: #222;
+  /* background: #222; */
 }
 
 section {
@@ -56,7 +56,7 @@ section {
   left: 0;
   right: 0;
   z-index: 10000;
-  background: linear-gradient(to top, rgba(0, 0, 0, 1)50%,rgba(0, 0, 0, 1)50%), url(1.jpg);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,19 +66,19 @@ section {
 
 .header .logo {
   font-weight: bolder;
-  color: #fff;
+  color: var(--theme-color);
   font-size: 2.5rem;
 }
 
 .header .logo span {
-  color: var(--theme-color);
+  color: var(--text-dark);
 }
 
 
 .header .navbar  {
   list-style: none;
   font-size: 1.7rem;
-  color: #fff;
+  color: var(--text-dark);
 }
 
 .header .navbar li {
@@ -91,9 +91,12 @@ section {
 .header .navbar li a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-dark);
   text-align: center;
   padding: 5px;
+}
+.header .navbar li a i{
+  color: var(--text-dark);
 }
 
 ul li ul.dropdown {
@@ -110,7 +113,7 @@ ul li:hover ul.dropdown {
   width: 170px;
   display: block;
   opacity: 100%;
-  background-color: #00000071;
+  background-color: #fff;
   list-style: none;
 }
 
@@ -123,14 +126,14 @@ ul li:hover ul.dropdown li {
 
 .signin-link a{
   margin-left: 70px;
-  border: 1px solid #fff;
+  border: 1px solid var(--text-dark);
   border-radius: 20px;
   padding: 5px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.header .navbar a:hover {
+.header .navbar a:hover, .header .navbar a:hover  {
   color: var(--theme-color);
   border-color: var(--theme-color);
 }
@@ -692,18 +695,100 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
+/* FILTER SECTION */
+
+.filter-section {
+  position: relative;
+  overflow: hidden;
+  margin: 30px;
+  /* background-color: #222; */
+  border: 2px solid none;
+  border-radius: 25px;
+  /* box-shadow: inset 2px 2px 10px rgba(5, 5, 5, 0.612); */
+}
+
+.search-input {
+  font-weight: 500;
+  font-size: .8vw;
+  color: #fff;
+  background-color: rgb(28,28,30);
+  box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 0.4vw;
+  max-width: 190px;
+  transition: .4s;
+}
+
+.search-input:hover {
+  box-shadow: 0 0 0 .15vw rgba(135, 207, 235, 0.186);
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 .15vw skyblue;
+}
 
 /* START AGENCE SLIDER  */
+
+.slider-agence {
+  position: relative;
+  overflow: hidden;
+  margin: 30px;
+  /* background-color: #222; */
+  border: 2px solid none;
+  border-radius: 25px;
+  /* box-shadow: inset 2px 2px 10px rgba(5, 5, 5, 0.612); */
+
+}
+
+.slider-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+
+.prev-button, .next-button {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent;
+  color: rgb(181, 179, 179);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+
+.prev-button {
+  left: 0;
+
+}
+
+.next-button {
+  right: 0;
+
+}
+
 
 .card-agence {
   --accent-color: var(--theme-color);
   position: relative;
   width: 260px;
-  background: rgb(255, 255, 255);
+  background: rgb(237, 237, 237);
   border-radius: 1rem;
   padding: 0.5rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 50px 30px -20px;
   transition: all 0.5s ease-in-out;
+  margin: 10px;
 }
 
 .card-agence .image-container {
@@ -806,7 +891,7 @@ html::-webkit-scrollbar-thumb {
 
 .card-agence .button-container {
   display: flex;
-  gap: 0.3rem;
+  justify-content: center;
 }
 
 .card-agence .button-container .button {
@@ -817,6 +902,7 @@ html::-webkit-scrollbar-thumb {
   color: white;
   font-weight: 900;
   cursor: pointer;
+  margin: 5px 30px 15px 30px;
 }
 
 .card-agence .button-container .button:hover {
