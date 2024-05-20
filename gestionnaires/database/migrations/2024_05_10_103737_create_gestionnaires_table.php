@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('adresse', 50);
             $table->integer('telephone');
             $table->string('detail', 200);
+            $table->string('compteActiver', 50);
             $table->string('email', 50);
             $table->string('motDePasse', 200);
             $table->timestamps();

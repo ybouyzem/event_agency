@@ -140,7 +140,7 @@ ul li:hover ul.dropdown li {
 
 #menu-bars {
   font-size: 3rem;
-  color: #fff;
+  color: var(--theme-color);
   cursor: pointer;
   display: none;
 } 
@@ -151,7 +151,7 @@ ul li:hover ul.dropdown li {
 .home {
   height: 100vh;
   margin-bottom:10px;
-  background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgb(0, 0, 0)),url('img/event.jpeg');
+  background-image: linear-gradient(to top, rgba(245, 246, 252, 0), rgb(0, 0, 0)),url('img/slide1.jpg');
   background-size: cover;
 }
 
@@ -1323,7 +1323,7 @@ html::-webkit-scrollbar-thumb {
     left: 0;
     right: 0;
     border-top: 0.1rem solid #222;
-    background: #333;
+    background: #fff;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
 
@@ -1337,7 +1337,7 @@ html::-webkit-scrollbar-thumb {
 
   .header .navbar a {
     display: flex;
-    background: #333;
+    background: #fff;
     border-bottom:1px solid  gray;
     padding: 1.3rem;
     margin: 1.3rem;

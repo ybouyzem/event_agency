@@ -24,6 +24,7 @@ class Gestionnaire extends Model implements Authenticatable
         'adresse',
         'telephone',
         'detail',
+        'compteActiver',
         'email',
         'motDePasse',
     ];

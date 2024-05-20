@@ -30,48 +30,50 @@
       <div class="content">
         <h1>événements <br><span>Hadat</span> <br>où décollent vos idées</h1>
         <p class="par">Transformons Votre Vision En Une Réalité Minutieusement Planifiée.</p>
-        <button class="home-btn">
-          <div class="wrapper">
-            <p class="text">Rejoins-nous</p>
-        
-            <div class="flower flower1">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
+        <a href="{{asset('/se-connecter-gestionnaire/account-type')}}">
+          <button class="home-btn">
+            <div class="wrapper">
+              <p class="text">Rejoins-nous</p>
+          
+              <div class="flower flower1">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
+              <div class="flower flower2">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
+              <div class="flower flower3">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
+              <div class="flower flower4">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
+              <div class="flower flower5">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
+              <div class="flower flower6">
+                <div class="petal one"></div>
+                <div class="petal two"></div>
+                <div class="petal three"></div>
+                <div class="petal four"></div>
+              </div>
             </div>
-            <div class="flower flower2">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
-            </div>
-            <div class="flower flower3">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
-            </div>
-            <div class="flower flower4">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
-            </div>
-            <div class="flower flower5">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
-            </div>
-            <div class="flower flower6">
-              <div class="petal one"></div>
-              <div class="petal two"></div>
-              <div class="petal three"></div>
-              <div class="petal four"></div>
-            </div>
-          </div>
-        </button>
+          </button>
+        </a>
       </div>
     </section>
 
