@@ -1132,7 +1132,7 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212b36;
+  background-color: #fff;
   transition: opacity 0.75s, visibility 0.75s;
 }
 
@@ -1145,8 +1145,8 @@ html::-webkit-scrollbar-thumb {
   content: "";
   width: 75px;
   height: 75px;
-  border: 15px solid #dddddd;
-  border-top-color: #7449f5;
+  border: 15px solid #222;
+  border-top-color: var(--theme-color);
   border-radius: 50%;
   animation:loading 0.75s ease infinite;
 }

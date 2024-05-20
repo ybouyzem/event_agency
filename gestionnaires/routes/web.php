@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,10 @@ Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [Se
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 
 
-// Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
-//     ->name('index-gestionnaire')
-//     ->middleware(CheckGestionnaire::class);
+//admin
+Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
+
+
+Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
+    ->name('index-gestionnaire')
+    ->middleware(CheckGestionnaire::class);

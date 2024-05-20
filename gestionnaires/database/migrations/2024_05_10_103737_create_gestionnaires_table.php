@@ -9,25 +9,25 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('gestionnaire', function (Blueprint $table) {
-            $table->id();
-            $table->string('type', 50);
-            $table->string('service', 50);
-            $table->string('proprietaire', 50);
-            $table->string('nom', 50);
-            $table->string('ville', 50);
-            $table->string('adresse', 50);
-            $table->integer('telephone');
-            $table->string('detail', 200);
-            $table->string('compteActiver', 50);
-            $table->string('email', 50);
-            $table->string('motDePasse', 200);
-            $table->timestamps();
-        });
-
-    }
+        public function up(): void
+        {
+            Schema::create('gestionnaire', function (Blueprint $table) {
+                $table->id();
+                $table->string('type', 50)->nullable();
+                $table->string('service', 50)->nullable();
+                $table->string('proprietaire', 50)->nullable();
+                $table->string('nom', 50)->nullable();
+                $table->string('ville', 50)->nullable();
+                $table->string('adresse', 50)->nullable();
+                $table->integer('telephone')->nullable();
+                $table->string('detail', 200)->nullable();
+                $table->string('compteActiver', 50)->nullable();
+                $table->string('email', 50)->nullable();
+                $table->string('motDePasse', 200)->nullable();
+                $table->timestamps();
+            });
+        }
+        
 
     /**
      * Reverse the migrations.

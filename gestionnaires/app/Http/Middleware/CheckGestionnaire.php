@@ -16,7 +16,7 @@ class CheckGestionnaire
      */
     public function handle($request, Closure $next)
     {
-        if (auth()->check() && auth()->user()->role === 'gestionnaire') {
+        if (auth()->check() && auth()->user()->id == 1) {
             return $next($request);
         }
 
