@@ -21,6 +21,12 @@ class GestionnaireController extends Controller
     {
         return view("index-gestionnaire");
     }
+
+    public function profile()
+    {
+        return view("profile-gestionnaire");
+    }
+
     public function authentification()
     {
         return view("se-connecter-gestionnaire");

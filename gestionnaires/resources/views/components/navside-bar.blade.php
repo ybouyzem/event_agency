@@ -6,7 +6,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li>
-				<a href="/profile" style="background-color: rgb(13, 91, 160); color:white;">
+				<a href="/profile-gestionnaire" style="background-color: rgb(13, 91, 160); color:white;">
 					<i class='bx bxs-user-circle' ></i>
 					<span class="text">Profile</span>
 					<i class='bx bx-right-arrow-alt' ></i>

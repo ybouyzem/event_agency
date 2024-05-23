@@ -14,12 +14,12 @@ class CheckGestionnaire
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        if (auth()->check() && auth()->user()->id == 1) {
-            return $next($request);
-        }
+    // public function handle($request, Closure $next)
+    // {
+    //     if (auth()->check() && auth()->user()->id == 1) {
+    //         return $next($request);
+    //     }
 
-        return redirect()->route('authentification');
-    }
+    //     return redirect()->route('authentification');
+    // }
 }

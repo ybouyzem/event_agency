@@ -20,12 +20,13 @@ Route::match(['get', 'post'], '/services-gestionnaire/add', [ServiceController::
 Route::match(['get', 'delete'], '/services-gestionnaire/supprimer/{serviceId}', [ServiceController::class, 'supprimerService']);
 Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [ServiceController::class, 'modifierService'])->name('modifier-service');
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
+Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
 
 
 //admin
 Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
 
 
-Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
-    ->name('index-gestionnaire')
-    ->middleware(CheckGestionnaire::class);
+// Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])
+//     ->name('index-gestionnaire')
+//     ->middleware(CheckGestionnaire::class);

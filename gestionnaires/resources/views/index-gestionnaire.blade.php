@@ -15,7 +15,9 @@
 	<title>AdminHub</title>
 </head>
 <body>
-
+	@if (!session('gestionnaire')->proprietaire || !session('gestionnaire')->detail || !session('gestionnaire')->service || !session('gestionnaire')->compteActiver || session('gestionnaire')->compteActiver == "deactiver")
+		<x-warning-profile/>
+	@else
 
 	{{-- NAVBAR AND SIDEBAR --}}
 	<x-navside-bar/>
@@ -99,6 +101,7 @@
 	</section>
 	<!-- CONTENT -->
 	
+	@endif
  <!-- for the page loader -->
  {{-- <div class="loader"></div> --}}
  <script>(function(w, d) { w.CollectId = "663e3d251063215eaa11d59b"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>	<script src="script.js"></script>

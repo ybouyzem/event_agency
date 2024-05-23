@@ -15,10 +15,7 @@
 	<title>AdminHub</title>
 </head>
 <body>
-
-
 	{{-- NAVBAR AND SIDEBAR --}}
-	<x-navside-bar-admin/>
 
 		<!-- MAIN -->
 		<main>
