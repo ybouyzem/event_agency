@@ -15,7 +15,7 @@
 	<title>AdminHub</title>
 </head>
 <body>
-	@if (!session('gestionnaire')->proprietaire || !session('gestionnaire')->detail || !session('gestionnaire')->service || !session('gestionnaire')->compteActiver || session('gestionnaire')->compteActiver == "deactiver")
+	@if (!session('gestionnaire')->proprietaire || session('gestionnaire')->compteActiver != "oui")
 		<x-warning-profile/>
 	@else
 
