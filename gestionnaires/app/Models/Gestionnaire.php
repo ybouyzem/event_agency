@@ -27,5 +27,9 @@ class Gestionnaire extends Model implements Authenticatable
         'compteActiver',
         'email',
         'motDePasse',
+        'image1',
+        'image2',
+        'image3',
+        'image4'
     ];
 }

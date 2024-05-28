@@ -40,7 +40,25 @@
       </section>
       <!-- SIDEBAR -->
     
-    
+      @if(session('success'))
+      <div class="alert-container">
+        <div class="popup" id="popup">
+          <img src="img/verifier.png">
+          <h2>Succès!</h2>
+          <p> <span style="font-weight: 500">Informations du gestionnaire mises à jour avec succès</span><br>success!</p>
+          <button type="button" onclick="closePopup()" id="ok-button">OK</button>
+        </div>
+      </div>
+    @elseif(session('error'))
+      <div class="alert-container">
+        <div class="popup" id="popup">
+          <img src="img/error.png">
+          <h2>Oups!</h2>
+          <p> <span style="font-weight: 500">Quelque chose s'est mal passé!</span><br> veuillez réessayer.</p>
+          <button type="button" onclick="closePopup()" id="ok-button" class="error-ok">OK</button>
+        </div>
+      </div>
+      @endif
     
       <!-- CONTENT -->
       <section id="content">
@@ -98,7 +116,7 @@
                 @if (session('gestionnaire')->type=="Agence")
                 <div class="input-container select-option">
                   <label for="input">Service par defaut *</label>
-                  <select>
+                  <select name="service" id="service">
                     @if (session('gestionnaire')->service)
                       <option value="0">{{ session('gestionnaire')->service }}</option>
                     @else
@@ -125,7 +143,7 @@
                 @endif
 
                 <div class="description-profile">
-                  <textarea id="" name="detail" rows="4" cols="50" placeholder="Description">{{ session('gestionnaire')->detail }}</textarea>
+                  <textarea id="detail" name="detail" rows="4" cols="50" placeholder="Description">{{ session('gestionnaire')->detail }}</textarea>
                 </div>
                 <div class="input-container">
                   <input required="" id="input" type="submit" value="Modifier"/>
@@ -133,16 +151,25 @@
                 </form>
                 {{-- CHANGER IMAGE --}}
                 <div class="profile-title">Ajouter Votre Images <i class='bx bxs-image-add'></i></div>
-                <form action="" method="post">
+                <form action="{{ route('modifierImageGestionnaire', ['gestId' => session('gestionnaire')->id]) }}" method="POST">
+                  @csrf
                   <div class="messageBox">
                     <div class="fileUploadWrapper">
                       <label for="file">
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="file" name="file" />
+                      <input type="file" id="image1" name="image1" />
                     </div>
-                    <span>IMAGE 1</span>
+                  </div>
+                  <div class="messageBox">
+                    <div class="fileUploadWrapper">
+                      <label for="file">
+                        <i class='bx bx-image-add'></i>
+                        <span class="tooltip">Add an image</span>
+                      </label>
+                      <input type="file" id="image2" name="image2" />
+                    </div>
                   </div>
                   <div class="messageBox">
                     <div class="fileUploadWrapper">
@@ -150,9 +177,8 @@
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="file" name="file" />
+                      <input type="file" id="image3" name="image3" />
                     </div>
-                    <span>IMAGE 2</span>
                   </div>
                   <div class="messageBox">
                     <div class="fileUploadWrapper">
@@ -160,19 +186,8 @@
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="file" name="file" />
+                      <input type="file" id="image4" name="image4" />
                     </div>
-                    <span>IMAGE 3</span>
-                  </div>
-                  <div class="messageBox">
-                    <div class="fileUploadWrapper">
-                      <label for="file">
-                        <i class='bx bx-image-add' ></i>
-                        <span class="tooltip">Add an image</span>
-                      </label>
-                      <input type="file" id="file" name="file" />
-                    </div>
-                    <span>IMAGE 4</span>
                   </div>
 
                   
@@ -182,13 +197,14 @@
                 </form>
                 {{-- CHANGER MOT DE PASSE --}}
                 <div class="profile-title">Changer Votre mot de passe <i class='bx bxs-key'></i></div>
-                <form action="" method="post">
+                <form action="{{ route('modifierMotPasse', ['gestId' => session('gestionnaire')->id]) }}" method="POST">
+                  @csrf
                   <div class="input-container">
-                    <input required="" id="input" type="password"/>
+                    <input required="" id="input" type="password" name="oldMotPasse"/>
                     <label class="label" for="input">Ancien mot de passe *</label>
                   </div>
                   <div class="input-container">
-                    <input required="" id="input" type="password"/>
+                    <input required="" id="input" type="password" name="newMotPasse"/>
                     <label class="label" for="input">nouveau mot de passe *</label>
                   </div>
                   <div class="input-container">
@@ -200,5 +216,8 @@
             <!-- MAIN -->
       </section>
       <!-- CONTENT -->
+
+      <script src="{{asset('login.js')}}"></script>
+
     </body>
 </html>

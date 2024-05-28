@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-use App\Http\Controllers\Hash;
+use Illuminate\Support\Facades\Session;
+
+// use App\Http\Controllers\Hash;
 use App\Http\Requests\GestionnaireRequest;
 
 use Illuminate\Http\Request;
@@ -62,12 +65,9 @@ class GestionnaireController extends Controller
             $gestionnaire = new Gestionnaire();
     
             $gestionnaire->nom = $request->nomAgence;
-            $gestionnaire->proprietaire = $request->nomAgence;
             $gestionnaire->type = $request->type;
             $gestionnaire->ville = $request->ville;
-            $gestionnaire->adresse = $request->ville;
             $gestionnaire->telephone = $request->telephone;
-            $gestionnaire->detail = $request->type;
             $gestionnaire->email = $request->email; 
             $gestionnaire->motDePasse = HashFacade::make($request->motPasse); // Hash the password
     
@@ -104,7 +104,7 @@ class GestionnaireController extends Controller
         $gestionnaire = Gestionnaire::find($gestId);
     
         if (!$gestionnaire) {
-            return response()->json(['message' => 'Gestionnaire not found'], 404);
+            return redirect()->back()->with("error", "Gestionnaire couldn't be updated");
         }
     
         // Update the gestionnaire fields using object-oriented approach
@@ -112,9 +112,57 @@ class GestionnaireController extends Controller
     
         // Save the updated gestionnaire
         $gestionnaire->save();
-    
-        return response()->json(['message' => 'Gestionnaire information updated successfully']);
+        Session::forget('gestionnaire');
+        Session::put('gestionnaire', $gestionnaire);
+        return redirect()->back()->with("success", 'Gestionnaire information updated successfully');
     }
 
+    public function modifierImageGestionnaire(Request $request, $gestId)
+    {
+        $validatedData = $request->validate([
+            'image1' => 'nullable|string',
+            'image2' => 'nullable|string',
+            'image3' => 'nullable|string',
+            'image4' => 'nullable|string',
+        ]);
+        $gestionnaire = Gestionnaire::find($gestId);
+         if (!$gestionnaire) {
+            return redirect()->back()->with("error", "Gestionnaire couldn't be updated");
+        }
+    
+        // Update the gestionnaire fields using object-oriented approach
+        $gestionnaire->fill($validatedData);
+    
+        // Save the updated gestionnaire
+        $gestionnaire->save();
+        Session::forget('gestionnaire');
+        Session::put('gestionnaire', $gestionnaire);
+        return redirect()->back()->with("success", 'Gestionnaire information updated successfully');
+    }
+
+    public function modifiermotPasse(Request $request)
+    {
+        
+            $request->validate([
+                'oldMotPass' => 'required|string',
+                'newMotPass' => 'required|string|min:8',
+            ]);
+    
+            $gestionnaire = Auth::gestionnaire();
+    
+            // Check if the old password matches
+            
+            // if (!HashFacade::check($request->oldMotPass, $user->motDePasse)) {
+            //     return redirect()->back()->with('error', "Old password doesn't match");
+            // }
+    
+            // Update the password
+            $user->motDePasse = HashFacade::make($request->newMotPass);
+            $user->save();
+    
+            return redirect()->back()->with('success', 'Password updated successfully');
+       
+    }
+    
     
 }

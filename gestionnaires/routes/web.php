@@ -23,6 +23,10 @@ Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, '
 Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
 
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
+Route::match(['get', 'post'], '/profile-gestionnaire/modifierImages/{gestId}', [GestionnaireController::class, 'modifierImageGestionnaire'])->name('modifierImageGestionnaire');
+Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', [GestionnaireController::class, 'modifierMotPasse'])->name('modifierMotPasse');
+
+
 
 //admin
 Route::get('/index-admin', [AdminController::class, 'index'])->name('index');

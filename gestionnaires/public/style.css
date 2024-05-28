@@ -985,7 +985,7 @@ datalist option:checked {
 	align-items: center;
 	justify-content: center;
 	background-color: #5d7990;
-	padding: 0 15px;
+	padding:5px ;
 	border-radius: 10px;
 	margin: 5px;
   }
@@ -993,7 +993,8 @@ datalist option:checked {
   .messageBox span {
 	color: #fff;
 	font-size: 15px;
-	margin-left: 3px;
+	margin-left: -80px;
+	width: fit-content;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .fileUploadWrapper {
@@ -1053,6 +1054,80 @@ datalist option:checked {
 
 
 /* ADD IMAGE BUTTON */
+
+
+/* Alert Message Success */
+
+.alert-container{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #212b3645;
+	z-index: 1000;
+  }
+  
+  .alert-container .popup {
+	width: 350px;
+	background: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 0 30px 30px;
+	color: #333;
+  
+  }
+  
+  .alert-container .popup img {
+	width: 100px;
+	margin-top: -50px;
+	border-radius: 50px;
+	box-shadow: 0 2px 5px   rgba(0, 0, 0, 0.2);
+  }
+  
+  .alert-container .popup h2 {
+	font-size: 38px;
+	font-weight: 500;
+	margin: 5px 0 5px;
+  }
+  
+  .alert-container .popup p {
+	/* padding-top: 20px; */
+	text-align: center;
+	font-size: medium;
+  }
+  
+  .alert-container .popup button {
+	width: 100%;
+	margin-top: 10%;
+	padding: 10px 0;
+	background: #4db528;
+	color: #fff;
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px   rgba(0, 0, 0, 0.2);
+  }
+  .alert-container .popup .error-ok {
+	width: 100%;
+	margin-top: 10%;
+	padding: 10px 0;
+	background: darkred;
+	color: #fff;
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0 2px 5px   rgba(0, 0, 0, 0.2);
+  }
 
 @media screen and (max-width: 768px) {
 	#sidebar {
