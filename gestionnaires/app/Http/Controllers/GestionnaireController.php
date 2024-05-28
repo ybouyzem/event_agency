@@ -88,5 +88,33 @@ class GestionnaireController extends Controller
         return redirect()->route('authentification');
     }
 
+    public function modiferInfoGestionnaire(Request $request, $gestId)
+    {
+        $validatedData = $request->validate([
+            'service' => 'nullable|string|max:50',
+            'proprietaire' => 'nullable|string|max:50',
+            'nom' => 'nullable|string|max:50',
+            'ville' => 'nullable|string|max:50',
+            'adresse' => 'nullable|string|max:50',
+            'telephone' => 'nullable|integer',
+            'detail' => 'nullable|string|max:200',
+        ]);
+    
+        // Find the gestionnaire by id
+        $gestionnaire = Gestionnaire::find($gestId);
+    
+        if (!$gestionnaire) {
+            return response()->json(['message' => 'Gestionnaire not found'], 404);
+        }
+    
+        // Update the gestionnaire fields using object-oriented approach
+        $gestionnaire->fill($validatedData);
+    
+        // Save the updated gestionnaire
+        $gestionnaire->save();
+    
+        return response()->json(['message' => 'Gestionnaire information updated successfully']);
+    }
+
     
 }

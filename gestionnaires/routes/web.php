@@ -22,6 +22,7 @@ Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [Se
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
 
+Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
 
 //admin
 Route::get('/index-admin', [AdminController::class, 'index'])->name('index');

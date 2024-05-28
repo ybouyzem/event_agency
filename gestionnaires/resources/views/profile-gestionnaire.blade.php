@@ -70,9 +70,9 @@
                 <span>Bienvenue {{session('gestionnaire')->nom}} 👋</span>
              </div>
               <div class="profile-title">Modifier vos Information<i class='bx bxs-edit' ></i></div>
-              <form action="" method="post">
-                <div class="input-container">
-                  <label for="input" style="color: #747474; font-family:'Gill Sans'">Type</label>
+              <form action="{{ route('modiferInfoGestionnaire', ['gestId' => session('gestionnaire')->id]) }}" method="POST">                <div class="input-container">
+                @csrf  
+                <label for="input" style="color: #747474; font-family:'Gill Sans'">Type</label>
                   <input readonly id="input" type="text" value="{{ session('gestionnaire')->type }}" style="color: #6c6c6c; font-weight:bolder;"/>
                 </div>
                 <div class="input-container">
@@ -91,7 +91,7 @@
                   <div class="underline"></div>
                 </div>
                 <div class="input-container">
-                  <input required="" id="input" type="number" value="{{ session('gestionnaire')->adresse }}"/>
+                  <input required="" id="input" type="number" value="{{ session('gestionnaire')->telephone }}"/>
                   <label class="label" for="input">Telephone *</label>
                   <div class="underline"></div>
                 </div>
@@ -99,17 +99,21 @@
                 <div class="input-container select-option">
                   <label for="input">Service par defaut *</label>
                   <select>
-                    <option value="0">sélectionner service</option>
-                    <option value="1">Mariages</option>
-                    <option value="2">Ftour Ramadan</option>
-                    <option value="3">Evenement Prive</option>
-                    <option value="4">Fiancailles</option>
-                    <option value="5">Buffet</option>
-                    <option value="6">Pause cafe</option>
-                    <option value="7">Conferance</option>
-                    <option value="8">Seminaire</option>
-                    <option value="9">Soutenance</option>
-                    <option value="10">Gala</option>
+                    @if (session('gestionnaire')->service)
+                      <option value="0">{{ session('gestionnaire')->service }}</option>
+                    @else
+                      <option value="0">sélectionner service</option>
+                    @endif
+                      <option value="Mariages">Mariages</option>
+                    <option value="Ftour Ramadan">Ftour Ramadan</option>
+                    <option value="Evenement Prive">Evenement Prive</option>
+                    <option value="Fiancailles">Fiancailles</option>
+                    <option value="Buffet">Buffet</option>
+                    <option value="Pause cafe">Pause cafe</option>
+                    <option value="Conferance">Conferance</option>
+                    <option value="Seminaire">Seminaire</option>
+                    <option value="Soutenance">Soutenance</option>
+                    <option value="Gala">Gala</option>
                   </select>
                 </div>
                 @else 
@@ -121,7 +125,7 @@
                 @endif
 
                 <div class="description-profile">
-                  <textarea id="" name="" rows="4" cols="50" placeholder="Description">{{ session('gestionnaire')->detail }}</textarea>
+                  <textarea id="" name="detail" rows="4" cols="50" placeholder="Description">{{ session('gestionnaire')->detail }}</textarea>
                 </div>
                 <div class="input-container">
                   <input required="" id="input" type="submit" value="Modifier"/>
