@@ -855,9 +855,27 @@ datalist option:checked {
 	padding: 10px;
 
 }
+.profile-container .title {
+	vertical-align: middle;
+	flex-direction: column;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.profile-container .title span {
+	margin-left: 3%;
+}
+.profile-container .title img {
+	width: 120px;
+	height: 120px;
+	background-color: #3C91E6;
+	padding: 15px;
+	border-radius: 50%;
+
+}
 
 .profile-container form {
-	background-color: #eee;
+	background-color: #f4f4f4;
 	padding: 10px;
 	border-radius: 7px;
 	display: grid;
@@ -881,9 +899,10 @@ datalist option:checked {
 	text-align: left;
 	width: 250px;
 	height: 150px;
+	resize: none;
 }
 
-.profile-container .profile-title span{
+.profile-container .profile-title span, .profile-container .title span{
 	font-weight:bolder;
 	color: var(--blue);
 	font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -896,15 +915,31 @@ datalist option:checked {
 	width: 200px;
 	margin: 10px 5px 25px 5px;
 }
-  
+.input-container.select-option label {
+	font-size: 14px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #7d7d7d;
+
+}
+.input-container select {
+	font-size: 15px;
+	font-weight: 300;
+	padding: 5px;
+	border-radius: 10px;
+	margin-top: 2px;
+}
+
+
   .input-container input{
 	font-size: 15px;
 	width: 100%;
 	border: none;
-	border-bottom: 2px solid #ccc;
+	border-bottom: 2px solid #5097e762;
 	padding: 5px 0;
 	background-color: transparent;
 	outline: none;
+	color: #535252;
+	transition:all 0.5s;
   }
   
 
@@ -916,13 +951,18 @@ datalist option:checked {
 	transition: all 0.3s ease;
 	pointer-events: none;
   }
-  
+  .input-container input:focus {
+	border-bottom: 2px solid #5096e7;
+	transition:all 0.5s;
+
+  }
   .input-container input:focus ~ .label,
   .input-container input:valid ~ .label{
 	top: -15px;
 	font-size: 14px;
 	color: #7d7d7d;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   }
   
   .input-container input[type="submit"] {
@@ -934,10 +974,85 @@ datalist option:checked {
 	
   }
 
-
-  
-
 /* PROFILE PAGE */
+
+/* ADD IMAGE BUTTON */
+
+.messageBox {
+	width: fit-content;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #5d7990;
+	padding: 0 15px;
+	border-radius: 10px;
+	margin: 5px;
+  }
+
+  .messageBox span {
+	color: #fff;
+	font-size: 15px;
+	margin-left: 3px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .fileUploadWrapper {
+	width: fit-content;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #file {
+	display: none;
+  }
+  .fileUploadWrapper label {
+	cursor: pointer;
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	color: #fff;
+  }
+  .fileUploadWrapper label i {
+	font-size: 20px;
+	transition: all 0.3s;
+	color: #fff;
+  }
+
+  .fileUploadWrapper label:hover i {
+	stroke: #fff;
+  }
+  .fileUploadWrapper label:hover i {
+	stroke: #fff;
+	fill: white;
+  }
+  .fileUploadWrapper label:hover .tooltip {
+	display: block;
+	opacity: 1;
+  }
+  .tooltip {
+	position: absolute;
+	top: -40px;
+	display: none;
+	opacity: 0;
+	color: white;
+	font-size: 10px;
+	text-wrap: nowrap;
+	background-color: #000;
+	padding: 6px 10px;
+	border: 1px solid #3c3c3c;
+	border-radius: 5px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+	transition: all 0.3s;
+  }
+
+
+/* ADD IMAGE BUTTON */
 
 @media screen and (max-width: 768px) {
 	#sidebar {
