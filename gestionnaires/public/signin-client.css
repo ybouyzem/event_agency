@@ -183,14 +183,16 @@
     color: rgb(88, 187, 234);
 }
 
-.sigin-client-section button {
+.sigin-client-section button, .sigin-client-section input[type=submit] {
+    cursor: pointer;
+    width: 50%;
     border-radius: 20px;
     border: 1px solid var(--theme-color);
     background-color: var(--theme-color);
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
-    padding: 12px 45px;
+    padding: 10px;
     margin-top: 5px;
     letter-spacing: 1px;
     text-transform: uppercase;

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('signin-client.css') }}" />
 
     <!-- favorite icon -->
-    <link rel="icon" type="img/logo" href="images/favicon.png" />
+    <link rel="icon" type="img/logo" href="{{ asset('img/logo.png') }}" />
 
   </head>
   <body>
@@ -26,18 +26,18 @@
     <section class="sigin-client-section">
       <div class="container" id="container">
         <div class="form-container sign-up-container">
-          <form action="#">
+          <form action="" >
             <h1>Créer un compte</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             </div>
             <span>ou utilisez votre email pour vous inscrire</span>
-            <input type="text" placeholder="Nom Complet" />
-            <input type="text" placeholder="Ville" />
-            <input type="number" placeholder="Telephone" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Mot de passe" />
-            <button>S'inscrire</button>
+            <input type="text" name="nomComplet" placeholder="Nom Complet" required/>
+            <input type="text" name="ville" placeholder="Ville" required/>
+            <input type="number" name="telephone" placeholder="Telephone" required/>
+            <input type="email" name="email" placeholder="Email" required/>
+            <input type="password" name="motPasse" placeholder="Mot de passe" required/>
+            <input type="submit" value="S'inscrire">
           </form>
         </div>
         <div class="form-container sign-in-container">
@@ -47,10 +47,10 @@
               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
             </div>
             <span>ou utilisez votre compte</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Mot de Passe" />
+            <input type="email" name="email" placeholder="Email" required/>
+            <input type="password" name="motPasse" placeholder="Mot de Passe" required/>
             <a href="#" class="fogetpwd">Mot de passe oublié</a>
-            <button>Se connecter</button>
+            <input type="submit" value="Se connecter">
           </form>
         </div>
         <div class="overlay-container">
