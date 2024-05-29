@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GestionnaireController;
 use App\Http\Middleware\CheckGestionnaire;
@@ -22,14 +23,19 @@ Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [Se
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
 
+//gestionnaire profile
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modifierImages/{gestId}', [GestionnaireController::class, 'modifierImageGestionnaire'])->name('modifierImageGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', [GestionnaireController::class, 'modifierMotPasse'])->name('modifierMotPasse');
 
 
+//client
+Route::get( '/index/signin', [ClientController::class, 'index']);
+
+
 
 //admin
-Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
+// Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
 
 
 // Route::get('/index-gestionnaire', [GestionnaireController::class, 'index'])

@@ -8,9 +8,15 @@ use App\Models\Client;
 
 class ClientController extends Controller
 {
+    public function index()
+    {
+        return view("se-connecter-client");
+    }
     public function allClients()
     {
         $allClients = Client::all();
         return view("clients", compact('allClients'));
     }
+
 }
+

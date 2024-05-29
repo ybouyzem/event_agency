@@ -81,10 +81,6 @@
       <div class="type-gestionnaire">
         <div>
           <label>
-            <input type="radio" name="radio" checked="">
-            <span>Tous</span>
-          </label>
-          <label>
             <input type="radio" name="radio">
             <span>Agences</span>
           </label>
@@ -98,8 +94,16 @@
         <label for="">Choisis Services :</label>
         <select name="" id="">
           <option value="" selected>Tous les Services</option>
-          <option value="">A</option>
-          <option value="">B</option>
+          <option value="Mariages">Mariages</option>
+          <option value="Ftour Ramadan">Ftour Ramadan</option>
+          <option value="Evenement Prive">Evenement Prive</option>
+          <option value="Fiancailles">Fiancailles</option>
+          <option value="Buffet">Buffet</option>
+          <option value="Pause cafe">Pause cafe</option>
+          <option value="Conferance">Conferance</option>
+          <option value="Seminaire">Seminaire</option>
+          <option value="Soutenance">Soutenance</option>
+          <option value="Gala">Gala</option>
         </select>
       </div>
     </section>

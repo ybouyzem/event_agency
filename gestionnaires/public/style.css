@@ -1056,7 +1056,7 @@ datalist option:checked {
 /* ADD IMAGE BUTTON */
 
 
-/* Alert Message Success */
+/* Alert Message  */
 
 .alert-container{
 	position: fixed;
@@ -1128,7 +1128,9 @@ datalist option:checked {
 	cursor: pointer;
 	box-shadow: 0 2px 5px   rgba(0, 0, 0, 0.2);
   }
+  /* Alert Message  */
 
+  
 @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;

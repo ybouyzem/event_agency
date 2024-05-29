@@ -123,15 +123,15 @@
                       <option value="0">sélectionner service</option>
                     @endif
                       <option value="Mariages">Mariages</option>
-                    <option value="Ftour Ramadan">Ftour Ramadan</option>
-                    <option value="Evenement Prive">Evenement Prive</option>
-                    <option value="Fiancailles">Fiancailles</option>
-                    <option value="Buffet">Buffet</option>
-                    <option value="Pause cafe">Pause cafe</option>
-                    <option value="Conferance">Conferance</option>
-                    <option value="Seminaire">Seminaire</option>
-                    <option value="Soutenance">Soutenance</option>
-                    <option value="Gala">Gala</option>
+                      <option value="Ftour Ramadan">Ftour Ramadan</option>
+                      <option value="Evenement Prive">Evenement Prive</option>
+                      <option value="Fiancailles">Fiancailles</option>
+                      <option value="Buffet">Buffet</option>
+                      <option value="Pause cafe">Pause cafe</option>
+                      <option value="Conferance">Conferance</option>
+                      <option value="Seminaire">Seminaire</option>
+                      <option value="Soutenance">Soutenance</option>
+                      <option value="Gala">Gala</option>
                   </select>
                 </div>
                 @else 

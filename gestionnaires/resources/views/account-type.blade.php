@@ -88,12 +88,12 @@
     <section class="dark">
         <button class="account-type-button">Veuillez choisir votre rôle : Gestionnaire, Client ou Administrateur</button>
         <div class="account-type-container">
-            <a href="">
+            {{-- <a href="">
                 <div data-text="Administrateur" style="--r:-15;" class="glass">
                     <img src="{{asset('img/administrateur.png')}}" alt="">
                 </div>
-            </a>
-            <a href="">
+            </a> --}}
+            <a href="/index/signin">
                 <div data-text="Client" style="--r:5;" class="glass">
                     <img src="{{asset('img/client.png')}}" alt="">
                 </div>

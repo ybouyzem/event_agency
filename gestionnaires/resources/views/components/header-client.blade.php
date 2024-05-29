@@ -9,9 +9,16 @@
       <li>
         <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
-          <li><a href="agence1.php">Agence 1</a></li>
-          <li><a href="agence2.php">Agence 2</a></li>
-          <li><a href="agence3.php">Agence 3</a></li>
+          <li><a href="agence1.php">Mariages</a></li>
+          <li><a href="agence1.php">Ftour Ramadan</a></li>
+          <li><a href="agence2.php">Evenement Prive</a></li>
+          <li><a href="agence3.php">Fiancailles</a></li>
+          <li><a href="agence3.php">Buffet</a></li>
+          <li><a href="agence3.php">Pause cafe</a></li>
+          <li><a href="agence3.php">Conferance</a></li>
+          <li><a href="agence3.php">Seminaire</a></li>
+          <li><a href="agence3.php">Soutenance</a></li>
+          <li><a href="agence3.php">Gala</a></li>
         </ul>
       </li>
       <li><a href="#contact">contact</a></li>
