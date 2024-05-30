@@ -108,7 +108,7 @@
       </div>
     </section>
     {{-- slider of agences and prestataires --}}
-    <x-slider-agences/>
+    <x-slider-agences :gestionnaires="$gestionnaires"/>
     <!-- service section starts  -->
     {{-- <section class="service" id="service">
       <h1 class="heading">Nos <span>services</span></h1>

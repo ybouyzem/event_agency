@@ -57,6 +57,8 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 9%;
+  padding-top: 7px;
+  padding-bottom: 5px;
   opacity:0.9;
 }
 
@@ -75,6 +77,9 @@ section {
   list-style: none;
   font-size: 1.7rem;
   color: var(--text-dark);
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .header .navbar li {
@@ -129,19 +134,18 @@ ul li:hover ul.dropdown li {
   font-weight: 700;
 }
 
-li {
-  width: fit-content;
-}
-
-
 li a i {
   margin: 0;
   padding: 0;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 800;
-  color: #0043ed;
+  font-family: "Poppins", sans-serif;
+
 } 
 
+.my-account {
+  padding-left: 100px;
+}
 
 .header .navbar a:hover, .header .navbar a:hover  {
   color: var(--theme-color);
@@ -1009,7 +1013,7 @@ html::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
-.card-agence .button-container .button {
+.card-agence .button-container .button,  .contactbtn{
   border-radius: 1.4rem 1.4rem 0.7rem 0.7rem;
   border: none;
   padding: 0.5rem 0;
@@ -1017,7 +1021,15 @@ html::-webkit-scrollbar-thumb {
   color: white;
   font-weight: 900;
   cursor: pointer;
-  margin: 5px 30px 15px 30px;
+  margin: 5px 10px 15px 5px;
+}
+
+.contactbtn {
+  background-color: rgb(3, 154, 3);
+  padding: 0px 10px 0px 10px;
+}
+.contactbtn:hover {
+  background-color: green;
 }
 
 .card-agence .button-container .button:hover {
@@ -1046,6 +1058,28 @@ html::-webkit-scrollbar-thumb {
   75% {
     transform: scale(1.5, 2.05);
   }
+}
+
+.afficher-tous {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.afficher-tous a {
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background: #666;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.afficher-tous a:hover {
+  background: var(--theme-color);
 }
 
 /* END CARD AGENCES */

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hadat</title>
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!--font awesome-->
     <link
@@ -22,6 +23,6 @@
   </head>
   <body>
     <x-header-client/>
-    
+    <a href="{{route('logout')}}" style="font-size: 30px;position: absolute; top:300px">log out</a>
   </body>
 </html>

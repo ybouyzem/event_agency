@@ -26,15 +26,16 @@
       @if (!session('client'))
         <li class="signin-link"><a href="{{route('accountType')}}">Se connecter / S'inscrir</a></li>
       @else
-        <li>
-          <a href="" class="favoris">
-           <i class='bx bx-heart'></i>
+        <li class="my-account" >
+          <a href="" >
+           <i class='bx bx-heart' style="color: rgb(0, 146, 204)"></i>
+           <br><span style="color: rgb(0, 146, 204)">Mes favoris</span>
           </a>
         </li>
-        <li>
-          <a href="">
-            <i class='bx bx-user' ></i>
-          {{session('client')->nomComplet}}
+        <li >
+          <a href="{{route('profileClient')}}">
+            <i class='bx bx-user' style="color: rgb(0, 146, 204)"></i>
+            <br><span style="color: rgb(0, 146, 204)">Mon compte</span>
           </a>
         </li>
       @endif

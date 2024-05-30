@@ -10,6 +10,8 @@ use App\Http\Middleware\CheckGestionnaire;
 
 
 Route::get("/", [IndexController::class,"index"])->name("index");
+// Route::get("/", [GestionnaireController::class,"allGest"])->name("allGest");
+
 Route::match(['get', 'post'], '/se-connecter-gestionnaire', [GestionnaireController::class, 'authentification'])->name('authentification');
 Route::match(['get', 'post'], '/se-connecter-gestionnaire/add', [GestionnaireController::class, 'signup'])->name('signup');
 Route::match(['get', 'post'], '/se-connecter-gestionnaire/login', [GestionnaireController::class, 'signin'])->name('signin');
@@ -22,6 +24,7 @@ Route::match(['get', 'delete'], '/services-gestionnaire/supprimer/{serviceId}', 
 Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [ServiceController::class, 'modifierService'])->name('modifier-service');
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
+Route::get('/gestionnaire/{id}', [GestionnaireController::class, 'show'])->name('gestionnaire.show');
 
 //gestionnaire profile
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
@@ -31,8 +34,11 @@ Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', 
 
 //client
 Route::get( '/index/signin', [ClientController::class, 'index']);
+Route::get( '/index/profile', [ClientController::class, 'profileClient'])->name('profileClient');
+
 Route::match(['get', 'post'], '/index/signup', [ClientController::class, 'signupClient'])->name('signupClient');
 Route::match(['get', 'post'], '/signin', [ClientController::class, 'signinClient'])->name('signinClient');
+Route::get('/index/logout', [ClientController::class, 'logout'])->name('logout');
 
 
 

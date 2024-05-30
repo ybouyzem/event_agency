@@ -15,6 +15,11 @@ class ClientController extends Controller
     {
         return view("se-connecter-client");
     }
+
+    public function profileClient()
+    {
+        return view("profile-client");
+    }
     public function allClients()
     {
         $allClients = Client::all();
@@ -60,6 +65,12 @@ class ClientController extends Controller
             // Gestionnaire not found with the provided email
             return redirect()->back()->with("error", "Invalid email or password");
         }
+    }
+
+    public function logout()
+    {
+        session()->forget('client');
+        return redirect()->route('index');
     }
 
 }

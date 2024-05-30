@@ -163,6 +163,11 @@ class GestionnaireController extends Controller
             return redirect()->back()->with('success', 'Password updated successfully');
        
     }
-    
+
+    public function show($id)
+    {
+        $gestionnaire = Gestionnaire::findOrFail($id);
+        return view('detail-gestionnaire', compact('gestionnaire'));
+    }
     
 }
