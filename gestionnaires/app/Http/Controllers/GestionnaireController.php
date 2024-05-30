@@ -34,6 +34,7 @@ class GestionnaireController extends Controller
     {
         return view("se-connecter-gestionnaire");
     }
+    
     public function signin(Request $request)
     {
         $email = $request->email;
@@ -58,7 +59,6 @@ class GestionnaireController extends Controller
         }
     }
     
-
     public function signup(Request $request)
     {
         try {

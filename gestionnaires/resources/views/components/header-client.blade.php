@@ -22,9 +22,23 @@
         </ul>
       </li>
       <li><a href="#contact">contact</a></li>
-      <li><a href="#about">à propos</a></li>
-      <li class="signin-link"><a href="{{route('accountType')}}">Se connecter / S'inscrir</a></li>
-    </ul>
+      {{-- <li><a href="#about">à propos</a></li> --}}
+      @if (!session('client'))
+        <li class="signin-link"><a href="{{route('accountType')}}">Se connecter / S'inscrir</a></li>
+      @else
+        <li>
+          <a href="" class="favoris">
+           <i class='bx bx-heart'></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class='bx bx-user' ></i>
+          {{session('client')->nomComplet}}
+          </a>
+        </li>
+      @endif
+      </ul>
   
     <div id="menu-bars" class="fas fa-bars"></div>
   </header>

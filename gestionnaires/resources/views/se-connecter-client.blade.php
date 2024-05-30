@@ -7,6 +7,7 @@
     <title>Hadat</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!--font awesome-->
     <link
@@ -26,7 +27,8 @@
     <section class="sigin-client-section">
       <div class="container" id="container">
         <div class="form-container sign-up-container">
-          <form action="" >
+          <form action="{{route('signupClient')}}" method="POST">
+            @csrf
             <h1>Créer un compte</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -41,7 +43,8 @@
           </form>
         </div>
         <div class="form-container sign-in-container">
-          <form action="#">
+          <form action="{{route('signinClient')}}" method="POST">
+            @csrf
             <h1>Se connecter</h1>
             <div class="social-container">
               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -69,18 +72,24 @@
         </div>
       </div>
     </section>
+    @if (session('success'))
+      <script>swal("bienvenu!", "Votre compte a été créé avec succès!", "success");</script>
+    @elseif (session('error'))
+      <script>swal("Oups!", "quelque chose de mal s'est produit, veuillez réessayer!", "error");</script>
+    @endif
     <script>
       const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+      const signInButton = document.getElementById('signIn');
+      const container = document.getElementById('container');
 
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
+      signUpButton.addEventListener('click', () => {
+	      container.classList.add("right-panel-active");
+      });
 
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
+      signInButton.addEventListener('click', () => {
+	      container.classList.remove("right-panel-active");
+      });
     </script>
+
   </body>
 </html>

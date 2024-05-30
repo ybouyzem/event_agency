@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('ville', 50);
             $table->integer('telephone');
             $table->string('email', 50);
-            $table->string('motDePasse', 50);
+            $table->string('motPasse', 500);
             $table->timestamps();
         });
     }

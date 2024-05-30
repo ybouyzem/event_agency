@@ -129,6 +129,20 @@ ul li:hover ul.dropdown li {
   font-weight: 700;
 }
 
+li {
+  width: fit-content;
+}
+
+
+li a i {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: #0043ed;
+} 
+
+
 .header .navbar a:hover, .header .navbar a:hover  {
   color: var(--theme-color);
   border-color: var(--theme-color);
