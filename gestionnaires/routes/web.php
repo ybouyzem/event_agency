@@ -24,7 +24,7 @@ Route::match(['get', 'delete'], '/services-gestionnaire/supprimer/{serviceId}', 
 Route::match(['get', 'post'], '/services-gestionnaire/modifier/{serviceId}', [ServiceController::class, 'modifierService'])->name('modifier-service');
 Route::get('/se-connecter-gestionnaire/account-type', [IndexController::class, 'accountType'])->name('accountType');
 Route::get('/profile-gestionnaire', [GestionnaireController::class, 'profile'])->name('profileGestionnaire');
-Route::get('/gestionnaire/{id}', [GestionnaireController::class, 'show'])->name('gestionnaire.show');
+Route::get('/gestionnaire/{id}', [GestionnaireController::class, 'showDetail'])->name('gestionnaire.showDetail');
 
 //gestionnaire profile
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');

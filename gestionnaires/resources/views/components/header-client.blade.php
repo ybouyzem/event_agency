@@ -28,14 +28,14 @@
       @else
         <li class="my-account" >
           <a href="" >
-           <i class='bx bx-heart' style="color: rgb(0, 146, 204)"></i>
-           <br><span style="color: rgb(0, 146, 204)">Mes favoris</span>
+           <i class='bx bx-heart' style="color: rgb(0, 146, 204);font-size:14px;"></i>
+           <br><span style="color: rgb(0, 146, 204);font-size:14px;">Mes favoris</span>
           </a>
         </li>
         <li >
           <a href="{{route('profileClient')}}">
-            <i class='bx bx-user' style="color: rgb(0, 146, 204)"></i>
-            <br><span style="color: rgb(0, 146, 204)">Mon compte</span>
+            <i class='bx bx-user' style="color: rgb(0, 146, 204); font-size:14px;"></i>
+            <br><span style="color: rgb(0, 146, 204);font-size:14px;">Mon compte</span>
           </a>
         </li>
       @endif

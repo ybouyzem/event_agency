@@ -15,6 +15,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('type', 50)->nullable();
                 $table->string('service', 50)->nullable();
+                $table->float('prix')->nullable();
                 $table->string('proprietaire', 50)->nullable();
                 $table->string('nom', 50)->nullable();
                 $table->string('ville', 50)->nullable();

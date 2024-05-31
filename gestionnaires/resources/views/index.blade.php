@@ -224,5 +224,6 @@
     <!--JS file-->
     <script src="loader.js"></script>
     <script src="script.js"></script>
+    <script src="filter-agence.js"></script>
   </body>
 </html>

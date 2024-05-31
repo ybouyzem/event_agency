@@ -16,7 +16,7 @@
 	    <title>AdminHub</title>
     </head>
     <body>
-      <section id="sidebar">
+      {{-- <section id="sidebar">
         <a href="/index-gestionnaire" class="brand">
           <img src="img/logo.png" class="logo">
           <span class="text">ADAT</span>
@@ -37,7 +37,19 @@
             </a>
           </li>
         </ul>
-      </section>
+      </section> --}}
+      {{-- @if (!session('gestionnaire')->proprietaire || session('gestionnaire')->compteActiver != "oui")
+		<x-warning-profile/>
+	@else --}}
+
+	{{-- NAVBAR AND SIDEBAR --}}
+	<x-navside-bar/>
+
+  
+</section>
+<!-- CONTENT -->
+
+{{-- @endif --}}
       <!-- SIDEBAR -->
     
       @if(session('success'))
@@ -60,26 +72,6 @@
       </div>
       @endif
     
-      <!-- CONTENT -->
-      <section id="content">
-        <!-- NAVBAR -->
-        <nav>
-          <i class='bx bx-menu' ></i>
-          <form action="#" style="visibility: hidden">
-            <div class="form-input">
-              <input type="search" placeholder="Chercher client...">
-              <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
-            </div>
-          </form>
-          <input type="checkbox" id="switch-mode" hidden style="visibility: hidden">
-          <label for="switch-mode" class="switch-mode" style="visibility: hidden"></label>
-          <a href="#" class="profile">
-            
-            <p>Nom: {{ session('gestionnaire')->nom }}</p>
-          </a>
-        </nav>
-        <!-- NAVBAR -->
-      </section>
         <main>
          
             <div class="profile-container">

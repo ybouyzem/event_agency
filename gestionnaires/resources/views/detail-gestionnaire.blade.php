@@ -24,7 +24,6 @@
     />
     <!--css file-->
     <link rel="stylesheet" href="{{ asset('detail-gest.css') }}" />
-    <link rel = "stylesheet" href = "{{ asset('bootstrap.min.css') }}" />
 
     <!-- favorite icon -->
     <link rel="icon" type="img/logo" href="images/favicon.png" />
@@ -32,28 +31,33 @@
   </head>
   <body>
     <x-header-client/>
-    <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img src="{{asset('img/gallery1.jpg')}}" class="d-block w-100 .carousel-img" alt="image 1">
-        </div>
-        <div class="carousel-item">
-        <img src="{{asset('img/gallery4.jpg')}}" class="d-block w-100 .carousel-img" alt="image 2">
-        </div>
-        <div class="carousel-item">
-        <img src="{{asset('img/gallery5.jpg')}}" class="d-block w-100 .carousel-img" alt="image 3">
-        </div>
+    <x-slider-images :gestionnaire="$gestionnaire"/>
+    <section class="detail-gest">
+      <form action="">
+        <div class="title"><i class='bx bxs-building-house'></i> {{$gestionnaire->nom}}</div>
+          <div class="other-info">
+            <div class="info"><i class='bx bxs-business' ></i> <span>{{$gestionnaire->ville}}</span></div>
+            <div class="info"><i class='bx bxs-edit-location' ></i> <span>{{$gestionnaire->adresse}}</span></div>
+            <div class="info"><i class='bx bxs-donate-heart' ></i><span>{{$gestionnaire->service}}</span></div>
+            <div class="info"><i class='bx bx-credit-card' ></i>Prix A partir de : <span>{{$gestionnaire->prix}} Dh</span></div>
+            @if (session('client'))
+            <div class="info phone"><i class='bx bxs-phone-call' style="color: rgb(4, 163, 4)"></i> <span>0{{$gestionnaire->telephone}}</span></div>  
+            @endif
+          </div>
+      </form>
+      <div class="description">
+        {{-- <h2>Description:</h2> --}}
+        <div class="text">{{$gestionnaire->detail}}</div>
+        @if (session('client'))
+          <div class="contacter-btn">
+            <input type="submit" name="" value="Contacter" id="">
+            <i class='bx bxs-chevrons-right'></i>
+          </div>
+        @else
+          <p>il faut fair se conncter pour voir numero telephone !</p>
+        @endif
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-      </div>
-
-    <script src="{{asset('bootstrap.bundle.min.js')}}"></script>
+      
+    </section>
   </body>
 </html>

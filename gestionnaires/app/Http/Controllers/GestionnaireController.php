@@ -164,9 +164,12 @@ class GestionnaireController extends Controller
        
     }
 
-    public function show($id)
+   public function showDetail($id)
     {
+        // Retrieve the gestionnaire by its id
         $gestionnaire = Gestionnaire::findOrFail($id);
+
+        // Return a view with the gestionnaire details
         return view('detail-gestionnaire', compact('gestionnaire'));
     }
     
