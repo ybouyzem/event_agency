@@ -18,7 +18,7 @@
             <div class="brand">{{$gestionnaire->nom}}</div>
             <div class="other-data">
               <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
-              <div class="product-name">Service: <span>{{$gestionnaire->service}}</span></div>
+              <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
               <div class="product-name">Prix A partir de : <span> {{$gestionnaire->prix}} dh</span></div>
             </div>
             <div class="rating">

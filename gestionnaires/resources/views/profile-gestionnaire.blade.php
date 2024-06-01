@@ -84,7 +84,7 @@
                   <div class="underline"></div>
                 </div>
                 <div class="input-container">
-                  <input id="input" type="number" name="prix" value="{{ session('gestionnaire')->prix }}" required />
+                  <input id="input" type="number" name="prix" value="{{ session('gestionnaire')->prix }}"  required />
                   <label class="label" for="input">Prix de depart (dh)*</label>
                   <div class="underline"></div>
                 </div>
