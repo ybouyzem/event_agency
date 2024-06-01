@@ -98,6 +98,7 @@ class GestionnaireController extends Controller
             'adresse' => 'nullable|string|max:50',
             'telephone' => 'nullable|integer',
             'detail' => 'nullable|string|max:200',
+            'prix' =>'nullable|integer',
         ]);
     
         // Find the gestionnaire by id

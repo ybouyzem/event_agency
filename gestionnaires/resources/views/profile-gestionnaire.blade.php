@@ -16,28 +16,6 @@
 	    <title>AdminHub</title>
     </head>
     <body>
-      {{-- <section id="sidebar">
-        <a href="/index-gestionnaire" class="brand">
-          <img src="img/logo.png" class="logo">
-          <span class="text">ADAT</span>
-        </a>
-        <ul class="side-menu top">
-          <li>
-            <a href="/profile-gestionnaire" style="background-color: rgb(13, 91, 160); color:white;">
-              <i class='bx bxs-user-circle' ></i>
-              <span class="text">Profile</span>
-              <i class='bx bx-right-arrow-alt' ></i>
-            </a>
-          </li>
-        <ul class="side-menu">
-          <li>
-            <a href="{{ route('logout') }}" class="logout">
-              <i class='bx bxs-log-out-circle' ></i>
-              <span class="text">Logout</span>
-            </a>
-          </li>
-        </ul>
-      </section> --}}
       {{-- @if (!session('gestionnaire')->proprietaire || session('gestionnaire')->compteActiver != "oui")
 		<x-warning-profile/>
 	@else --}}
@@ -86,23 +64,28 @@
                   <input readonly id="input" type="text" value="{{ session('gestionnaire')->type }}" style="color: #6c6c6c; font-weight:bolder;"/>
                 </div>
                 <div class="input-container">
-                  <input required="" id="input" type="text" value="{{ session('gestionnaire')->proprietaire }}"/>
+                  <input required="" id="input" type="text" name="proprietaire" value="{{ session('gestionnaire')->proprietaire }}"/>
                   <label class="label" for="input">Proprietaire *</label>
                   <div class="underline"></div>
                 </div>
                 <div class="input-container">
-                  <input required="" id="input" type="text" value="{{ session('gestionnaire')->ville }}"/>
+                  <input required="" id="input" type="text" name="ville" value="{{ session('gestionnaire')->ville }}"/>
                   <label class="label" for="input">Ville *</label>
                   <div class="underline"></div>
                 </div>
                 <div class="input-container">
-                  <input required="" id="input" type="text" value="{{ session('gestionnaire')->adresse }}"/>
+                  <input required="" id="input" type="text" name="adresse" value="{{ session('gestionnaire')->adresse }}"/>
                   <label class="label" for="input">Adresse *</label>
                   <div class="underline"></div>
                 </div>
                 <div class="input-container">
-                  <input required="" id="input" type="number" value="{{ session('gestionnaire')->telephone }}"/>
+                  <input required="" id="input" type="number" name="telephone" value="{{ session('gestionnaire')->telephone }}"/>
                   <label class="label" for="input">Telephone *</label>
+                  <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                  <input id="input" type="number" name="prix" value="{{ session('gestionnaire')->prix }}" required />
+                  <label class="label" for="input">Prix de depart (dh)*</label>
                   <div class="underline"></div>
                 </div>
                 @if (session('gestionnaire')->type=="Agence")
@@ -110,7 +93,7 @@
                   <label for="input">Service par defaut *</label>
                   <select name="service" id="service">
                     @if (session('gestionnaire')->service)
-                      <option value="0">{{ session('gestionnaire')->service }}</option>
+                      <option value="{{ session('gestionnaire')->service }}">{{ session('gestionnaire')->service }}</option>
                     @else
                       <option value="0">sélectionner service</option>
                     @endif
@@ -128,8 +111,8 @@
                 </div>
                 @else 
                 <div class="input-container">
-                  <input required="" id="input" type="text" />
-                  <label class="label" for="input">Service par defaut *</label>
+                  <input required="" name="service" id="input" type="text" value="{{ session('gestionnaire')->service }}"/>
+                  <label class="label"  for="input">Service par defaut *</label>
                   <div class="underline"></div>
                 </div>
                 @endif
@@ -151,7 +134,7 @@
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="image1" name="image1" />
+                      <input type="file" id="image1" name="image1" required value="{{session('gestionnaire')->image1}}" required/>
                     </div>
                   </div>
                   <div class="messageBox">
@@ -160,7 +143,7 @@
                         <i class='bx bx-image-add'></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="image2" name="image2" />
+                      <input type="file" id="image2" name="image2" value="{{session('gestionnaire')->image2}}" required/>
                     </div>
                   </div>
                   <div class="messageBox">
@@ -169,7 +152,7 @@
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="image3" name="image3" />
+                      <input type="file" id="image3" name="image3" value="{{session('gestionnaire')->image3}}" required/>
                     </div>
                   </div>
                   <div class="messageBox">
@@ -178,7 +161,7 @@
                         <i class='bx bx-image-add' ></i>
                         <span class="tooltip">Add an image</span>
                       </label>
-                      <input type="file" id="image4" name="image4" />
+                      <input type="file" id="image4" name="image4" value="{{session('gestionnaire')->image4}}" required/>
                     </div>
                   </div>
 

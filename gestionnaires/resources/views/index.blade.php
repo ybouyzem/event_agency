@@ -81,11 +81,11 @@
       <div class="type-gestionnaire">
         <div>
           <label>
-            <input type="radio" name="radio">
+            <input type="radio" name="radio" value="agences">
             <span>Agences</span>
           </label>
           <label>
-            <input type="radio" name="radio">
+            <input type="radio" name="radio" value="prestataires">
             <span>Prestataires</span>
           </label>
         </div>

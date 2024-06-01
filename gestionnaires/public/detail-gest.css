@@ -343,6 +343,7 @@ li a i {
   background: none;
   color: green;
   font-weight: 600;
+  cursor: pointer;
 }
 
 
