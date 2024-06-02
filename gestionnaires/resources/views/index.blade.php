@@ -107,6 +107,11 @@
           <option value="Gala">Gala</option>
         </select>
       </div>
+      <div class="PB-range-slider-div">
+        <p>Prix maximum</p>
+        <input type="range" min="50" max="90000" value="900000" class="PB-range-slider" id="myRange" >
+        <p class="PB-range-slidervalue" id="priceDisplay"></p>
+      </div>
     </section>
     {{-- slider of agences and prestataires --}}
     <x-slider-agences :gestionnaires="$gestionnaires"/>
@@ -182,8 +187,8 @@
     <!-- for the page loader -->
     <div class="loader"></div>
     <!--JS file-->
-    <script src="loader.js"></script>
-    <script src="script.js"></script>
-    <script src="filter-agence.js"></script>
+    <script src="{{asset('loader.js')}}"></script>
+    <script src="{{asset('script.js')}}"></script>
+    <script src="{{asset('filter-agence.js')}}"></script>
   </body>
 </html>

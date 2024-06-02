@@ -1,5 +1,15 @@
 @props(['gestionnaires'])
 
+  @if (empty($gestionnaires))
+
+    <div class="empty-gest">
+      Désolé! il n'y a aucune agence ou prestataire disponible actuellement.
+    </div>
+
+  @else
+  <div class="empty-gest" style="display: none">
+    Désolé! il n'y a aucune agence ou prestataire disponible actuellement.
+  </div>
   <section class="slider-agence">
     <div class="slider-container">
       <div class="slider-track">
@@ -19,7 +29,7 @@
             <div class="other-data">
               <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
               <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
-              <div class="product-name">Prix A partir de : <span> {{$gestionnaire->prix}} dh</span></div>
+              <div class="product-name">Prix A partir de : <span id="price"> {{$gestionnaire->prix}}</span> dh</div>
             </div>
             <div class="rating">
               <svg viewBox="0 0 99.498 16.286" xmlns="http://www.w3.org/2000/svg" class="svg four-star-svg">
@@ -49,6 +59,7 @@
   <div class="afficher-tous">
     <a href="">Afichier tous</a>
   </div>
+  @endif
   <script>
 
 const sliderTrack = document.querySelector('.slider-track');
