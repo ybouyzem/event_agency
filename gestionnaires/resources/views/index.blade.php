@@ -82,11 +82,11 @@
       <div class="type-gestionnaire">
         <div>
           <label>
-            <input type="radio" name="radio" value="agences">
+            <input type="radio" name="radio" value="Agence">
             <span>Agences</span>
           </label>
           <label>
-            <input type="radio" name="radio" value="prestataires">
+            <input type="radio" name="radio" value="Prestataire">
             <span>Prestataires</span>
           </label>
         </div>
@@ -95,7 +95,7 @@
         {{-- <label for="">Choisis Services :</label> --}}
         <select name="" id="type-service">
           <option value="all" selected>Tous les Services</option>
-          <option value="Mariages">Mariages</option>
+          <option value="Mariage">Mariages</option>
           <option value="Ftour Ramadan">Ftour Ramadan</option>
           <option value="Evenement Prive">Evenement Prive</option>
           <option value="Fiancailles">Fiancailles</option>
