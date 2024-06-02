@@ -95,7 +95,7 @@
         {{-- <label for="">Choisis Services :</label> --}}
         <select name="" id="type-service">
           <option value="all" selected>Tous les Services</option>
-          <option value="Mariage">Mariages</option>
+          <option value="Mariages">Mariages</option>
           <option value="Ftour Ramadan">Ftour Ramadan</option>
           <option value="Evenement Prive">Evenement Prive</option>
           <option value="Fiancailles">Fiancailles</option>

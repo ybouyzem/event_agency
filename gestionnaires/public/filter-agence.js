@@ -10,19 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (this.value === 'Agence') {
                     // Disable cards with type prestataire
                     cards.forEach(function(card) {
-                        console.log( card.querySelector("#type-service").textConten);
                         if (card.querySelector("#type-gest").textContent === "Prestataire" || (selectMenu.value != "all" && selectMenu.value !=  card.querySelector("#type-service").textContent)) {
                             card.style.display = "none";
                         }
                         else
-                        card.style.display = "block";
+                            card.style.display = "block";
                     });
                 } else if (this.value === 'Prestataire') {
                     // Disable cards with type prestataire
 
                     cards.forEach(function(card) {
-
-                        if (card.querySelector("#type-gest").textContent === "Agence" || (selectMenu.value != "all" && selectMenu.value !=  card.querySelector("#type-service").textConten)) {
+                        if (card.querySelector("#type-gest").textContent === "Agence" || (selectMenu.value != "all" && selectMenu.value !=  card.querySelector("#type-service").textContent)) {
                             card.style.display = "none";
                         }
                         else
@@ -35,9 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     selectMenu.addEventListener('change', function()
     {
+        
         var selectedService = this.value;
         cards.forEach(function(card) {
-            if ((card.querySelector("#type-service").textContent != selectedService || (card.querySelector("#type-gest").textContent != selectedRadio && selectedRadio != undefined))){
+            if (selectedService == "all")
+            {
+                radioButtons.forEach(function(radioButton) {
+                    radioButton.checked = false;
+                });
+                card.style.display = "block";
+            }
+            else if ((card.querySelector("#type-service").textContent != selectedService || (card.querySelector("#type-gest").textContent != selectedRadio && selectedRadio != undefined && selectedService!="all") )){
                 card.style.display = "none";
             }
             else
