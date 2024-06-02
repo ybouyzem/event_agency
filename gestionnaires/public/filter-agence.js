@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         var selectedService = this.value;
         cards.forEach(function(card) {
-            if ((card.querySelector("#type-service").textContent != selectedService || card.querySelector("#type-gest").textContent != selectedRadio)){
+            if ((card.querySelector("#type-service").textContent != selectedService || (card.querySelector("#type-gest").textContent != selectedRadio && selectedRadio != undefined))){
                 card.style.display = "none";
             }
             else
