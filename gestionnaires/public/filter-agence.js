@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var radioButtons = document.querySelectorAll('input[type="radio"][name="radio"]');
     var cards = document.querySelectorAll(".card-agence");
@@ -5,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectedRadio ;
     var slider = document.getElementById('myRange');
     var output = document.getElementById('priceDisplay');
+    var selectedService;
+    var selectedPrice;
 
 
     function checkDisplayedCards() {
@@ -28,32 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    //radio filter for type gestionnaires
     radioButtons.forEach(function(radioButton) {
         radioButton.addEventListener('change', function() {
             if (this.checked) {
                 slider.value = "900000";
                 output.textContent = slider.value + " dh";
                 selectedRadio = this.value;
-                if (this.value === 'Agence') {
-                    // Disable cards with type prestataire
-                    cards.forEach(function(card) {
-                        if (card.querySelector("#type-gest").textContent === "Prestataire" || (selectMenu.value != "all" && selectMenu.value !=  card.querySelector("#type-service").textContent)) {
-                            card.style.display = "none";
-                        }
-                        else
-                            card.style.display = "block";
-                    });
-                } else if (this.value === 'Prestataire') {
-                    // Disable cards with type prestataire
-
-                    cards.forEach(function(card) {
-                        if (card.querySelector("#type-gest").textContent === "Agence" || (selectMenu.value != "all" && selectMenu.value !=  card.querySelector("#type-service").textContent)) {
-                            card.style.display = "none";
-                        }
-                        else
-                        card.style.display = "block";
-                    });
-                } 
+                filterFunction(selectedPrice, selectedService, selectedRadio, cards);
             }
             checkDisplayedCards();
         });
@@ -63,29 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
     selectMenu.addEventListener('change', function()
     {
         
-        var selectedService = this.value;
-        cards.forEach(function(card) {
-            slider.value = "900000";
-            output.textContent = slider.value + "dh";
-            if (selectedService == "all")
-            {
-                radioButtons.forEach(function(radioButton) {
-                    radioButton.checked = false;
-                });
-                card.style.display = "block";
-            }
-            else if ((card.querySelector("#type-service").textContent != selectedService || (card.querySelector("#type-gest").textContent != selectedRadio && selectedRadio != undefined && selectedService!="all") )){
-                card.style.display = "none";
-            }
-            else
-                card.style.display = "block";
-        });
+        selectedService = this.value;
+        slider.value = "900000";
+        output.textContent = slider.value + "dh";
+
+
+        filterFunction(selectedPrice, selectedService, selectedRadio, cards);
+
         checkDisplayedCards();
     });
 
-    var newcards = document.querySelectorAll(".card-agence");
 
-    var selectedPrice;
     output.textContent = slider.value + " dh" ;
     //change scroler value
     slider.addEventListener('input', function() {
@@ -94,17 +67,36 @@ document.addEventListener('DOMContentLoaded', function() {
     //this is filter of price
     slider.addEventListener('change', function() {
         selectedPrice = this.value;
-        newcards.forEach(function(card) {
-            price = parseFloat(card.querySelector("#price").textContent.replace(/[^0-9.-]+/g, ""))
-            if ((price> selectedPrice  )){
-                card.style.display = "none";
-            }
-            else
-                card.style.display = "block";
-        });
+
+        filterFunction(selectedPrice, selectedService, selectedRadio, cards);
         checkDisplayedCards();
-        
-        
     });
     
    });
+
+
+
+function filterFunction(selectedPrice, selectedService, selectedType, cards)
+{
+    cards.forEach(function(card) {
+        price = parseFloat(card.querySelector("#price").textContent.replace(/[^0-9.-]+/g, ""));
+        if (price <= selectedPrice || selectedPrice == undefined)
+        {
+
+            if (card.querySelector("#type-service").textContent == selectedService || selectedService == undefined || selectedService == "all")
+            {
+                console.log(selectedService);
+
+                if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined)
+                    card.style.display="block";
+                else
+                    card.style.display="none";
+
+            }
+            else
+                card.style.display="none";
+        }
+        else
+            card.style.display="none";
+    });
+}
