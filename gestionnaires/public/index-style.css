@@ -60,6 +60,9 @@ section {
   padding-top: 7px;
   padding-bottom: 5px;
   opacity:0.9;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 0 6px 3px #eee;
+
 }
 
 .header .logo {
@@ -1051,7 +1054,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .card-agence .favorite svg {
-  fill: #a8a8a8;
+  fill: #fff;
 }
 
 .card-agence .content {
@@ -1413,6 +1416,78 @@ html::-webkit-scrollbar-thumb {
 }
 
 /* end for events page */
+
+
+/* PROFILE CLINET PAGE */
+
+
+.profile-container {
+  /* background-color: #dcdcdc2f; */
+  width: 100%;
+  padding: 20px;
+  margin: 0px;
+  margin-top: 70px;
+  padding-top: 50px;
+  /* background-color: #212b36; */
+  display: flex;
+  grid-template-columns: auto auto;
+}
+
+.profile-container .sidebar-client {
+  position: relative;
+  width: 23%;
+  margin: 0px 10px 0px 0px;
+}
+
+
+.profile-container .sidebar-client ul {
+  list-style: none;
+}
+
+.profile-container .sidebar-client ul li {
+  padding: 15px;
+  border-left: 1.5px solid #dedcdc;
+  border-right: 1.5px solid #dedcdc;
+  border-top: 0.75px solid #dedcdc;
+  border-bottom: 0.75px solid #dedcdc;
+
+}
+.profile-container .sidebar-client ul li:first-child {
+  border-radius: 10px 10px 0px 0px;
+  border-top: 1.5px solid #dedcdc;
+}
+
+.profile-container .sidebar-client ul li:last-child {
+  border-radius: 0px 0px 10px 10px;
+  border-bottom: 1.5px solid #dedcdc;
+
+}
+
+.profile-container .sidebar-client ul li a {
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.profile-container .sidebar-client ul li:hover {
+  cursor: pointer;
+  background-color: #23a5d518;
+}
+.profile-container .sidebar-client ul li:hover   a {
+  width: 100%;
+  height: 100%;
+  color: var(--theme-color);
+  transition: 0.3s;
+}
+
+.profile-container .main-client {
+  width: 77%;
+  padding: 10px;
+}
+
+/* PROFILE CLIENT PAGE */
+
 
 
 
