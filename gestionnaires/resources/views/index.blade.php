@@ -7,12 +7,15 @@
     <title>Hadat</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="sweetalert2.all.min.js"></script>
 
     <!--font awesome-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <!--css file-->
     <link rel="stylesheet" href="{{ asset('index-style.css') }}" />
@@ -114,7 +117,7 @@
       </div>
     </section>
     {{-- slider of agences and prestataires --}}
-    <x-slider-agences :gestionnaires="$gestionnaires"/>
+    <x-slider-agences :gestionnaires="$gestionnaires" :favoriteGests="$favoriteGests" />
     <!-- service section starts  -->
     {{-- <section class="service" id="service">
       <h1 class="heading">Nos <span>services</span></h1>

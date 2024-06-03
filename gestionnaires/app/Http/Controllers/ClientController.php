@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Hash as HashFacade;
 use Illuminate\Support\Facades\Session;
 use App\Models\Client;
+use App\Models\Favoris;
 
 class ClientController extends Controller
 {
@@ -66,6 +68,46 @@ class ClientController extends Controller
             return redirect()->back()->with("error", "Invalid email or password");
         }
     }
+
+    //add to favoris
+
+
+    public function favoris($clientId, $idService, $idGest)
+    {
+   
+
+        // Create a new Favoris instance
+        $favoris = new Favoris();
+    
+        // Assign values to the Favoris instance
+        $favoris->id_client = $clientId;
+        $favoris->id_service = null;
+        $favoris->id_gest = $idGest;
+    
+        // Save the Favoris instance
+        if ($favoris->save()) {
+            return redirect()->back()->with('success', 'Item added to your favorites.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to add item to your favorites.');
+        }
+    }
+    
+    public function deleteFavoris($clientId, $idService, $gestionnaireId)
+    {
+        // Find the favoris entry to delete
+        $favoris = Favoris::where('id_client', $clientId)
+            ->where('id_gest', $gestionnaireId)
+            ->first();
+
+        if ($favoris) {
+        // Delete the favoris entry
+            $favoris->delete();
+            return redirect()->back()->with('success', 'Favoris deleted successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Favoris not found.');
+        }
+    }
+
 
     public function logout()
     {

@@ -14,5 +14,6 @@ class Favoris extends Model
     protected $fillable = [
         'id_client',
         'id_service',
+        'id_gest'
     ];
 }

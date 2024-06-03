@@ -40,6 +40,9 @@ Route::match(['get', 'post'], '/index/signup', [ClientController::class, 'signup
 Route::match(['get', 'post'], '/signin', [ClientController::class, 'signinClient'])->name('signinClient');
 Route::get('/index/logout', [ClientController::class, 'logout'])->name('logout');
 
+//favoris
+Route::get('/index/{id}/{id_service}/{id_gest}', [ClientController::class, 'favoris'])->name('favoris');
+Route::get('/index/delfav/{clientId}/{idService}/{gestionnaireId}', [ClientController::class, 'deleteFavoris'])->name('deleteFavoris');
 
 
 

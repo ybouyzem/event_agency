@@ -1,4 +1,4 @@
-@props(['gestionnaires'])
+{{-- @props(['gestionnaires']) --}}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +24,7 @@
   </head>
   <body>
     <x-header-client/>
-    {{-- <a href="{{route('logout')}}" style="font-size: 30px;position: absolute; top:300px">log out</a> --}}
+    <a href="{{route('logout')}}" style="font-size: 30px;position: absolute; top:300px">log out</a>
     <section class="profile-container">
       <div class="sidebar-client">
         <ul>
@@ -36,7 +36,7 @@
       </div>
       <div class="main-client">
         <h2>Ma liste d'envie</h2>
-        <div class="card-agence">
+        {{-- <div class="card-agence">
           <div class="image-container">
             <img src="img/{{$gestionnaire->image1}}" alt="">
           </div>
@@ -49,9 +49,9 @@
           <div class="content">
             <div class="brand">{{$gestionnaire->nom}}</div>
             <div class="other-data">
-              <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
-              <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
-              <div class="product-name">Prix A partir de : <span id="price"> {{$gestionnaire->prix}}</span> dh</div>
+              <div class="product-name" >Type: <span id="type-gest"></span></div>
+              <div class="product-name">Service: <span id="type-service"></span></div>
+              <div class="product-name">Prix A partir de : <span id="price"> </span> dh</div>
             </div>
             <div class="rating">
               <svg viewBox="0 0 99.498 16.286" xmlns="http://www.w3.org/2000/svg" class="svg four-star-svg">
@@ -70,7 +70,7 @@
               <button class="contactbtn"><i class='bx bxs-phone-call' ></i></button>
             @endif
           </div>
-        </div>
+        </div> --}}
       </div>
     </section>
 
