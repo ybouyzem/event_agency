@@ -87,7 +87,7 @@ function filterFunction(selectedPrice, selectedService, selectedType, cards)
             {
                 console.log(selectedService);
 
-                if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined)
+                if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined || selectedType == "all")
                     card.style.display="block";
                 else
                     card.style.display="none";

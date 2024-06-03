@@ -85,6 +85,10 @@
       <div class="type-gestionnaire">
         <div>
           <label>
+            <input type="radio" name="radio" value="all">
+            <span>Tous</span>
+          </label>
+          <label>
             <input type="radio" name="radio" value="Agence">
             <span>Agences</span>
           </label>
