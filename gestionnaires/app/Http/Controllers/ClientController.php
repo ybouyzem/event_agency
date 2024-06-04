@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash as HashFacade;
 use Illuminate\Support\Facades\Session;
 use App\Models\Client;
 use App\Models\Favoris;
+use App\Models\Gestionnaire;
 
 class ClientController extends Controller
 {
@@ -92,6 +93,7 @@ class ClientController extends Controller
         }
     }
     
+    //delete from favoris
     public function deleteFavoris($clientId, $idService, $gestionnaireId)
     {
         // Find the favoris entry to delete
@@ -106,6 +108,15 @@ class ClientController extends Controller
         } else {
             return redirect()->back()->with('error', 'Favoris not found.');
         }
+    }
+
+    public function favorisClient()
+    {
+        $favoriteGests = Favoris::all();
+        $gestionnaires = Gestionnaire::all();
+
+        return view('favoris-client', ['gestionnaires' => $gestionnaires, 'favoriteGests' => $favoriteGests]); 
+
     }
 
 

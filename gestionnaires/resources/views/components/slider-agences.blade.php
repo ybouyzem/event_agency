@@ -20,7 +20,7 @@
           <label class="favorite">
             @if (!empty($favoriteGests))
               @foreach ($favoriteGests as $gest)
-                @if ($gest->id_gest == $gestionnaire->id)
+                @if ($gest->id_gest == $gestionnaire->id && session('client') && $gest->id_client == session('client')->id)
                   <input checked type="checkbox"  id="checkfavoris" data-gestionnaire-id="{{$gestionnaire->id}}" data-client-id="{{ session('client') ? session('client')->id : '' }}" data-favoris="{{ json_encode($favoriteGests) }}" onchange="handleCheckboxChange(this)">
                 @else
                   <input type="checkbox"  id="checkfavoris" data-gestionnaire-id="{{$gestionnaire->id}}" data-client-id="{{ session('client') ? session('client')->id : '' }}"  data-favoris="{{ json_encode($favoriteGests) }}" onchange="handleCheckboxChange(this)">

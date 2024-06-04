@@ -27,7 +27,7 @@
         <li class="signin-link"><a href="{{route('accountType')}}">Se connecter / S'inscrir</a></li>
       @else
         <li class="my-account" >
-          <a href="" >
+          <a href="{{route('favorisClient')}}" >
            <i class='bx bx-heart' style="color: rgb(0, 146, 204);font-size:14px;"></i>
            <br><span style="color: rgb(0, 146, 204);font-size:14px;">Mes favoris</span>
           </a>

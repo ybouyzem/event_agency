@@ -43,7 +43,7 @@ Route::get('/index/logout', [ClientController::class, 'logout'])->name('logout')
 //favoris
 Route::get('/index/{id}/{id_service}/{id_gest}', [ClientController::class, 'favoris'])->name('favoris');
 Route::get('/index/delfav/{clientId}/{idService}/{gestionnaireId}', [ClientController::class, 'deleteFavoris'])->name('deleteFavoris');
-
+Route::get('/index/mesfavoris', [ClientController::class, 'favorisClient'])->name('favorisClient');
 
 
 

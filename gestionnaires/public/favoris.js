@@ -26,7 +26,7 @@ function handleCheckboxChange(checkbox) {
         var gest_exist = 0;
 
         favoriteGestsArray.forEach(function(gest) {
-            if (gest.id_gest == gestionnaireId)
+            if (gest.id_gest == gestionnaireId && clientId == gest.id_client)
                 gest_exist++;
         });
         if (gest_exist == 0)
