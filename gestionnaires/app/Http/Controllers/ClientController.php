@@ -119,6 +119,30 @@ class ClientController extends Controller
 
     }
 
+    public function modifierClientInfo(Request $request, $clientId)
+    {
+        $validatedData = $request->validate([
+            'nomComplet' => 'nullable|string|max:50',
+            'ville' => 'nullable|string|max:50',
+            'telephone' => 'nullable|integer',
+            
+        ]);
+        
+        // Find the gestionnaire by id
+        $client = Client::find($clientId);
+        
+        if (!$client) {
+            return redirect()->back()->with("error", "client couldn't be updated");
+        }
+        
+        // Update the gestionnaire fields using object-oriented approach
+        $client->fill($validatedData);
+        
+        // Save the updated gestionnaire
+        $client->save();
+        return redirect()->back()->with("success", 'client information updated successfully');
+    }
+
 
     public function logout()
     {

@@ -35,6 +35,9 @@ Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', 
 //client
 Route::get( '/index/signin', [ClientController::class, 'index']);
 Route::get( '/index/profile', [ClientController::class, 'profileClient'])->name('profileClient');
+Route::match(['get', 'post'], '/index/modifierClientInfo/{clientId}', [ClientController::class, 'modifierClientInfo'])->name('modifierClientInfo');
+
+
 
 Route::match(['get', 'post'], '/index/signup', [ClientController::class, 'signupClient'])->name('signupClient');
 Route::match(['get', 'post'], '/signin', [ClientController::class, 'signinClient'])->name('signinClient');
