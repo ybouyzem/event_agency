@@ -31,7 +31,7 @@
     <!-- home section starts  -->
     <section class="home" id="home">
       <div class="content">
-        <h1>événements <br><span>Hadat</span> <br>où décollent vos idées</h1>
+        <h1>evénements <br><span>Hadat</span> <br>où décollent vos idées</h1>
         <p class="par">Transformons Votre Vision En Une Réalité Minutieusement Planifiée.</p>
         <a href="{{asset('/se-connecter-gestionnaire/account-type')}}">
           <button class="home-btn">
@@ -81,7 +81,7 @@
     </section>
 
     <section class="filter-section">
-      <div class="filter-title">veuillez choisir ce que vous recherchez</div>
+      <p class="filter-title">veuillez choisir ce que vous recherchez</p>
       <div class="type-gestionnaire">
         <div>
           <label>

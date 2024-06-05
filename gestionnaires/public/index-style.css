@@ -48,6 +48,7 @@ section {
 
 .header {
   position: fixed;
+  height: 70px;
   top: 0;
   left: 0;
   right: 0;
@@ -59,9 +60,8 @@ section {
   padding: 1.5rem 9%;
   padding-top: 7px;
   padding-bottom: 5px;
-  opacity:0.9;
   border-bottom: 1px solid #eee;
-  box-shadow: 0 0 6px 3px #eee;
+  box-shadow: 0 0 6px 3px #eeeeee77;
 
 }
 
@@ -736,7 +736,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 .filter-section .filter-title {
-  padding: 10px;
+  width: 200px;
+  margin-left: -50px;
   font-size: 16px;
   font-weight: 500;
   color: var(--theme-color);
@@ -745,7 +746,7 @@ html::-webkit-scrollbar-thumb {
 .type-gestionnaire div {
 
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-top: 0.5rem;
   justify-content: center;
   height: 40px;
@@ -989,7 +990,7 @@ html::-webkit-scrollbar-thumb {
   position: relative;
   width: 260px;
   background: rgb(237, 237, 237);
-  border-radius: 1rem;
+  border-radius: 5px;
   padding: 0.5rem;
   transition: all 0.5s ease-in-out;
   margin: 10px;
@@ -1482,8 +1483,20 @@ html::-webkit-scrollbar-thumb {
 }
 
 .profile-container .main-client {
-  width: 77%;
+  display: flex;
+  /* grid-template-columns:  auto auto auto; */
+  flex-direction: column;
   padding: 10px;
+}
+.profile-container .main-client .favoris-cards 
+{
+  display: grid;
+  grid-template-columns: auto auto auto  ;
+}
+
+.profile-container .main-client h2 {
+  height: 20px;
+  margin-left: 10px;
 }
 
 /* PROFILE CLIENT PAGE */

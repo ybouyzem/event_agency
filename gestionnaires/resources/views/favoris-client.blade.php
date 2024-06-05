@@ -49,7 +49,8 @@
       </div>
       <div class="main-client">
         <h2>Ma liste d'envie</h2>
-        @foreach ($gestionnaires as $gestionnaire)
+        <div class="favoris-cards">
+          @foreach ($gestionnaires as $gestionnaire)
                 @foreach ($favoriteGests as $gest)
                     @if ($gest->id_gest == $gestionnaire->id && $gest->id_client == session('client')->id)
                     <div class="card-agence">
@@ -88,8 +89,11 @@
                     @endif
                 @endforeach
             @endforeach
+        </div>
     </div>
     </section>
+    <x-footer/>
     <script src="{{asset('favoris.js')}}"></script>
+    <script src="{{asset('detail-agence.js')}}"></script>
   </body>
 </html>

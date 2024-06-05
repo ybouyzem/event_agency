@@ -4,7 +4,7 @@
     <a href="{{route('index')}}" class="logo"><span>H</span>adat</a>
   
     <ul class="navbar">
-      <li><a href="index.php">accueil</a></li>
+      <li><a href="/">accueil</a></li>
       <li><a href="events.php">prestataires</a></li>
       <li>
         <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>

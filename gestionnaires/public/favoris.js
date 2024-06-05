@@ -1,6 +1,5 @@
 
 function handleCheckboxChange(checkbox) {
-
     // Get the necessary attributes from the checkbox element
     var clientId = checkbox.getAttribute('data-client-id') ; // Default to '-1' if data-client-id is not set
     var gestionnaireId = checkbox.getAttribute('data-gestionnaire-id'); // Default to '-1' if data-gestionnaire-id is not set
