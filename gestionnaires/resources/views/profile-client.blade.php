@@ -103,7 +103,7 @@
       width: 100%;
     }
     #edit-pwd-form input[type="password"] {
-      border: 1px solid #666;
+      border-bottom: 1px solid #6666666f;
       width: 200px;
       padding: 7px;
     }
@@ -112,9 +112,21 @@
       cursor: pointer;
       width: 100px;
       margin: 10px 0px 10px 20px;
-      border-radius: 7px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
+    }
+    .error {
+      margin-top: 20px;
+      color: orangered;
+      margin-left: 20px;
+      font-size: 12px;
+    }
+
+    .success {
+      margin-top: 20px;
+      color:green;
+      margin-left: 20px;
+      font-size: 12px;
     }
 </style>
   <body>
@@ -143,19 +155,27 @@
               <tr>
                 <td><input name="nomComplet" type="text" value="{{session('client')->nomComplet}}" readonly class="client-data" required></td>
                 <td><input name="ville" type="text" value="{{session('client')->ville}}" readonly class="client-data" required></td>
-                <td><input name="telephone" type="number" value="0{{session('client')->telephone}}" readonly class="client-data" required></td>
+                <td><input name="telephone" type="number" value="{{session('client')->telephone}}" readonly class="client-data" required></td>
                 <td>{{session('client')->email}}</td>
                 <td><input type="submit" value="modifier" class="client-data" id="modifierInfoBtn"></td>
               </tr>
             </table>
             <button onclick="showEditBtn()"><i class='bx bxs-edit-alt'></i>Modifier</button> <button onclick="showEditPwd()"><i class='bx bx-key' ></i></i>Modifier mot de passe</button>
           </form>
-          <form action="" method="post" id="edit-pwd-form">
-            <h2>changer votre mot de passe</h2>
-            <input type="password" name="" id="" placeholder="ancien mot de passe" required>
-            <input type="password" name="" id="" placeholder="nouveau mot de passe" required>
-            <input type="submit" value="modifer" >
-          </form>
+          @if (session('errorpwd'))
+            <div class="error">mot de passe incorrect. veuillez réessayer!</div>
+          @elseif (session('successpwd'))
+            <div class="success">votre mot de passe a été mis à jour avec succès!</div>
+          @endif
+          <form action="{{ route('changePassword', session('client')->id) }}" method="post" id="edit-pwd-form">
+            @csrf
+            <h2>Changer votre mot de passe</h2>
+            <input type="password" name="old_password" placeholder="Ancien mot de passe" required>
+            <input type="password" name="new_password" placeholder="Nouveau mot de passe" required>
+            <input type="password" name="new_password_confirmation" placeholder="Confirmez le nouveau mot de passe" required>
+            <input type="submit" value="Modifier">
+        </form>
+
       </div>
     </section>
     <x-footer/>

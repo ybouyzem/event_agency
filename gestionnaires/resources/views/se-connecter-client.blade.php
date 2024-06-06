@@ -31,7 +31,7 @@
             @csrf
             <h1>Créer un compte</h1>
             <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="{{ route('auth.google') }}" class="social"><i class="fab fa-google-plus-g"></i></a>
             </div>
             <span>ou utilisez votre email pour vous inscrire</span>
             <input type="text" name="nomComplet" placeholder="Nom Complet" required/>

@@ -36,6 +36,7 @@ Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', 
 Route::get( '/index/signin', [ClientController::class, 'index']);
 Route::get( '/index/profile', [ClientController::class, 'profileClient'])->name('profileClient');
 Route::match(['get', 'post'], '/index/modifierClientInfo/{clientId}', [ClientController::class, 'modifierClientInfo'])->name('modifierClientInfo');
+Route::post('/client/change-password/{clientId}', [ClientController::class, 'changePassword'])->name('changePassword');
 
 
 
@@ -48,6 +49,10 @@ Route::get('/index/{id}/{id_service}/{id_gest}', [ClientController::class, 'favo
 Route::get('/index/delfav/{clientId}/{idService}/{gestionnaireId}', [ClientController::class, 'deleteFavoris'])->name('deleteFavoris');
 Route::get('/index/mesfavoris', [ClientController::class, 'favorisClient'])->name('favorisClient');
 
+
+
+Route::get('/auth/google', [ClientController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/auth/google/callback', [ClientController::class, 'handleGoogleCallback']);
 
 
 //admin

@@ -35,8 +35,29 @@
       color: var(--theme-color);
       transition: 0.3s;
     }
-  </style>
+
+
+    /* empty message */
+    .empty {
+      margin-top: 20px;
+      font-size: 14px;
+      padding: 7px;
+      text-align: center;
+      width: 800px;
+      background-color:rgba(255, 166, 0, 0.578);
+      color: orangered; 
+      font-weight: 600;
+    }
+</style>
   <body>
+    <?php $var = 0;?>
+    @foreach ($gestionnaires as $gestionnaire)
+                @foreach ($favoriteGests as $gest)
+                    @if ($gest->id_gest == $gestionnaire->id && $gest->id_client == session('client')->id)
+                      <?php $var += 1?>
+                    @endif
+                @endforeach
+    @endforeach
     <x-header-client/>
     <section class="profile-container">
       <div class="sidebar-client">
@@ -50,6 +71,9 @@
       <div class="main-client">
         <h2>Ma liste d'envie</h2>
         <div class="favoris-cards">
+          @if ($var == 0)
+            <div class="empty">Il n’y a aucun service dans votre liste d’envies.</div>
+          @else
           @foreach ($gestionnaires as $gestionnaire)
                 @foreach ($favoriteGests as $gest)
                     @if ($gest->id_gest == $gestionnaire->id && $gest->id_client == session('client')->id)
@@ -89,6 +113,7 @@
                     @endif
                 @endforeach
             @endforeach
+            @endif
         </div>
     </div>
     </section>

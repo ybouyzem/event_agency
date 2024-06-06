@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Google_Client;
+use Google_Service_Oauth2;
 use Illuminate\Support\Facades\Hash as HashFacade;
 use Illuminate\Support\Facades\Session;
 use App\Models\Client;
@@ -124,25 +128,96 @@ class ClientController extends Controller
         $validatedData = $request->validate([
             'nomComplet' => 'nullable|string|max:50',
             'ville' => 'nullable|string|max:50',
-            'telephone' => 'nullable|integer',
-            
+            'telephone' => 'nullable|numeric',
         ]);
-        
-        // Find the gestionnaire by id
+    
+        // Find the client by id
         $client = Client::find($clientId);
-        
+    
         if (!$client) {
-            return redirect()->back()->with("error", "client couldn't be updated");
+            return redirect()->back()->with('error', "Client couldn't be updated");
         }
-        
-        // Update the gestionnaire fields using object-oriented approach
+    
+        // Update the client fields using object-oriented approach
         $client->fill($validatedData);
-        
-        // Save the updated gestionnaire
+    
+        // Save the updated client
         $client->save();
-        return redirect()->back()->with("success", 'client information updated successfully');
+        Session::forget('client');
+        Session::put('client', $client);
+        return redirect()->back()->with('success', 'Client information updated successfully');
+    }
+    
+    public function changePassword(Request $request, $clientId)
+    {
+        // Find the client by ID
+        $client = Client::find($clientId);
+    
+        if (!$client) {
+            return redirect()->back()->with('error', 'Client not found');
+        }
+    
+        // Validate the request data
+        $request->validate([
+            'old_password' => 'required|string',
+            'new_password' => 'required|string|confirmed',
+        ]);
+    
+        // Check if the old password matches the current password
+        if (!Hash::check($request->old_password, $client->motPasse)) {
+            return redirect()->back()->with('errorpwd', 'Ancien mot de passe incorrect');
+        }
+    
+        // Update the password
+        $client->motPasse = Hash::make($request->new_password);
+        $client->save();
+    
+        return redirect()->back()->with('successpwd', 'Mot de passe changé avec succès');
     }
 
+
+    public function redirectToGoogle()
+{
+    $client = new Google_Client();
+    $client->setClientId(env('GOOGLE_CLIENT_ID'));
+    $client->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
+    $client->setRedirectUri(env('GOOGLE_REDIRECT_URI'));
+    $client->setScopes(['email', 'profile']);
+
+    return Redirect::to($client->createAuthUrl());
+}
+public function handleGoogleCallback(Request $request)
+{
+    $client = new Google_Client();
+    $client->setClientId(env('GOOGLE_CLIENT_ID'));
+    $client->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
+    $client->setRedirectUri(env('GOOGLE_REDIRECT_URI'));
+
+    $token = $client->fetchAccessTokenWithAuthCode($request->code);
+    $client->setAccessToken($token);
+
+    $oauth2 = new Google_Service_Oauth2($client);
+    $userInfo = $oauth2->userinfo->get();
+
+    // Check if the user with this email already exists in the database
+    $existingClient = Client::where('email', $userInfo->email)->first();
+
+    if (!$existingClient) {
+        // Create a new client account if it doesn't exist
+        $newClient = new Client();
+        $newClient->nomComplet = $userInfo->name;
+        $newClient->email = $userInfo->email;
+        // Set other necessary fields
+        $newClient->save();
+    } else {
+        // Update the existing client account with Google account information
+        $existingClient->nomComplet = $userInfo->name;
+        // Update other necessary fields
+        $existingClient->save();
+    }
+
+    // Redirect or do something else
+}
 
     public function logout()
     {
