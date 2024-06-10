@@ -35,7 +35,7 @@
             </div>
             <span>ou utilisez votre email pour vous inscrire</span>
             <input type="text" name="nomComplet" placeholder="Nom Complet" required/>
-            <input type="text" name="ville" placeholder="Ville" required/>
+            {{-- <input type="text" name="ville" placeholder="Ville" required/> --}}
             <input type="number" name="telephone" placeholder="Telephone" required/>
             <input type="email" name="email" placeholder="Email" required/>
             <input type="password" name="motPasse" placeholder="Mot de passe" required/>

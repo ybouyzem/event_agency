@@ -13,6 +13,7 @@ use App\Http\Requests\GestionnaireRequest;
 
 use Illuminate\Http\Request;
 use App\Models\Gestionnaire;
+use App\Models\Favoris;
 use Illuminate\Support\Facades\Hash as HashFacade;
 use App\Http\Middleware\CheckGestionnaire;
 
@@ -141,29 +142,29 @@ class GestionnaireController extends Controller
         return redirect()->back()->with("success", 'Gestionnaire information updated successfully');
     }
 
-    public function modifiermotPasse(Request $request)
-    {
+    // public function modifiermotPasse(Request $request)
+    // {
         
-            $request->validate([
-                'oldMotPass' => 'required|string',
-                'newMotPass' => 'required|string|min:8',
-            ]);
+    //         $request->validate([
+    //             'oldMotPass' => 'required|string',
+    //             'newMotPass' => 'required|string|min:8',
+    //         ]);
     
-            $gestionnaire = Auth::gestionnaire();
+    //         $gestionnaire = Auth::gestionnaire();
     
-            // Check if the old password matches
+    //         // Check if the old password matches
             
-            // if (!HashFacade::check($request->oldMotPass, $user->motDePasse)) {
-            //     return redirect()->back()->with('error', "Old password doesn't match");
-            // }
+    //         // if (!HashFacade::check($request->oldMotPass, $user->motDePasse)) {
+    //         //     return redirect()->back()->with('error', "Old password doesn't match");
+    //         // }
     
-            // Update the password
-            $user->motDePasse = HashFacade::make($request->newMotPass);
-            $user->save();
+    //         // Update the password
+    //         $user->motDePasse = HashFacade::make($request->newMotPass);
+    //         $user->save();
     
-            return redirect()->back()->with('success', 'Password updated successfully');
+    //         return redirect()->back()->with('success', 'Password updated successfully');
        
-    }
+    // }
 
    public function showDetail($id)
     {
@@ -174,4 +175,13 @@ class GestionnaireController extends Controller
         return view('detail-gestionnaire', compact('gestionnaire'));
     }
     
+
+    public function allPres()
+    {
+        $favoriteGests = Favoris::all();
+        $prestataires = Gestionnaire::where('type', 'Prestataire')->paginate(6);
+
+        return view('tous-prestataires', ['prestataires' => $prestataires, 'favoriteGests' => $favoriteGests]); 
+        
+    }
 }

@@ -39,7 +39,7 @@ class ClientController extends Controller
             $client = new Client();
 
             $client->nomComplet = $request->nomComplet;
-            $client->ville = $request->ville;
+            // $client->ville = $request->ville;
             $client->telephone = $request->telephone;
             $client->email = $request->email;
             $client->motPasse = HashFacade::make($request->motPasse); // Hash the password
@@ -207,6 +207,8 @@ public function handleGoogleCallback(Request $request)
         $newClient = new Client();
         $newClient->nomComplet = $userInfo->name;
         $newClient->email = $userInfo->email;
+        $newClient->telephone = $userInfo->telephone;
+
         // Set other necessary fields
         $newClient->save();
     } else {

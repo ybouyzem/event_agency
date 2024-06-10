@@ -5,7 +5,7 @@
   
     <ul class="navbar">
       <li><a href="/">accueil</a></li>
-      <li><a href="events.php">prestataires</a></li>
+      <li><a href="{{route('allPres')}}">prestataires</a></li>
       <li>
         <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
