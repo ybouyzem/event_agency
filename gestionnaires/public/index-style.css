@@ -727,6 +727,7 @@ html::-webkit-scrollbar-thumb {
   grid-template-columns: auto auto auto auto;
   align-items: center;
   margin: 30px;
+  margin-top: 90px;
   background: rgb(237, 237, 237);;
   /* background-color: #222; */
   border: 2px solid none;
@@ -1502,7 +1503,60 @@ html::-webkit-scrollbar-thumb {
 /* PROFILE CLIENT PAGE */
 
 
+/* ALL GESTIONNAIRES PAGE */
 
+
+.all-gest-container {
+  padding: 20px;
+  margin-top: 70px;
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 10px;
+  align-content: center;
+  align-items: center;
+
+}
+  
+/* ALL GESTIONNAIRES PAGE */
+  
+
+.pagination {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin-right: 30px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover:not(.active):not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.pagination button.active {
+  background-color: var(--theme-color);
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Pagination */
 
 /* media queries  */
 @media (max-width: 1300px) {

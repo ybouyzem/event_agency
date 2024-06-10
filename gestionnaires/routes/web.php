@@ -55,6 +55,9 @@ Route::get('/auth/google', [ClientController::class, 'redirectToGoogle'])->name(
 Route::get('/auth/google/callback', [ClientController::class, 'handleGoogleCallback']);
 
 
+//allGest
+Route::get('/index/allGest', [IndexController::class, 'allGest'])->name('allGest');
+
 //admin
 // Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
 

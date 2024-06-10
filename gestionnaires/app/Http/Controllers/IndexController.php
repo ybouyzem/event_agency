@@ -24,4 +24,12 @@ class IndexController extends Controller
     {
         return view("account-type");
     }
+
+    public function allGest()
+    {
+        $favoriteGests = Favoris::all();
+        $gestionnaires = Gestionnaire::paginate(6); // 10 items per page
+
+        return view('tous-gestionnaires', ['gestionnaires' => $gestionnaires, 'favoriteGests' => $favoriteGests]); 
+    }
 }

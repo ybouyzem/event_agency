@@ -16,6 +16,8 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
+
 
     <!--css file-->
     <link rel="stylesheet" href="{{ asset('index-style.css') }}" />

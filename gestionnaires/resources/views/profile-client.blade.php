@@ -208,5 +208,8 @@
         form.style.visibility = 'visible';
       }
     </script>
+        <div class="loader"></div>
+        <!--JS file-->
+        <script src="{{asset('loader.js')}}"></script>
   </body>
 </html>

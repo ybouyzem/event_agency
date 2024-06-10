@@ -1,22 +1,82 @@
-@props(['gestionnaires', 'favoriteGests'])
-  
-  @if (empty($gestionnaires))
-    <div class="empty-gest">
-      Désolé! il n'y a aucune agence ou prestataire disponible actuellement.
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hadat</title>
 
-  @else
-  <div class="empty-gest" style="display: none">
-    Désolé! il n'y a aucune agence ou prestataire disponible actuellement.
-  </div>
-  <section class="slider-agence">
-    <div class="slider-container">
-      <div class="slider-track">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
+
+
+    <!--css file-->
+    <link rel="stylesheet" href="{{ asset('index-style.css') }}" />
+
+    <!-- favorite icon -->
+
+  </head>
+  <body>
+    <x-header-client/>
+
+    <section class="filter-section">
+        <p class="filter-title">veuillez choisir ce que vous recherchez</p>
+        <div class="type-gestionnaire">
+          <div>
+            <label>
+              <input type="radio" name="radio" value="all">
+              <span>Tous</span>
+            </label>
+            <label>
+              <input type="radio" name="radio" value="Agence">
+              <span>Agences</span>
+            </label>
+            <label>
+              <input type="radio" name="radio" value="Prestataire">
+              <span>Prestataires</span>
+            </label>
+          </div>
+        </div>
+        <div class="city-filter">
+          {{-- <label for="">Choisis Services :</label> --}}
+          <select name="" id="type-service">
+            <option value="all" selected>Tous les Services</option>
+            <option value="Mariages">Mariages</option>
+            <option value="Ftour Ramadan">Ftour Ramadan</option>
+            <option value="Evenement Prive">Evenement Prive</option>
+            <option value="Fiancailles">Fiancailles</option>
+            <option value="Buffet">Buffet</option>
+            <option value="Pause cafe">Pause cafe</option>
+            <option value="Conferance">Conferance</option>
+            <option value="Seminaire">Seminaire</option>
+            <option value="Soutenance">Soutenance</option>
+            <option value="Gala">Gala</option>
+          </select>
+        </div>
+        <div class="PB-range-slider-div">
+          <p>Prix maximum</p>
+          <input type="range" min="50" max="90000" value="900000" class="PB-range-slider" id="myRange" >
+          <p class="PB-range-slidervalue" id="priceDisplay"></p>
+        </div>
+      </section>
+    
+
+    <div class="all-gest-container">
+      
         @foreach ($gestionnaires as $gestionnaire)
         <div class="card-agence">
           <div class="image-container">
-            <img src="img/{{$gestionnaire->image1}}" alt="">
-          </div>
+            <img src="{{ asset('img/' . $gestionnaire->image1) }}" alt="">
+        </div>
           <label class="favorite">
             @if (!empty($favoriteGests))
               @foreach ($favoriteGests as $gest)
@@ -60,16 +120,41 @@
           </div>
         </div>
         @endforeach
-      </div>
+        {{ $gestionnaires->links() }}
     </div>
-    <button class="prev-button"><i class='bx bxs-left-arrow-circle'></i></button>
-    <button class="next-button"><i class='bx bxs-right-arrow-circle'></i></button>
-  </section>
-
-  <div class="afficher-tous">
-    <a href="{{route('allGest')}}">Afichier tous</a>
-  </div>
-  @endif
-
+    <div>
+        <div class="pagination">
+            {{-- Previous Page Link --}}
+            @if ($gestionnaires->onFirstPage())
+                <button disabled>Précédent</button>
+            @else
+                <button onclick="window.location.href='{{ $gestionnaires->previousPageUrl() }}'">Précédent</button>
+            @endif
+    
+            {{-- Pagination Elements --}}
+            @for ($page = 1; $page <= $gestionnaires->lastPage(); $page++)
+                @if ($page == $gestionnaires->currentPage())
+                    <button class="active">{{ $page }}</button>
+                @else
+                    <button onclick="window.location.href='{{ $gestionnaires->url($page) }}'">{{ $page }}</button>
+                @endif
+            @endfor
+    
+            {{-- Next Page Link --}}
+            @if ($gestionnaires->hasMorePages())
+                <button onclick="window.location.href='{{ $gestionnaires->nextPageUrl() }}'">Suivant</button>
+            @else
+                <button disabled>Suivant</button>
+            @endif
+        </div>
+    </div>
+    <x-footer/>
+    <div class="loader"></div>
+    <!--JS file-->
+    <script src="{{asset('loader.js')}}"></script>
+    <script src="{{asset('script.js')}}"></script>
+    <script src="{{asset('filter-agence.js')}}"></script>
   <script src="{{asset('favoris.js')}}"></script>
   <script src="{{asset('detail-agence.js')}}"></script>
+  </body>
+</html>

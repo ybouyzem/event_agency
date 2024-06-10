@@ -11,6 +11,8 @@
     src="https://kit.fontawesome.com/64d58efce2.js"
     crossorigin="anonymous"
   ></script>
+  <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
+
     <title>Document</title>
 </head>
 <body>

@@ -24,9 +24,8 @@
     />
     <!--css file-->
     <link rel="stylesheet" href="{{ asset('detail-gest.css') }}" />
+    <link rel="icon" href="{{asset('img/logo.png')}}" type="image/x-icon">
 
-    <!-- favorite icon -->
-    <link rel="icon" type="img/logo" href="images/favicon.png" />
 
   </head>
   <body>
@@ -62,4 +61,7 @@
     <x-footer/>
 
   </body>
+  <div class="loader"></div>
+  <!--JS file-->
+  <script src="{{asset('loader.js')}}"></script>
 </html>
