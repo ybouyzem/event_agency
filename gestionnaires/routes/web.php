@@ -30,6 +30,8 @@ Route::get('/gestionnaire/{id}', [GestionnaireController::class, 'showDetail'])-
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modifierImages/{gestId}', [GestionnaireController::class, 'modifierImageGestionnaire'])->name('modifierImageGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', [GestionnaireController::class, 'modifierMotPasse'])->name('modifierMotPasse');
+//promotion
+Route::match(['get', 'post'], '/promotion', [GestionnaireController::class, 'promotion'])->name('promotion');
 
 
 //client

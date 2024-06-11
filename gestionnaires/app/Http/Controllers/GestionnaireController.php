@@ -184,4 +184,9 @@ class GestionnaireController extends Controller
         return view('tous-prestataires', ['prestataires' => $prestataires, 'favoriteGests' => $favoriteGests]); 
         
     }
+
+    public function promotion()
+    {
+        return view('promotion');
+    }
 }

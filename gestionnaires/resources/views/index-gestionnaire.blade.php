@@ -26,20 +26,20 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<h1>Tableau de bord</h1>
 					<ul class="breadcrumb">
 						<li>
-							<a href="#">Dashboard</a>
+							<a href="#">Tableau de bord</a>
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active" href="#">Index</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 
-			<ul class="box-info">
+			{{-- <ul class="box-info">
 				<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
@@ -61,11 +61,11 @@
 						<p>Total Sales</p>
 					</span>
 				</li>
-			</ul>
+			</ul> --}}
 
 
 		 	{{-- reservations table --}}
-			<x-reservation-table/>
+			{{-- <x-reservation-table/> --}}
 				{{-- <div class="todo">
 					<div class="head">
 						<h3>Todos</h3>

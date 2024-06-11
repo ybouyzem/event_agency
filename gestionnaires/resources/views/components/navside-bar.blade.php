@@ -15,39 +15,39 @@
 			<li class="active">
 				<a href="/index-gestionnaire">
 					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
+					<span class="text">Tableau de Bord</span>
 				</a>
 			</li>
-			<li>
+			{{-- <li>
 				<a href="/reservations">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Reservations</span>
 				</a>
-			</li>
-			@if (session('gestionnaire') && session('gestionnaire')->type == "Agence")
+			</li> --}}
+			{{-- @if (session('gestionnaire') && session('gestionnaire')->type == "Agence")
 				<li>
 					<a href="/services-gestionnaire">
 						<i class='bx bxs-doughnut-chart' ></i>
 						<span class="text">Services</span>
 					</a>
 				</li>
-			@endif
-			<li>
+			@endif --}}
+			{{-- <li>
 				<a href="/clients">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Clients</span>
 				</a>
-			</li>
-			<li>
+			</li> --}}
+			{{-- <li>
 				<a href="#">
 					<i class='bx bxs-group' ></i>
 					<span class="text">Packs</span>
 				</a>
-			</li>
+			</li> --}}
 			<li>
-				<a href="#">
+				<a href="/promotion">
 					<i class='bx bxs-group' ></i>
-					<span class="text">Promotion</span>
+					<span class="text">Promotions</span>
 				</a>
 			</li>
 		</ul>
@@ -61,7 +61,7 @@
 			<li>
 				<a href="{{ route('logout') }}" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
+					<span class="text">Se déconnecter</span>
 				</a>
 			</li>
 		</ul>

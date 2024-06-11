@@ -1612,6 +1612,31 @@ html::-webkit-scrollbar-thumb {
 
 /* Pagination */
 
+.promotion {
+  background-color: pink;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  padding: 4px 20px 10px 20px;
+}
+
+.promotion h3 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.promotion .slider-agence .slider-track .card-agence {
+}
+
+/*promotion*/
+
+
+
+/*promotion*/
+
+
+
 /* media queries  */
 @media (max-width: 1300px) {
 

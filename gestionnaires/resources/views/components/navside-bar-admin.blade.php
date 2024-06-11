@@ -24,24 +24,24 @@
 					<span class="text">gestionnaires</span>
 				</a>
 			</li>
-			<li>
+			{{-- <li>
 				<a href="/reservations-admin">
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Reservations</span>
 				</a>
-			</li>
-			<li>
+			</li> --}}
+			{{-- <li>
 				<a href="/clients-admin">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Clients</span>
 				</a>
-			</li>
+			</li> --}}
 		</ul>
 		<ul class="side-menu">
 			<li>
 				<a href="{{ route('logout') }}" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
+					<span class="text">Se déconnecter</span>
 				</a>
 			</li>
 		</ul>

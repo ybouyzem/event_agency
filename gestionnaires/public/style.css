@@ -428,13 +428,13 @@ body {
 	width: fit-content;
 	/* border-right: 2px solid rgba(170, 170, 170, 0.557); */
 }
-#content main .table-data .order table tr td:first-child {
+/* #content main .table-data .order table tr td:first-child {
 	display: flex;
 	align-items: center;
 	grid-gap: 12px;
 	padding-left: 6px;
 
-}
+} */
 
 #content main .table-data .order table tr td:nth-child(2) {
 	width: 100px;
@@ -496,6 +496,24 @@ body {
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
 }
+
+#content main .table-data .order table td input{
+	padding: 10px;
+	border: 0px solid rgba(139, 69, 19, 0);
+	background-color: rgba(128, 128, 128, 0);
+	height: 30px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+#content main .table-data .order table td input:focus
+{
+	outline: none;
+	border: 0px;
+	border-bottom: 2px solid #dbe2e9;
+}
+
+
 /* MAIN */
 /* CONTENT */
 
