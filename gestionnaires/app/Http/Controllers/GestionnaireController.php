@@ -67,7 +67,7 @@ class GestionnaireController extends Controller
     
             $gestionnaire->nom = $request->nomAgence;
             $gestionnaire->type = $request->type;
-            $gestionnaire->ville = $request->ville;
+            // $gestionnaire->ville = $request->ville;
             $gestionnaire->telephone = $request->telephone;
             $gestionnaire->email = $request->email; 
             $gestionnaire->motDePasse = HashFacade::make($request->motPasse); // Hash the password

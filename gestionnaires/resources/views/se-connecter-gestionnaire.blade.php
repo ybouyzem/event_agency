@@ -93,10 +93,10 @@
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <div class="input-field">
+            {{-- <div class="input-field">
                 <i class='bx bxs-buildings' ></i>
               <input type="text" placeholder="Ville" name="ville" required/>
-            </div>
+            </div> --}}
             <div class="input-field">
                 <i class="bx bxs-phone"></i>
               <input type="number" placeholder="numero telephone" name="telephone" oninput="validatePhoneNumber(this)" required/>

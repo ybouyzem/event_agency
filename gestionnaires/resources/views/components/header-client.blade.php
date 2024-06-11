@@ -5,7 +5,21 @@
   
     <ul class="navbar">
       <li><a href="/">accueil</a></li>
-      <li><a href="{{route('allPres')}}">prestataires</a></li>
+      <li>
+        <a href="{{route('allPres')}}">prestataires<i class='bx bx-chevron-down' ></i></a>
+        <ul class="dropdown">
+          <li><a href="agence1.php">Salle de mariage</a></li>
+          <li><a href="agence1.php">Photographes</a></li>
+          <li><a href="agence2.php">Traiteur & Catering</a></li>
+          <li><a href="agence3.php">Negafa</a></li>
+          <li><a href="agence3.php">Orchestres</a></li>
+          <li><a href="agence3.php">Salons & Coiffure</a></li>
+          <li><a href="agence3.php">Décoration & Design</a></li>
+          <li><a href="agence3.php">Issawa & Dakka Marrakchia</a></li>
+          <li><a href="agence3.php">DJ Evolutif</a></li>
+          <li><a href="agence3.php">Eclairage & Sonorisation</a></li>
+        </ul>
+      </li>
       <li>
         <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">

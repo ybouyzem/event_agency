@@ -68,11 +68,11 @@
                   <label class="label" for="input">Proprietaire *</label>
                   <div class="underline"></div>
                 </div>
-                <div class="input-container">
+                {{-- <div class="input-container">
                   <input required="" id="input" type="text" name="ville" value="{{ session('gestionnaire')->ville }}"/>
                   <label class="label" for="input">Ville *</label>
                   <div class="underline"></div>
-                </div>
+                </div> --}}
                 <div class="input-container">
                   <input required="" id="input" type="text" name="adresse" value="{{ session('gestionnaire')->adresse }}"/>
                   <label class="label" for="input">Adresse *</label>
@@ -95,7 +95,7 @@
                     @if (session('gestionnaire')->service)
                       <option value="{{ session('gestionnaire')->service }}">{{ session('gestionnaire')->service }}</option>
                     @else
-                      <option value="0">sélectionner service</option>
+                      <option value="0">sélectionner Evenement</option>
                     @endif
                       <option value="Mariages">Mariages</option>
                       <option value="Ftour Ramadan">Ftour Ramadan</option>
@@ -110,15 +110,106 @@
                   </select>
                 </div>
                 @else 
-                <div class="input-container">
+                <div class="input-container select-option">
+                  <label for="input">Service par defaut *</label>
+                  <select name="service" id="service">
+                    @if (session('gestionnaire')->service)
+                      <option value="{{ session('gestionnaire')->service }}">{{ session('gestionnaire')->service }}</option>
+                    @else
+                      <option value="0">sélectionner service</option>
+                    @endif
+                      <option value="Salle de mariage">Salle de mariage</option>
+                      <option value="Photographes">Photographes</option>
+                      <option value="Traiteur & Catering">Traiteur & Catering</option>
+                      <option value="Negafa">Negafa</option>
+                      <option value="Orchestres">Orchestres</option>
+                      <option value="Salons & Coiffure">Salons & Coiffure</option>
+                      <option value="Décoration & Design">Décoration & Design</option>
+                      <option value="Issawa & Dakka Marrakchia">Issawa & Dakka Marrakchia</option>
+                      <option value="DJ Evolutif">DJ Evolutif</option>
+                      <option value="Eclairage & Sonorisation">Eclairage & Sonorisation</option>
+                  </select>
+                </div>
+
+                {{-- <div class="input-container">
                   <input required="" name="service" id="input" type="text" value="{{ session('gestionnaire')->service }}"/>
                   <label class="label"  for="input">Service par defaut *</label>
                   <div class="underline"></div>
-                </div>
+                </div> --}}
                 @endif
+                <div class="input-container select-option">
+                  <label for="input">Ville *</label>
+                  <select name="ville" id="service">
+                    @if (session('gestionnaire')->ville)
+                      <option value="{{ session('gestionnaire')->ville }}">{{ session('gestionnaire')->ville }}</option>
+                    @else
+                      <option value="0">sélectionner votre ville</option>
+                    @endif
+                    <option value="all">Tous les villes</option>
+                    <option value="agadir">Agadir</option>
+                    <option value="ait-melloul">Ait Melloul</option>
+                    <option value="asilah">Asilah</option>
+                    <option value="azrou">Azrou</option>
+                    <option value="azzemour">Azzemour</option>
+                    <option value="beni-mellal">Beni Mellal</option>
+                    <option value="ben-ahmed">Ben Ahmed</option>
+                    <option value="ben-guerir">Ben Guerir</option>
+                    <option value="berkane">Berkane</option>
+                    <option value="berrechid">Berrechid</option>
+                    <option value="biougra">Biougra</option>
+                    <option value="bouarfa">Bouarfa</option>
+                    <option value="casablanca">Casablanca</option>
+                    <option value="chechaouen">Chechaouen</option>
+                    <option value="drargua">Drargua</option>
+                    <option value="el-aaiun">El Aaiun</option>
+                    <option value="el-hajeb">El Hajeb</option>
+                    <option value="el-jadida">El Jadida</option>
+                    <option value="el-kelâa-des-sraghna">El Kelâa des Sraghna</option>
+                    <option value="essaouira">Essaouira</option>
+                    <option value="fes">Fes</option>
+                    <option value="fes-el-jdid">Fes el Jdid</option>
+                    <option value="fnideq">Fnideq</option>
+                    <option value="guelmim">Guelmim</option>
+                    <option value="imzouren">Imzouren</option>
+                    <option value="jerada">Jerada</option>
+                    <option value="kalaa-sraghna">Kalaa Sraghna</option>
+                    <option value="kenitra">Kenitra</option>
+                    <option value="khemisset">Khemisset</option>
+                    <option value="khenifra">Khenifra</option>
+                    <option value="khouribga">Khouribga</option>
+                    <option value="larache">Larache</option>
+                    <option value="laayoune">Laayoune</option>
+                    <option value="martil">Martil</option>
+                    <option value="marrakech">Marrakech</option>
+                    <option value="meknes">Meknes</option>
+                    <option value="mohammedia">Mohammedia</option>
+                    <option value="moulay-idriss">Moulay Idriss</option>
+                    <option value="nador">Nador</option>
+                    <option value="ouarzazate">Ouarzazate</option>
+                    <option value="oued-zem">Oued Zem</option>
+                    <option value="oujda">Oujda</option>
+                    <option value="oulad-teima">Oulad Teima</option>
+                    <option value="rabat">Rabat</option>
+                    <option value="safi">Safi</option>
+                    <option value="sebt-zniber">Sebt Zniber</option>
+                    <option value="settat">Settat</option>
+                    <option value="sidi-ifni">Sidi Ifni</option>
+                    <option value="sidi-kacem">Sidi Kacem</option>
+                    <option value="sidi-slimane">Sidi Slimane</option>
+                    <option value="tan-tan">Tan-Tan</option>
+                    <option value="tangier">Tangier</option>
+                    <option value="taroudant">Taroudant</option>
+                    <option value="taza">Taza</option>
+                    <option value="temara">Temara</option>
+                    <option value="tetouan">Tetouan</option>
+                    <option value="tirahmad">Tirahmad</option>
+                    <option value="tiznit">Tiznit</option>
+                    <option value="youssoufia">Youssoufia</option>
+                </select>
+                </div>
 
                 <div class="description-profile">
-                  <textarea id="detail" name="detail" rows="4" cols="50" placeholder="Description">{{ session('gestionnaire')->detail }}</textarea>
+                  <textarea id="detail" name="detail" rows="4" cols="50" placeholder="Description" required>{{ session('gestionnaire')->detail }} </textarea>
                 </div>
                 <div class="input-container">
                   <input required="" id="input" type="submit" value="Modifier"/>
@@ -163,9 +254,7 @@
                       </label>
                       <input type="file" id="image4" name="image4" value="{{session('gestionnaire')->image4}}" required/>
                     </div>
-                  </div>
-
-                  
+                  </div>                  
                   <div class="input-container">
                     <input required="" id="input" type="submit" value="Ajouter images"/>
                   </div>

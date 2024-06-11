@@ -8,6 +8,7 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!--font awesome-->
     <link
@@ -86,10 +87,10 @@
       <p class="filter-title">veuillez choisir ce que vous recherchez</p>
       <div class="type-gestionnaire">
         <div>
-          <label>
+          {{-- <label>
             <input type="radio" name="radio" value="all">
             <span>Tous</span>
-          </label>
+          </label> --}}
           <label>
             <input type="radio" name="radio" value="Agence">
             <span>Agences</span>
@@ -103,7 +104,7 @@
       <div class="city-filter">
         {{-- <label for="">Choisis Services :</label> --}}
         <select name="" id="type-service">
-          <option value="all" selected>Tous les Services</option>
+          <option value="all">Services & evenements</option>
           <option value="Mariages">Mariages</option>
           <option value="Ftour Ramadan">Ftour Ramadan</option>
           <option value="Evenement Prive">Evenement Prive</option>
@@ -114,8 +115,87 @@
           <option value="Seminaire">Seminaire</option>
           <option value="Soutenance">Soutenance</option>
           <option value="Gala">Gala</option>
+          <option value="Salle de mariage">Salle de mariage</option>
+          <option value="Photographes">Photographes</option>
+          <option value="Traiteur & Catering">Traiteur & Catering</option>
+          <option value="Negafa">Negafa</option>
+          <option value="Orchestres">Orchestres</option>
+          <option value="Salons & Coiffure">Salons & Coiffure</option>
+          <option value="Décoration & Design">Décoration & Design</option>
+          <option value="Issawa & Dakka Marrakchia">Issawa & Dakka Marrakchia</option>
+          <option value="DJ Evolutif">DJ Evolutif</option>
+          <option value="Eclairage & Sonorisation">Eclairage & Sonorisation</option>
         </select>
       </div>
+    <div class="city-select-wrapper">
+      {{-- <label for="">Choisis Services :</label> --}}
+      {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <select name="city" size="1" onfocus="this.size = 8" onchange="this.blur()" onblur="this.size = 1; this.blur()"> --}}
+      <select name="city" id="cities" >
+        <option value="all" >Tous les villes</option>
+        <option value="agadir">Agadir</option>
+        <option value="ait-melloul">Ait Melloul</option>
+        <option value="asilah">Asilah</option>
+        <option value="azrou">Azrou</option>
+        <option value="azzemour">Azzemour</option>
+        <option value="beni-mellal">Beni Mellal</option>
+        <option value="ben-ahmed">Ben Ahmed</option>
+        <option value="ben-guerir">Ben Guerir</option>
+        <option value="berkane">Berkane</option>
+        <option value="berrechid">Berrechid</option>
+        <option value="biougra">Biougra</option>
+        <option value="bouarfa">Bouarfa</option>
+        <option value="casablanca">Casablanca</option>
+        <option value="chechaouen">Chechaouen</option>
+        <option value="drargua">Drargua</option>
+        <option value="el-aaiun">El Aaiun</option>
+        <option value="el-hajeb">El Hajeb</option>
+        <option value="el-jadida">El Jadida</option>
+        <option value="el-kelâa-des-sraghna">El Kelâa des Sraghna</option>
+        <option value="essaouira">Essaouira</option>
+        <option value="fes">Fes</option>
+        <option value="fes-el-jdid">Fes el Jdid</option>
+        <option value="fnideq">Fnideq</option>
+        <option value="guelmim">Guelmim</option>
+        <option value="imzouren">Imzouren</option>
+        <option value="jerada">Jerada</option>
+        <option value="kalaa-sraghna">Kalaa Sraghna</option>
+        <option value="kenitra">Kenitra</option>
+        <option value="khemisset">Khemisset</option>
+        <option value="khenifra">Khenifra</option>
+        <option value="khouribga">Khouribga</option>
+        <option value="larache">Larache</option>
+        <option value="laayoune">Laayoune</option>
+        <option value="martil">Martil</option>
+        <option value="marrakech">Marrakech</option>
+        <option value="meknes">Meknes</option>
+        <option value="mohammedia">Mohammedia</option>
+        <option value="moulay-idriss">Moulay Idriss</option>
+        <option value="nador">Nador</option>
+        <option value="ouarzazate">Ouarzazate</option>
+        <option value="oued-zem">Oued Zem</option>
+        <option value="oujda">Oujda</option>
+        <option value="oulad-teima">Oulad Teima</option>
+        <option value="rabat">Rabat</option>
+        <option value="safi">Safi</option>
+        <option value="sebt-zniber">Sebt Zniber</option>
+        <option value="settat">Settat</option>
+        <option value="sidi-ifni">Sidi Ifni</option>
+        <option value="sidi-kacem">Sidi Kacem</option>
+        <option value="sidi-slimane">Sidi Slimane</option>
+        <option value="tan-tan">Tan-Tan</option>
+        <option value="tangier">Tangier</option>
+        <option value="taroudant">Taroudant</option>
+        <option value="taza">Taza</option>
+        <option value="temara">Temara</option>
+        <option value="tetouan">Tetouan</option>
+        <option value="tirahmad">Tirahmad</option>
+        <option value="tiznit">Tiznit</option>
+        <option value="youssoufia">Youssoufia</option>
+      </select>
+    </div>
+  
       <div class="PB-range-slider-div">
         <p>Prix maximum</p>
         <input type="range" min="50" max="90000" value="900000" class="PB-range-slider" id="myRange" >

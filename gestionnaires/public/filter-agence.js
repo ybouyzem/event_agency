@@ -3,11 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var radioButtons = document.querySelectorAll('input[type="radio"][name="radio"]');
     var cards = document.querySelectorAll(".card-agence");
     var selectMenu = document.getElementById('type-service');
+    var selectMenuEvent = document.getElementById('type-evenement');
+    var selectCities = document.getElementById('cities');
+
     var selectedRadio ;
     var slider = document.getElementById('myRange');
     var output = document.getElementById('priceDisplay');
     var selectedService;
     var selectedPrice;
+    var selectedEvent;
+    var selectedCity;
+
 
 
     function checkDisplayedCards() {
@@ -38,11 +44,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 slider.value = "900000";
                 output.textContent = slider.value + " dh";
                 selectedRadio = this.value;
-                filterFunction(selectedPrice, selectedService, selectedRadio, cards);
+                filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity,  cards);
             }
             checkDisplayedCards();
         });
     });
+
+     //this filter for cities
+     selectCities.addEventListener('change', function()
+     {
+         
+         selectedCity = this.value;
+         slider.value = "900000";
+         output.textContent = slider.value + "dh";
+ 
+ 
+         filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
+ 
+         checkDisplayedCards();
+     });
+ 
 
     //this filter for services, it's a select menu
     selectMenu.addEventListener('change', function()
@@ -53,10 +74,27 @@ document.addEventListener('DOMContentLoaded', function() {
         output.textContent = slider.value + "dh";
 
 
-        filterFunction(selectedPrice, selectedService, selectedRadio, cards);
+        filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
 
         checkDisplayedCards();
     });
+
+
+    // //this filter for events, each agency have has a type of event
+    // selectMenuEvent.addEventListener('change', function()
+    // {
+        
+    //     selectedEvent = this.value;
+    //     slider.value = "900000";
+    //     output.textContent = slider.value + "dh";
+
+
+    //     filterFunction(selectedPrice, selectMenuEvent, selectedRadio,selectedCity, cards);
+
+    //     checkDisplayedCards();
+    // });
+
+   
 
 
     output.textContent = slider.value + " dh" ;
@@ -68,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.addEventListener('change', function() {
         selectedPrice = this.value;
 
-        filterFunction(selectedPrice, selectedService, selectedRadio, cards);
+        filterFunction(selectedPrice, selectMenuEvent, selectedRadio,selectedCity, cards);
         checkDisplayedCards();
     });
     
@@ -76,22 +114,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function filterFunction(selectedPrice, selectedService, selectedType, cards)
+function filterFunction(selectedPrice, selectedService, selectedType, selectedCity,  cards)
 {
     cards.forEach(function(card) {
         price = parseFloat(card.querySelector("#price").textContent.replace(/[^0-9.-]+/g, ""));
+        console.log(selectedService);
         if (price <= selectedPrice || selectedPrice == undefined)
         {
-
-            if (card.querySelector("#type-service").textContent == selectedService || selectedService == undefined || selectedService == "all")
+            if (card.querySelector("#city").textContent == selectedCity || selectedCity == undefined || selectedCity == "all")
             {
-                console.log(selectedService);
-
-                if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined || selectedType == "all")
-                    card.style.display="block";
+                if (card.querySelector("#type-service").textContent == selectedService || selectedService == undefined || selectedService == "all")
+                {
+                    if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined || selectedType == "all")
+                        card.style.display="block";
+                    else
+                        card.style.display="none";
+                }
                 else
                     card.style.display="none";
-
             }
             else
                 card.style.display="none";

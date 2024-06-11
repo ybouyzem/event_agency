@@ -28,46 +28,8 @@
   <body>
     <x-header-client/>
 
-    <section class="filter-section">
-        <p class="filter-title">veuillez choisir ce que vous recherchez</p>
-        <div class="type-gestionnaire">
-          <div>
-            <label>
-              <input type="radio" name="radio" value="all">
-              <span>Tous</span>
-            </label>
-            <label>
-              <input type="radio" name="radio" value="Agence">
-              <span>Agences</span>
-            </label>
-            <label>
-              <input type="radio" name="radio" value="Prestataire">
-              <span>Prestataires</span>
-            </label>
-          </div>
-        </div>
-        <div class="city-filter">
-          {{-- <label for="">Choisis Services :</label> --}}
-          <select name="" id="type-service">
-            <option value="all" selected>Tous les Services</option>
-            <option value="Mariages">Mariages</option>
-            <option value="Ftour Ramadan">Ftour Ramadan</option>
-            <option value="Evenement Prive">Evenement Prive</option>
-            <option value="Fiancailles">Fiancailles</option>
-            <option value="Buffet">Buffet</option>
-            <option value="Pause cafe">Pause cafe</option>
-            <option value="Conferance">Conferance</option>
-            <option value="Seminaire">Seminaire</option>
-            <option value="Soutenance">Soutenance</option>
-            <option value="Gala">Gala</option>
-          </select>
-        </div>
-        <div class="PB-range-slider-div">
-          <p>Prix maximum</p>
-          <input type="range" min="50" max="90000" value="900000" class="PB-range-slider" id="myRange" >
-          <p class="PB-range-slidervalue" id="priceDisplay"></p>
-        </div>
-      </section>
+  <h1 style="margin-top:100px; margin-left:40px">Tous Les Agences et Prestataires</h1>
+
     
 
     <div class="all-gest-container">
