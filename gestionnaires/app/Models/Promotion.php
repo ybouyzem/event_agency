@@ -12,10 +12,8 @@ class Promotion extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id_service',
         'id_gestionnaire',
         'reduction',
-        'date_debut',
         'date_fin',
     ];
 }

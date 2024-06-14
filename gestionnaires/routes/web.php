@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GestionnaireController;
 use App\Http\Middleware\CheckGestionnaire;
+use App\Http\Controllers\PromotionController;
 
 
 Route::get("/", [IndexController::class,"index"])->name("index");
@@ -30,8 +31,6 @@ Route::get('/gestionnaire/{id}', [GestionnaireController::class, 'showDetail'])-
 Route::match(['get', 'post'], '/profile-gestionnaire/modifier/{gestId}', [GestionnaireController::class, 'modiferInfoGestionnaire'])->name('modiferInfoGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modifierImages/{gestId}', [GestionnaireController::class, 'modifierImageGestionnaire'])->name('modifierImageGestionnaire');
 Route::match(['get', 'post'], '/profile-gestionnaire/modiferMotPasse/{gestId}', [GestionnaireController::class, 'modifierMotPasse'])->name('modifierMotPasse');
-//promotion
-Route::match(['get', 'post'], '/promotion', [GestionnaireController::class, 'promotion'])->name('promotion');
 
 
 //client
@@ -51,10 +50,17 @@ Route::get('/index/{id}/{id_service}/{id_gest}', [ClientController::class, 'favo
 Route::get('/index/delfav/{clientId}/{idService}/{gestionnaireId}', [ClientController::class, 'deleteFavoris'])->name('deleteFavoris');
 Route::get('/index/mesfavoris', [ClientController::class, 'favorisClient'])->name('favorisClient');
 
+//promotion
+Route::match(['get', 'post'], '/promotion', [PromotionController::class, 'promotion'])->name('promotion');
+Route::match(['get', 'post'], '/add-promotion', [PromotionController::class, 'addPromotion'])->name('add.promotion');
+
 
 
 Route::get('/auth/google', [ClientController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [ClientController::class, 'handleGoogleCallback']);
+
+
+
 
 
 //allGest

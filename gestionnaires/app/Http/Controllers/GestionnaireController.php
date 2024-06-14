@@ -185,8 +185,4 @@ class GestionnaireController extends Controller
         
     }
 
-    public function promotion()
-    {
-        return view('promotion');
-    }
 }
