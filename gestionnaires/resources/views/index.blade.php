@@ -82,7 +82,7 @@
         </a>
       </div>
     </section>
-    <x-slider-promotion :gestionnaires="$gestionnaires" :favoriteGests="$favoriteGests" />
+    <x-slider-promotion :promotions="$promotions"  />
     <section class="filter-section">
       <p class="filter-title">veuillez choisir ce que vous recherchez</p>
       <div class="type-gestionnaire">

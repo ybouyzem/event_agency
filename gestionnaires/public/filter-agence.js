@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 slider.value = "900000";
                 output.textContent = slider.value + " dh";
                 selectedRadio = this.value;
-                filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity,  cards);
+                filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
             }
             checkDisplayedCards();
         });
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.addEventListener('change', function() {
         selectedPrice = this.value;
 
-        filterFunction(selectedPrice, selectMenuEvent, selectedRadio,selectedCity, cards);
+        filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
         checkDisplayedCards();
     });
     
@@ -114,18 +114,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function filterFunction(selectedPrice, selectedService, selectedType, selectedCity,  cards)
+function filterFunction(selectedPrice, selectedService,  selectedRadio, selectedCity,  cards)
 {
     cards.forEach(function(card) {
+        // console.log(cards);
         price = parseFloat(card.querySelector("#price").textContent.replace(/[^0-9.-]+/g, ""));
-        console.log(selectedService);
         if (price <= selectedPrice || selectedPrice == undefined)
         {
             if (card.querySelector("#city").textContent == selectedCity || selectedCity == undefined || selectedCity == "all")
             {
                 if (card.querySelector("#type-service").textContent == selectedService || selectedService == undefined || selectedService == "all")
                 {
-                    if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined || selectedType == "all")
+                    if (card.querySelector("#type-gest").textContent == selectedRadio || selectedRadio == undefined || selectedRadio == "all")
                         card.style.display="block";
                     else
                         card.style.display="none";

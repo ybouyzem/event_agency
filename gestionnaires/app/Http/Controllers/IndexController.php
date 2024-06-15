@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Gestionnaire;
 use App\Models\Favoris;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
+
 
 
 class IndexController extends Controller
@@ -16,7 +18,9 @@ class IndexController extends Controller
         $gestionnaires = Gestionnaire::all();
         // $clientId = session('client')->id;
         $favoriteGests = Favoris::all();
-        return view('index', ['gestionnaires' => $gestionnaires, 'favoriteGests' => $favoriteGests]); 
+        $promotions = DB::select('SELECT * FROM promotion, gestionnaire WHERE promotion.id_gestionnaire = gestionnaire.id');
+
+        return view('index', ['gestionnaires' => $gestionnaires, 'favoriteGests' => $favoriteGests, 'promotions' => $promotions]); 
     }
     
 
