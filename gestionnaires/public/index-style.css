@@ -1613,7 +1613,7 @@ html::-webkit-scrollbar-thumb {
 /* Pagination */
 
 .promotion {
-  background-color: pink;
+  background-color: rgb(21, 164, 221);
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   padding: 4px 20px 10px 20px;
@@ -1627,6 +1627,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .promotion .slider-agence .slider-track .card-agence {
+  
 }
 
 /*promotion*/

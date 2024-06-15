@@ -154,7 +154,7 @@
               </tr>
               <tr>
                 <td><input name="nomComplet" type="text" value="{{session('client')->nomComplet}}" readonly class="client-data" required></td>
-                <td><input name="ville" type="text" value="{{session('client')->ville}}" readonly class="client-data" required></td>
+                {{-- <td><input name="ville" type="text" value="{{session('client')->ville}}" readonly class="client-data" required></td> --}}
                 <td><input name="telephone" type="number" value="{{session('client')->telephone}}" readonly class="client-data" required></td>
                 <td>{{session('client')->email}}</td>
                 <td><input type="submit" value="modifier" class="client-data" id="modifierInfoBtn"></td>
