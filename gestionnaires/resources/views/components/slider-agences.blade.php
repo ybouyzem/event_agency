@@ -1,4 +1,4 @@
-@props(['gestionnaires', 'favoriteGests'])
+@props(['gestionnaires', 'favoriteGests', 'promotions'])
   
  
   <div class="empty-gest" style="display: none">
@@ -34,8 +34,20 @@
             <div class="other-data">
               <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
               <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
-              <div class="product-name">Prix A partir de : <span id="price"> {{$gestionnaire->prix}}</span> dh</div>
-            </div>
+              <div class="product-name">Prix A partir de : 
+                @if (empty($promotions))
+                <span id="price">{{$gestionnaire->prix}} dh</span> </div>
+
+                @else
+                @foreach ($promotions as $promo)
+                  @if ($promo->id_gestionnaire == $gestionnaire->id)
+                <span id="price">{{$promo->reduction}} </span>  <span style="text-decoration: line-through; color:orange; fonr-weight:400;font-size:12px;">{{$gestionnaire->prix}} dh</span></div>
+                  @else 
+                  <span id="price">{{$gestionnaire->prix}} dh</span> </div>
+                  @endif
+                @endforeach
+                @endif
+              </div>
             <div style="display: none"><span id="city">{{$gestionnaire->ville}}</span></div>
             {{-- <div class="rating">
               <svg viewBox="0 0 99.498 16.286" xmlns="http://www.w3.org/2000/svg" class="svg four-star-svg">

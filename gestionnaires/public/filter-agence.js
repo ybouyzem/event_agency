@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 slider.value = "900000";
                 output.textContent = slider.value + " dh";
                 selectedRadio = this.value;
+
                 filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
             }
             checkDisplayedCards();
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.addEventListener('change', function() {
         selectedPrice = this.value;
 
-        filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards);
+        filterFunction(selectedPrice, selectedService, selectedRadio,selectedCity, cards);
         checkDisplayedCards();
     });
     
@@ -114,10 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards)
+function filterFunction(selectedPrice, selectedService, selectedType, selectedCity,  cards)
 {
     cards.forEach(function(card) {
-        // console.log(cards);
         price = parseFloat(card.querySelector("#price").textContent.replace(/[^0-9.-]+/g, ""));
         if (price <= selectedPrice || selectedPrice == undefined)
         {
@@ -125,7 +125,7 @@ function filterFunction(selectedPrice, selectedService, selectedRadio, selectedC
             {
                 if (card.querySelector("#type-service").textContent == selectedService || selectedService == undefined || selectedService == "all")
                 {
-                    if (card.querySelector("#type-gest").textContent == selectedRadio || selectedRadio == undefined || selectedRadio == "all")
+                    if (card.querySelector("#type-gest").textContent == selectedType || selectedType == undefined || selectedType == "all")
                         card.style.display="block";
                     else
                         card.style.display="none";

@@ -38,13 +38,12 @@
             </div>
         </div>
 
-        <form action="" method="POST" id="promotionForm">
+        <form action="{{ route('addPromotion') }}" method="POST">
             @csrf
             <div class="table-data">
                 <div class="order">
                     <div class="head">
                         <h3>Ajouter une promotion</h3>
-
                     </div>
                         <table class="table">
                             <thead>
@@ -57,7 +56,6 @@
                             </thead>
                             <tbody class="items">
                                     <tr>
-
                                         <td id="ancienPrix">{{session('gestionnaire')->prix}}</td>
                                         @if ($promotion)
                                             <td><input type="number" id="nouveauPrix" placeholder="nouveau prix" name="newPrice" required value="{{$promotion->reduction}}"></td>
@@ -80,7 +78,6 @@
     <!-- MAIN -->
 </section>
 <!-- CONTENT -->
-
 <script>
     function handleModifierClick() {
         if (validatePromotionForm() == 1) {

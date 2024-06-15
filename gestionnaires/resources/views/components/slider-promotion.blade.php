@@ -5,7 +5,7 @@
     <div class="slider-agence">
         <div class="slider-track">
         @foreach ($promotions as $promotion)
-        <div class="card-agence">
+        <div class="card-agence-promo">
           <div class="new-price">
             <div >{{$promotion->reduction}} dh</div>
             <div class="old-price">{{$promotion->prix}} dh</div>
@@ -25,8 +25,12 @@
             </div>
             <div class="button-container">
                 <button class="buy-button button" onclick="showDetailGest({{ $promotion->id }})">Lire Plus</button>
-                <button class="contactbtn"><i class='bx bxs-phone-call' ></i></button>
-            </div>
+                @if (session('client'))
+                <button class="contactbtn" onclick="showPhone({{$gestionnaire->telephone}})"><i class='bx bxs-phone-call' ></i></button>
+              @else
+                <button class="contactbtn" onclick="showConnectAlert()"><i class='bx bxs-phone-call'></i></button>
+              @endif           
+             </div>
         </div>
         @endforeach
       </div>

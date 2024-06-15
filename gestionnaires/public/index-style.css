@@ -1614,11 +1614,7 @@ html::-webkit-scrollbar-thumb {
 
 /*promotion*/
 .promotion {
-<<<<<<< HEAD
-  background-color: rgb(21, 164, 221);
-=======
   background-color: #eee;
->>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   padding: 4px 20px 0px 20px;
@@ -1626,7 +1622,7 @@ html::-webkit-scrollbar-thumb {
 
 
 
-.promotion .new-price {
+.promotion .new-price{
   position: absolute;
   background-color: rgb(247, 206, 5);
   color: #fff;
@@ -1658,10 +1654,8 @@ html::-webkit-scrollbar-thumb {
 .promotion .slider-agence .slider-track {
   height: 350px;
 }
-.promotion .slider-agence .slider-track .card-agence {
-<<<<<<< HEAD
+.promotion .slider-agence .slider-track .card-agence-promo  {
   
-=======
   background-color: #fff;
   margin-right: 25px;
   height: 250px;
@@ -1670,19 +1664,18 @@ html::-webkit-scrollbar-thumb {
   grid-template-columns: auto;
   border-radius: 40px;
 }
-.promotion .slider-agence .slider-track .card-agence .brand {
+.promotion .slider-agence .slider-track .card-agence-promo .brand {
   text-align: center;
   color: var(--theme-color);
->>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
 }
 
-.promotion .slider-agence .slider-track .card-agence .image-container {
+.promotion .slider-agence .slider-track .card-agence-promo .image-container {
   border-radius: 40px;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
 
 }
 
-.promotion .card-agence .button-container
+.promotion .card-agence-promo .button-container
 {
   position: absolute;
   margin-top: 103%;

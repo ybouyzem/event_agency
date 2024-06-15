@@ -19,31 +19,49 @@ class PromotionController extends Controller
         return view('promotion', compact('promotion'));
     }
     public function addPromotion(Request $request)
-    {
-        // Retrieve the necessary values from the request
-        $nouveauPrix = $request->input('newPrice') ?? 0; // Default to 0 if not provided
-        $dateFin = $request->input('dateFin');
-    
-        // Check if a promotion exists for the gestionnaire ID
-        $existingPromotion = Promotion::where('id_gestionnaire', session('gestionnaire')->id)->first();
-    
-        if ($existingPromotion) {
-            // Modify the existing promotion
-            $existingPromotion->reduction = $nouveauPrix;
-            $existingPromotion->date_fin = $dateFin;
-            $existingPromotion->save();
-            $message = 'La promotion a été modifiée avec succès!';
-        } else {
-            // Create a new promotion
-            $promotion = new Promotion();
-            $promotion->reduction = $nouveauPrix;
-            $promotion->date_fin = $dateFin;
-            $promotion->id_gestionnaire = session('gestionnaire')->id; // Assuming the promotion is linked to a gestionnaire
-            $promotion->save();
-            $message = 'La promotion a été ajoutée avec succès!';
-        }
-    
-        return redirect()->back()->with('success', $message);
+{
+    // Retrieve the necessary values from the request
+    $nouveauPrix = $request->input('newPrice') ?? 0; // Default to 0 if not provided
+    $dateFin = $request->input('dateFin');
+
+    // Get today's date
+    $today = now();
+
+    // Get the gestionnaire's original price
+    $gestionnaire = session('gestionnaire');
+    $originalPrice = $gestionnaire->prix;
+
+    // Validate that dateFin is in the future
+    if (strtotime($dateFin) <= strtotime($today)) {
+        return redirect()->back()->with('error', 'La date de fin doit être une date future.');
     }
+
+    // Validate that the new price is less than the original price
+    if ($nouveauPrix >= $originalPrice) {
+        return redirect()->back()->with('error', 'Le nouveau prix doit être inférieur au prix original.');
+    }
+
+    // Check if a promotion exists for the gestionnaire ID
+    $existingPromotion = Promotion::where('id_gestionnaire', $gestionnaire->id)->first();
+
+    if ($existingPromotion) {
+        // Modify the existing promotion
+        $existingPromotion->reduction = $nouveauPrix;
+        $existingPromotion->date_fin = $dateFin;
+        $existingPromotion->save();
+        $message = 'La promotion a été modifiée avec succès!';
+    } else {
+        // Create a new promotion
+        $promotion = new Promotion();
+        $promotion->reduction = $nouveauPrix;
+        $promotion->date_fin = $dateFin;
+        $promotion->id_gestionnaire = $gestionnaire->id; // Assuming the promotion is linked to a gestionnaire
+        $promotion->save();
+        $message = 'La promotion a été ajoutée avec succès!';
+    }
+
+    return redirect()->back()->with('success', $message);
+}
+
     
 }

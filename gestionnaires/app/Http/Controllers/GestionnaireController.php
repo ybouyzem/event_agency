@@ -16,7 +16,7 @@ use App\Models\Gestionnaire;
 use App\Models\Favoris;
 use Illuminate\Support\Facades\Hash as HashFacade;
 use App\Http\Middleware\CheckGestionnaire;
-
+use App\Models\Promotion;
 
 
 class GestionnaireController extends Controller
@@ -180,8 +180,8 @@ class GestionnaireController extends Controller
     {
         $favoriteGests = Favoris::all();
         $prestataires = Gestionnaire::where('type', 'Prestataire')->paginate(6);
-
-        return view('tous-prestataires', ['prestataires' => $prestataires, 'favoriteGests' => $favoriteGests]); 
+        $promotions = Promotion::all();
+        return view('tous-prestataires', ['prestataires' => $prestataires, 'favoriteGests' => $favoriteGests, 'promotions' => $promotions]); 
         
     }
 
