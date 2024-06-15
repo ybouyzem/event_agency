@@ -1612,25 +1612,84 @@ html::-webkit-scrollbar-thumb {
 
 /* Pagination */
 
+/*promotion*/
 .promotion {
+<<<<<<< HEAD
   background-color: rgb(21, 164, 221);
+=======
+  background-color: #eee;
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   padding: 4px 20px 10px 20px;
 }
 
+
+
+.promotion .new-price {
+  position: absolute;
+  background-color: var(--theme-color);
+  color: #fff;
+  padding: 4px;
+  width: 80px;
+  margin-left: 80%;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 6px 3px #eeeeee77;
+
+}
+
+.promotion .old-price {
+  text-decoration: line-through;
+  font-size: 11px;
+  color: rgb(246, 205, 129);
+}
+
 .promotion h3 {
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: var(--theme-color);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+
+.promotion .slider-agence .slider-track {
+  height: 350px;
+}
 .promotion .slider-agence .slider-track .card-agence {
+<<<<<<< HEAD
   
+=======
+  background-color: #fff;
+  margin-right: 25px;
+  height: 250px;
+  width: 250px;
+  display: grid;
+  grid-template-columns: auto;
+  border-radius: 40px;
+}
+.promotion .slider-agence .slider-track .card-agence .brand {
+  text-align: center;
+  color: var(--theme-color);
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
 }
 
-/*promotion*/
+.promotion .slider-agence .slider-track .card-agence .image-container {
+  border-radius: 40px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+
+}
+
+.promotion .card-agence .button-container
+{
+  position: absolute;
+  margin-top: 100%;
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+}
 
 
 
