@@ -1614,7 +1614,11 @@ html::-webkit-scrollbar-thumb {
 
 /*promotion*/
 .promotion {
+<<<<<<< HEAD
+  background-color: rgb(21, 164, 221);
+=======
   background-color: #eee;
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
   padding: 4px 20px 0px 20px;
@@ -1655,6 +1659,9 @@ html::-webkit-scrollbar-thumb {
   height: 350px;
 }
 .promotion .slider-agence .slider-track .card-agence {
+<<<<<<< HEAD
+  
+=======
   background-color: #fff;
   margin-right: 25px;
   height: 250px;
@@ -1666,6 +1673,7 @@ html::-webkit-scrollbar-thumb {
 .promotion .slider-agence .slider-track .card-agence .brand {
   text-align: center;
   color: var(--theme-color);
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
 }
 
 .promotion .slider-agence .slider-track .card-agence .image-container {

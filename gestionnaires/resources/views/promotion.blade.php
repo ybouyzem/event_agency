@@ -37,14 +37,17 @@
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
+        <form id="promotionForm" action="">
+=======
         <form action="{{ route('add.promotion') }}" method="POST" id="promotionForm">
             @csrf
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
             <div class="table-data">
                 <div class="order">
                     <div class="head">
                         <h3>Ajouter une promotion</h3>
-                        {{-- <i class='bx bx-search' ></i> --}}
-                        {{-- <i class='bx bx-filter' ></i> --}}
+
                     </div>
                         <table class="table">
                             <thead>
@@ -57,6 +60,14 @@
                             </thead>
                             <tbody class="items">
                                     <tr>
+<<<<<<< HEAD
+                                        <td id="ancienPrix">{{session('gestionnaire')->prix}} dh</td>
+                                        <td><input type="number" id="nouveauPrix" required></td>
+                                        <td><input type="date" id="dateFin" required></td>
+                                        <td>
+                                            <button class="modifer-button" type="button" onclick="handleModifierClick()"><i class='bx bxs-edit'></i> Enregister</button>
+                                            <button class="supprimer-button" type="button"><i class='bx bx-message-square-x'></i> supprimer</button>
+=======
                                         <td id="ancienPrix">{{session('gestionnaire')->prix}}</td>
                                         @if ($promotion)
                                             <td><input type="number" id="nouveauPrix" placeholder="nouveau prix" name="newPrice" required value="{{$promotion->reduction}}"></td>
@@ -68,6 +79,7 @@
                                         <td>
                                             <button class="modifer-button"  onclick="handleModifierClick()"><i class='bx bxs-edit'></i> modifier</button>
                                             <button class="supprimer-button"><i class='bx bx-message-square-x'></i> supprimer</button>
+>>>>>>> c6fde80b518bb43d7a7ab8b004918fb0dd8256d3
                                         </td>
                                     </tr>
                             </tbody>
@@ -126,5 +138,33 @@
     }
 </script>
 <script>(function(w, d) { w.CollectId = "663e3d251063215eaa11d59b"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>	<script src="script.js"></script>
+
+<script>
+function handleModifierClick() {
+            if (validatePromotionForm()) {
+                // alert('La promotion a été ajoutée avec succès!');
+                document.getElementById('promotionForm').submit(); // Submit the form if validation passes
+            }
+        }
+
+        function validatePromotionForm() {
+            const ancienPrix = parseFloat(document.getElementById('ancienPrix').innerText);
+            const nouveauPrix = parseFloat(document.getElementById('nouveauPrix').value);
+            const dateFin = new Date(document.getElementById('dateFin').value);
+            const today = new Date();
+
+            if (nouveauPrix >= ancienPrix) {
+                alert('Le nouveau prix doit être inférieur à l\'ancien prix.');
+                return false;
+            }
+
+            if (dateFin <= today) {
+                alert('La date de fin doit être ultérieure à aujourd\'hui.');
+                return false;
+            }
+
+            return true; // Return true if both validations pass
+        }
+</script>
 </body>
 </html>
