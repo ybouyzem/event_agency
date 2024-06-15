@@ -11,6 +11,7 @@
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <link
@@ -39,9 +40,9 @@
             <div class="info"><i class='bx bxs-edit-location' ></i> <span>{{$gestionnaire->adresse}}</span></div>
             <div class="info"><i class='bx bxs-donate-heart' ></i><span>{{$gestionnaire->service}}</span></div>
             <div class="info"><i class='bx bx-credit-card' ></i>Prix A partir de : <span>{{$gestionnaire->prix}} Dh</span></div>
-            @if (session('client'))
+            {{-- @if (session('client'))
             <div class="info phone"><i class='bx bxs-phone-call' style="color: rgb(4, 163, 4)"></i> <span>0{{$gestionnaire->telephone}}</span></div>  
-            @endif
+            @endif --}}
           </div>
       </form>
       <div class="description">
@@ -49,19 +50,21 @@
         <div class="text">{{$gestionnaire->detail}}</div>
         @if (session('client'))
           <div class="contacter-btn">
-            <input type="submit" name="" value="Contacter" id="">
-            <i class='bx bxs-chevrons-right'></i>
+            <input type="submit" value="Contacter" onclick="showPhone('{{ $gestionnaire->telephone }}')">
+            <i class='bx bxs-phone-call'></i>
           </div>
         @else
-          <p>il faut fair se conncter pour voir numero telephone !</p>
+        <div class="contacter-btn">
+          <input type="submit" value="Contacter" onclick="showConnectAlert()">
+          <i class='bx bxs-phone-call'></i>
+        </div>
         @endif
       </div>
-      
     </section>
     <x-footer/>
-
   </body>
   <div class="loader"></div>
   <!--JS file-->
   <script src="{{asset('loader.js')}}"></script>
+  <script src="{{asset('alert.js')}}"></script>
 </html>

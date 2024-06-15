@@ -82,7 +82,9 @@
         </a>
       </div>
     </section>
-    <x-slider-promotion :promotions="$promotions"  />
+    @if (!empty($promotions))
+      <x-slider-promotion :promotions="$promotions"  />
+    @endif
     <section class="filter-section">
       <p class="filter-title">veuillez choisir ce que vous recherchez</p>
       <div class="type-gestionnaire">
@@ -203,7 +205,14 @@
       </div>
     </section>
     {{-- slider of agences and prestataires --}}
-    <x-slider-agences :gestionnaires="$gestionnaires" :favoriteGests="$favoriteGests" />
+    @if (empty($gestionnaires))
+    <div class="empty-gest">
+      Désolé! il n'y a aucune agence ou prestataire disponible actuellement.
+    </div>
+
+    @else
+      <x-slider-agences :gestionnaires="$gestionnaires" :favoriteGests="$favoriteGests" />
+    @endif
     <!-- service section starts  -->
     {{-- <section class="service" id="service">
       <h1 class="heading">Nos <span>services</span></h1>
@@ -276,8 +285,15 @@
     <!-- for the page loader -->
     <div class="loader"></div>
     <!--JS file-->
+    <script>
+
+    </script>
     <script src="{{asset('loader.js')}}"></script>
     <script src="{{asset('script.js')}}"></script>
     <script src="{{asset('filter-agence.js')}}"></script>
+    <script src="{{asset('favoris.js')}}"></script>
+    <script src="{{asset('detail-agence.js')}}"></script>
+    <script src="{{asset('alert.js')}}"></script>
+
   </body>
 </html>

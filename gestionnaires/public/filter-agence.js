@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function filterFunction(selectedPrice, selectedService,  selectedRadio, selectedCity,  cards)
+function filterFunction(selectedPrice, selectedService, selectedRadio, selectedCity, cards)
 {
     cards.forEach(function(card) {
         // console.log(cards);

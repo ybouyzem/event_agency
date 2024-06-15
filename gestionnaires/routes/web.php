@@ -52,7 +52,7 @@ Route::get('/index/mesfavoris', [ClientController::class, 'favorisClient'])->nam
 
 //promotion
 Route::match(['get', 'post'], '/promotion', [PromotionController::class, 'promotion'])->name('promotion');
-Route::match(['get', 'post'], '/add-promotion', [PromotionController::class, 'addPromotion'])->name('add.promotion');
+Route::match(['get', 'post'], '/add-promotion', [PromotionController::class, 'addPromotion'])->name('addPromotion');
 
 
 

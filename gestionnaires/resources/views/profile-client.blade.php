@@ -147,7 +147,6 @@
             <table>
               <tr class="table-header">
                 <th>Nom Complet</th>
-                <th>Ville</th>
                 <th>Telephone</th>
                 <th>Email</th>
                 <th></th>
