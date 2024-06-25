@@ -52,7 +52,7 @@
             <span>ou utilisez votre compte</span>
             <input type="email" name="email" placeholder="Email" required/>
             <input type="password" name="motPasse" placeholder="Mot de Passe" required/>
-            <a href="#" class="fogetpwd">Mot de passe oublié</a>
+            <a href="{{ route('password.request') }}" class="forgetpwd">Mot de passe oublié</a>
             <input type="submit" value="Se connecter">
           </form>
         </div>
