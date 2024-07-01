@@ -35,17 +35,22 @@
               <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
               <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
               <div class="product-name">Prix A partir de : 
-                @if (empty($promotions))
-                <span id="price">{{$gestionnaire->prix}} dh</span> </div>
-
-                @else
+                @php
+                  $has_promotion = 0;  
+                @endphp
+                @endphp
                 @foreach ($promotions as $promo)
                   @if ($promo->id_gestionnaire == $gestionnaire->id)
-                <span id="price">{{$promo->reduction}} </span>  <span style="text-decoration: line-through; color:orange; fonr-weight:400;font-size:12px;">{{$gestionnaire->prix}} dh</span></div>
-                  @else 
-                  <span id="price">{{$gestionnaire->prix}} dh</span> </div>
+                    @php 
+                      $has_promotion = 1;
+                      break;
+                    @endphp
                   @endif
                 @endforeach
+                @if ($has_promotion == 1)
+                  <span id="price">{{$promo->reduction}} </span>  <span style="text-decoration: line-through; color:orange; fonr-weight:400;font-size:12px;">{{$gestionnaire->prix}} dh</span></div>
+                @else
+                  <span id="price">{{$gestionnaire->prix}} dh</span> </div>
                 @endif
               </div>
             <div style="display: none"><span id="city">{{$gestionnaire->ville}}</span></div>
