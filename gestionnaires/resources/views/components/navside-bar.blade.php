@@ -12,12 +12,12 @@
 					<i class='bx bx-right-arrow-alt' ></i>
 				</a>
 			</li>
-			<li class="active">
+			{{-- <li class="active">
 				<a href="/index-gestionnaire">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Tableau de Bord</span>
 				</a>
-			</li>
+			</li> --}}
 			{{-- <li>
 				<a href="/reservations">
 					<i class='bx bxs-shopping-bag-alt' ></i>
@@ -46,7 +46,7 @@
 			</li> --}}
 			<li>
 				<a href="/promotion">
-					<i class='bx bxs-group' ></i>
+					<i class='bx bxs-discount'></i>
 					<span class="text">Promotions</span>
 				</a>
 			</li>
@@ -90,7 +90,6 @@
 			<a href="#" class="profile">
 				
 				{{-- @if(auth()->check() && auth()->user()->role === 'gestionnaire') --}}
-				<p>Nom: {{ session('gestionnaire')->nom }}</p>
 				<!-- Add more properties as needed -->
 			{{-- @endif --}}
 			

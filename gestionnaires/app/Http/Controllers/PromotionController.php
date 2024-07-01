@@ -63,5 +63,18 @@ class PromotionController extends Controller
     return redirect()->back()->with('success', $message);
 }
 
+
+public function deletePromotion()
+{
+
+    $idGest = session('gestionnaire')->id;
+    $promotion = Promotion::where('id_gestionnaire', $idGest)->first();
+    if ($promotion) {
+        $promotion->delete();
+        return redirect()->back()->with('success', 'Promotion deleted successfully.');
+    } else {
+        return redirect()->back()->with('error', 'Promotion not found.');
+    }
+}
     
 }

@@ -23,7 +23,7 @@ class GestionnaireController extends Controller
 {
     public function index()
     {
-        return view("index-gestionnaire");
+        return view("profile-gestionnaire");
     }
 
     public function profile()

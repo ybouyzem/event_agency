@@ -67,7 +67,7 @@
                                         @endif
                                         <td>
                                             <button class="modifer-button" onclick="handleModifierClick()"><i class='bx bxs-edit'></i> enregistrer</button>
-                                            <button class="supprimer-button"><i class='bx bx-message-square-x'></i> supprimer</button>
+                                            <button  type="button" class="supprimer-button" onclick="deletePromotion()"><i class='bx bx-message-square-x'></i> supprimer</button>
                                         </td>
                                     </tr>
                             </tbody>
@@ -79,16 +79,39 @@
 </section>
 <!-- CONTENT -->
 <script>
+function deletePromotion() {
+    // Show a confirmation alert first
+    Swal.fire({
+        position: "center",
+        icon: "warning",
+        title: "Êtes-vous sûr de vouloir supprimer cette promotion ?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Oui, supprimer !",
+        cancelButtonText: "Annuler"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Perform the redirection
+            window.location.href = '/delete-promotion';
+            console.log('/delete-promotion');
+        }
+    });
+}
+
+    
+
+
     function handleModifierClick() {
         if (validatePromotionForm() == 1) {
+            window.location.href = '/add-promotion';
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Votre promotion ajoutée avec succès !",
+                title: "Votre promotion à ajoutée avec succès !",
                 showConfirmButton: false,
                 timer: 1500
             });
-            window.location.href = '/add-promotion';
         }
 
     }
@@ -125,6 +148,7 @@
 
         return 1; // Return true if both validations pass
     }
+
 </script>
 <script>(function(w, d) { w.CollectId = "663e3d251063215eaa11d59b"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>	<script src="script.js"></script>
 </body>

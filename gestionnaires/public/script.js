@@ -3,7 +3,6 @@
 
 // for the sidebar menu
 const windowPathname = window.location.pathname;
-console.warn(windowPathname);
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 window.onload = function() {
