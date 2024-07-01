@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GestionnaireController;
 use App\Http\Middleware\CheckGestionnaire;
 use App\Http\Controllers\PromotionController;
-
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 Route::get("/", [IndexController::class,"index"])->name("index");
 // Route::get("/", [GestionnaireController::class,"allGest"])->name("allGest");
@@ -67,6 +68,19 @@ Route::get('/auth/google/callback', [ClientController::class, 'handleGoogleCallb
 Route::get('/index/allGest', [IndexController::class, 'allGest'])->name('allGest');
 //allPrestataires
 Route::get('/index/allPres', [GestionnaireController::class, 'allPres'])->name('allPres');
+
+// Show the form to request a password reset link
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+
+// Handle the form submission to send the reset link
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+// Show the form to reset the password
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+
+// Handle the form submission to reset the password
+Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 
 //admin
 // Route::get('/index-admin', [AdminController::class, 'index'])->name('index');
