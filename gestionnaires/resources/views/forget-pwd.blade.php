@@ -16,35 +16,31 @@
     />
 
     <!--css file-->
-    <link rel="stylesheet" href="{{ asset('signin-client.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('signin-client.css') }}" /> --}}
 
     <!-- favorite icon -->
     <link rel="icon" type="img/logo" href="{{ asset('img/logo.png') }}" />
 
   </head>
   <body>
-    <!-- resources/views/auth/passwords/email.blade.php -->
-    <form method="POST" action="{{ route('password.email') }}">
-    @csrf
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <button type="submit">Send Password Reset Link</button>
-    </form>
-
-    @if (session('status'))
-        <div>{{ session('status') }}</div>
-    @endif
-
-    @if ($errors->any())
-        <div>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <form method="POST" action="{{ route('password.reset.send') }}">
+      @csrf
+      <label for="email">Adresse email</label>
+      <input id="email" type="email" name="email" required>
+      <button type="submit">Send Reset Code</button>
+  </form>
+  
+  @if ($errors->any())
+      <div class="alert alert-danger">
+          @foreach ($errors->all() as $error)
+              <p>{{ $error }}</p>
+          @endforeach
+      </div>
+  @endif
+  
+  @if (session('status'))
+      <p>{{ session('status') }}</p>
+  @endif
+  
   </body>
 </html>

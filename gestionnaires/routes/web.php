@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,9 @@ use App\Http\Middleware\CheckGestionnaire;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+
 
 Route::get("/", [IndexController::class,"index"])->name("index");
 // Route::get("/", [GestionnaireController::class,"allGest"])->name("allGest");
@@ -57,9 +61,20 @@ Route::match(['get', 'post'], '/add-promotion', [PromotionController::class, 'ad
 Route::match(['get', 'post'], '/delete-promotion', [PromotionController::class, 'deletePromotion'])->name('deletePromotion');
 
 
+//forgot password
+Route::get('password/reset', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [PasswordResetController::class, 'sendResetCode'])->name('password.reset.send');
+// Route::get('/test-email', function () {
+//     $code = Str::random(6);
+//     Mail::to("bouyzemyounes1@gmail.com")->send(new App\Mail\PasswordResetCode($code));
+//     return 'Email sent!';
+// });
+
+
 
 Route::get('/auth/google', [ClientController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [ClientController::class, 'handleGoogleCallback']);
+
 
 
 
@@ -70,17 +85,17 @@ Route::get('/index/allGest', [IndexController::class, 'allGest'])->name('allGest
 //allPrestataires
 Route::get('/index/allPres', [GestionnaireController::class, 'allPres'])->name('allPres');
 
-// Show the form to request a password reset link
-Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// // Show the form to request a password reset link
+// Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 
-// Handle the form submission to send the reset link
-Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// // Handle the form submission to send the reset link
+// Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
-// Show the form to reset the password
-Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// // Show the form to reset the password
+// Route::get('reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
 
-// Handle the form submission to reset the password
-Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+// // Handle the form submission to reset the password
+// Route::post('reset-password', [PasswordResetController::class, 'reset'])->name('password.update');
 
 
 //admin
