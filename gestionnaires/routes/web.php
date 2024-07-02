@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ServiceController;
@@ -64,6 +65,17 @@ Route::match(['get', 'post'], '/delete-promotion', [PromotionController::class, 
 //forgot password
 Route::get('password/reset', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [PasswordResetController::class, 'sendResetCode'])->name('password.reset.send');
+Route::get('/enter-reset-code', [PasswordResetController::class, 'showEnterResetCodeForm'])->name('enter.reset.code');
+Route::post('/verify-code', [PasswordResetController::class, 'verifyCode'])->name('verify.code');
+Route::get('/reset-pwd-client', [PasswordResetController::class, 'showPasswordResetForm'])->name('reset.pwd.client');
+Route::post('/reset-pwd-client', [PasswordResetController::class, 'resetPassword'])->name('reset.pwd.client.submit');
+
+//contact us
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
+
+
+
 // Route::get('/test-email', function () {
 //     $code = Str::random(6);
 //     Mail::to("bouyzemyounes1@gmail.com")->send(new App\Mail\PasswordResetCode($code));

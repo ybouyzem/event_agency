@@ -8,31 +8,31 @@
       <li>
         <a href="{{route('allPres')}}">prestataires<i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
-          <li><a href="agence1.php">Salle de mariage</a></li>
-          <li><a href="agence1.php">Photographes</a></li>
-          <li><a href="agence2.php">Traiteur & Catering</a></li>
-          <li><a href="agence3.php">Negafa</a></li>
-          <li><a href="agence3.php">Orchestres</a></li>
-          <li><a href="agence3.php">Salons & Coiffure</a></li>
-          <li><a href="agence3.php">Décoration & Design</a></li>
-          <li><a href="agence3.php">Issawa & Dakka Marrakchia</a></li>
-          <li><a href="agence3.php">DJ Evolutif</a></li>
-          <li><a href="agence3.php">Eclairage & Sonorisation</a></li>
+          <li><a href="">Salle de mariage</a></li>
+          <li><a href="">Photographes</a></li>
+          <li><a href="">Traiteur & Catering</a></li>
+          <li><a href="">Negafa</a></li>
+          <li><a href="">Orchestres</a></li>
+          <li><a href="">Salons & Coiffure</a></li>
+          <li><a href="">Décoration & Design</a></li>
+          <li><a href="">Issawa & Dakka Marrakchia</a></li>
+          <li><a href="">DJ Evolutif</a></li>
+          <li><a href="">Eclairage & Sonorisation</a></li>
         </ul>
       </li>
       <li>
         <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
-          <li><a href="agence1.php">Mariages</a></li>
-          <li><a href="agence1.php">Ftour Ramadan</a></li>
-          <li><a href="agence2.php">Evenement Prive</a></li>
-          <li><a href="agence3.php">Fiancailles</a></li>
-          <li><a href="agence3.php">Buffet</a></li>
-          <li><a href="agence3.php">Pause cafe</a></li>
-          <li><a href="agence3.php">Conferance</a></li>
-          <li><a href="agence3.php">Seminaire</a></li>
-          <li><a href="agence3.php">Soutenance</a></li>
-          <li><a href="agence3.php">Gala</a></li>
+          <li><a href="">Mariages</a></li>
+          <li><a href="">Ftour Ramadan</a></li>
+          <li><a href="">Evenement Prive</a></li>
+          <li><a href="">Fiancailles</a></li>
+          <li><a href="">Buffet</a></li>
+          <li><a href="">Pause cafe</a></li>
+          <li><a href="">Conferance</a></li>
+          <li><a href="">Seminaire</a></li>
+          <li><a href="">Soutenance</a></li>
+          <li><a href="">Gala</a></li>
         </ul>
       </li>
       <li><a href="#contact">contact</a></li>

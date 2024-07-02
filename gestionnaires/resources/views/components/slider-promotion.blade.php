@@ -13,7 +13,6 @@
           <div class="image-container">
             <img src="img/{{$promotion->image1}}" alt="">
           </div>
-
             <div class="content">
                 <div class="brand">{{$promotion->nom}}</div>
                 <div class="other-data">
@@ -21,15 +20,14 @@
                     <div class="product-name">Service: <span>{{$promotion->service}}</span></div>
                 </div>
                 <div style="display: none"><span >{{$promotion->ville}}</span></div>
-
             </div>
             <div class="button-container">
                 <button class="buy-button button" onclick="showDetailGest({{ $promotion->id }})">Lire Plus</button>
                 @if (session('client'))
-                <button class="contactbtn" onclick="showPhone({{$gestionnaire->telephone}})"><i class='bx bxs-phone-call' ></i></button>
+                <button class="contactbtn" onclick="showPhone({{$promotion->telephone}})"><i class='bx bxs-phone-call' ></i></button>
               @else
                 <button class="contactbtn" onclick="showConnectAlert()"><i class='bx bxs-phone-call'></i></button>
-              @endif           
+              @endif       
              </div>
         </div>
         @endforeach

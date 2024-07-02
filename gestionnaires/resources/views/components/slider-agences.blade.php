@@ -38,7 +38,6 @@
                 @php
                   $has_promotion = 0;  
                 @endphp
-                @endphp
                 @foreach ($promotions as $promo)
                   @if ($promo->id_gestionnaire == $gestionnaire->id)
                     @php 

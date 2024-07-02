@@ -237,25 +237,55 @@
     <!-- contact section starts  -->
     <section class="contact" id="contact">
         <h1 class="heading"><span>nous</span> contacter</h1>
-        <form action="contact-us.php" method="post" >
-            <div class="inputBox">
-                <input type="text" placeholder="nom complet" id="nomComplet" name="nomComplet" />
-                <input type="email" placeholder="email" id="email" name="email"/>
-            </div>
-            <div class="inputBox">
-                <input type="tel" placeholder="telephone" id="telephone" name="telephone"/>
-                <input type="text" placeholder="objet" id="object" name="object"/>
-            </div>
-            <textarea
-            name="message"
-            placeholder="message"
-            id="message"
-            cols="30"
-            rows="10"
-            ></textarea>
-            <input type="submit" value="envoyer" class="btn" />
-        </form>
+        <form action="{{ route('contact.store') }}" method="post">
+          @csrf
+          <div class="inputBox">
+              <input type="text" placeholder="nom complet" id="nomComplet" name="nomComplet" value="{{ old('nomComplet') }}" />
+              @error('nomComplet')
+                  <div class="error">{{ $message }}</div>
+              @enderror
+              <input type="email" placeholder="email" id="email" name="email" value="{{ old('email') }}"/>
+              @error('email')
+                  <div class="error">{{ $message }}</div>
+              @enderror
+          </div>
+          <div class="inputBox">
+              <input type="tel" placeholder="telephone" id="telephone" name="telephone" value="{{ old('telephone') }}"/>
+              @error('telephone')
+                  <div class="error">{{ $message }}</div>
+              @enderror
+              <input type="text" placeholder="objet" id="object" name="object" value="{{ old('object') }}"/>
+              @error('object')
+                  <div class="error">{{ $message }}</div>
+              @enderror
+          </div>
+          <textarea
+          name="message"
+          placeholder="message"
+          id="message"
+          cols="30"
+          rows="10"
+          >{{ old('message') }}</textarea>
+          @error('message')
+              <div class="error">{{ $message }}</div>
+          @enderror
+          <input type="submit" value="envoyer" class="btn" />
+      </form>
+      
     </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          @if(session('contact_success'))
+              Swal.fire({
+                  position: 'center',
+                  icon: 'success',
+                  title: '{{ session('contact_success') }}',
+                  showConfirmButton: false,
+                  timer: 1500
+              });
+          @endif
+      });
+  </script>
     <!-- about section starts  -->
     {{-- <section class="about" id="about">
       <h1 class="heading"><span>À PROPOS</span> DE NOUS</h1>
