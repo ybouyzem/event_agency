@@ -70,6 +70,9 @@ Route::post('/verify-code', [PasswordResetController::class, 'verifyCode'])->nam
 Route::get('/reset-pwd-client', [PasswordResetController::class, 'showPasswordResetForm'])->name('reset.pwd.client');
 Route::post('/reset-pwd-client', [PasswordResetController::class, 'resetPassword'])->name('reset.pwd.client.submit');
 
+
+//forgot password gestionnaire
+
 //contact us
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
 

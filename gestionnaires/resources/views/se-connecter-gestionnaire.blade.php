@@ -57,8 +57,9 @@
               <input type="password" placeholder="Mot de passe"  oninput="checkPasswordStrength(this)" name="motPasse" required />
               {{-- <span id="password-strength"></span> --}}
             </div>
+            <a class="social-text" href="" style="color: skyblue; text-decoration:none;">Mot de Passe Oublier?</a>
             <input type="submit" value="Se Connecter" class="btn solid" />
-            <p class="social-text">Ou Inscrivez-vous sur Google</p>
+            {{-- <p class="social-text">Ou Inscrivez-vous sur Google</p> --}}
             <div class="social-media">
               {{-- <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -66,9 +67,9 @@
               <a href="#" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a> --}}
-              <a href="#" class="social-icon">
+              {{-- <a href="#" class="social-icon">
                 <i class="fab fa-google"></i>
-              </a>
+              </a> --}}
               {{-- <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a> --}}
@@ -111,7 +112,7 @@
               <span id="password-strength-signup"></span>
             </div>
             <input type="submit" class="btn" value="S'inscrire" />
-            <p class="social-text">Ou Inscrivez-vous sur Google</p>
+            {{-- <p class="social-text">Ou Inscrivez-vous sur Google</p> --}}
             <div class="social-media">
               {{-- <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -119,9 +120,9 @@
               {{-- <a href="#" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a> --}}
-              <a href="#" class="social-icon">
+              {{-- <a href="#" class="social-icon">
                 <i class="fab fa-google"></i>
-              </a>
+              </a> --}}
                {{-- <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a>  --}}

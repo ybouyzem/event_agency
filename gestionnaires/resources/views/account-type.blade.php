@@ -86,7 +86,7 @@
     <!-- header section starts  -->
     <x-header-client/>
     <section class="dark">
-        <button class="account-type-button">Veuillez choisir votre rôle : Gestionnaire, Client ou Administrateur</button>
+        <button class="account-type-button">Veuillez choisir votre rôle : Gestionnaire, Client</button>
         <div class="account-type-container">
             {{-- <a href="">
                 <div data-text="Administrateur" style="--r:-15;" class="glass">
