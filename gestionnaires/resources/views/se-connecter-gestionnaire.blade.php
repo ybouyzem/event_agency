@@ -57,7 +57,7 @@
               <input type="password" placeholder="Mot de passe"  oninput="checkPasswordStrength(this)" name="motPasse" required />
               {{-- <span id="password-strength"></span> --}}
             </div>
-            <a class="social-text" href="" style="color: skyblue; text-decoration:none;">Mot de Passe Oublier?</a>
+            <a class="social-text" href="{{route('password.reset.gest')}}" style="color: skyblue; text-decoration:none;">Mot de Passe Oublier?</a>
             <input type="submit" value="Se Connecter" class="btn solid" />
             {{-- <p class="social-text">Ou Inscrivez-vous sur Google</p> --}}
             <div class="social-media">

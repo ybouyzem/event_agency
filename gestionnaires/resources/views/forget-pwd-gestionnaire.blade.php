@@ -46,7 +46,7 @@
       <button type="submit">Send Reset Code</button>
   </form> --}}
 
-  <form method="POST" action="{{ route('password.reset.send') }}">
+  <form method="POST" action="{{ route('password.reset.send.gest') }}">
     @csrf
     <div class="mb-3">
       <label for="email" class="form-label">Adresse email</label>

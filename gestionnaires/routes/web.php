@@ -72,6 +72,14 @@ Route::post('/reset-pwd-client', [PasswordResetController::class, 'resetPassword
 
 
 //forgot password gestionnaire
+Route::get('password/reset/gest', [PasswordResetController::class, 'showResetFormGest'])->name('password.reset.gest');
+Route::post('password/reset/gest', [PasswordResetController::class, 'sendResetCodeGest'])->name('password.reset.send.gest');
+Route::get('/enter-reset-code-gest', [PasswordResetController::class, 'showEnterResetCodeFormGest'])->name('enter.reset.code.gest');
+Route::post('/verify-code-gest', [PasswordResetController::class, 'verifyCodeGest'])->name('verify.code.gest');
+Route::get('/reset-pwd-gest', [PasswordResetController::class, 'showPasswordResetFormGest'])->name('reset.pwd.gest');
+Route::post('/reset-pwd-gest', [PasswordResetController::class, 'resetPasswordGest'])->name('reset.pwd.gest.submit');
+
+
 
 //contact us
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
