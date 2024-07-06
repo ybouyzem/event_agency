@@ -79,6 +79,21 @@
 </section>
 <!-- CONTENT -->
 <script>
+
+
+function checkdateFin() {
+        const dateFinInput = document.getElementById('dateFin').value;
+        const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+        if (dateFinInput === currentDate) {
+            window.location.href = '/delete-promotion';
+            // Redirect to the route for deleting the promotion
+        } else {
+            alert('La date de fin n\'est pas encore atteinte.');
+        }
+}
+
+
 function deletePromotion() {
     // Show a confirmation alert first
     Swal.fire({

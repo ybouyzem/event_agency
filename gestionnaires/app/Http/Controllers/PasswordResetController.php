@@ -29,9 +29,9 @@ class PasswordResetController extends Controller
     // Handle the password reset request
     public function sendResetCode(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email|exists:client,email',
-        ]);
+        // $request->validate([
+        //     'email' => 'required|email|exists:client,email',
+        // ]);
 
         $client = Client::where('email', $request->email)->first();
         $code = Str::random(6);
@@ -49,9 +49,9 @@ class PasswordResetController extends Controller
 
     public function sendResetCodeGest(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email|exists:client,email',
-        ]);
+        // $request->validate([
+        //     'email' => 'required|email|exists:client,email',
+        // ]);
 
         $gest = Gestionnaire::where('email', $request->email)->first();
         $code = Str::random(6);
