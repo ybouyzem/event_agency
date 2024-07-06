@@ -31,7 +31,7 @@
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   transition: 0.2s linear;
 }
 
@@ -277,6 +277,16 @@ li a i {
   padding: 1rem 0;
 }
 
+.image-section {
+  height: 400px;
+  background-image: url(img/flowers5.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
 .about .row {
   display: flex;
   align-items: center;
@@ -301,12 +311,12 @@ li a i {
 
 .about .row .content h3 {
   font-size: 3.5rem;
-  color: #fff;
+  color: #222;
 }
 
 .about .row .content p {
   font-size: 1.5rem;
-  color: #eee;
+  color: #222;
   padding: 1rem 0;
   line-height: 2;
 }
@@ -808,12 +818,12 @@ html::-webkit-scrollbar-thumb {
 
 
 .city-filter {
-  width: 235px;
+  width: 265px;
   margin:0px 3px 0px 3px;
 }
 
 .city-filter select{
-  width: 235px;
+  width: 265px;
   display: flex;
   align-items: center;
   cursor: pointer;

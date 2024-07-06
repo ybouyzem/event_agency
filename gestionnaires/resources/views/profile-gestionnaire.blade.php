@@ -95,7 +95,7 @@
                     @if (session('gestionnaire')->service)
                       <option value="{{ session('gestionnaire')->service }}">{{ session('gestionnaire')->service }}</option>
                     @else
-                      <option value="0">sélectionner Evenement</option>
+                      <option value="0">sélectionnez evenement</option>
                     @endif
                       <option value="Mariages">Mariages</option>
                       <option value="Ftour Ramadan">Ftour Ramadan</option>
@@ -103,7 +103,7 @@
                       <option value="Fiancailles">Fiancailles</option>
                       <option value="Buffet">Buffet</option>
                       <option value="Pause cafe">Pause cafe</option>
-                      <option value="Conferance">Conferance</option>
+                      <option value="Conferance">Conference</option>
                       <option value="Seminaire">Seminaire</option>
                       <option value="Soutenance">Soutenance</option>
                       <option value="Gala">Gala</option>
@@ -116,7 +116,7 @@
                     @if (session('gestionnaire')->service)
                       <option value="{{ session('gestionnaire')->service }}">{{ session('gestionnaire')->service }}</option>
                     @else
-                      <option value="0">sélectionner service</option>
+                      <option value="0">sélectionnez un service</option>
                     @endif
                       <option value="Salle de mariage">Salle de mariage</option>
                       <option value="Photographes">Photographes</option>
@@ -143,7 +143,7 @@
                     @if (session('gestionnaire')->ville)
                       <option value="{{ session('gestionnaire')->ville }}">{{ session('gestionnaire')->ville }}</option>
                     @else
-                      <option value="0">sélectionner votre ville</option>
+                      <option value="0">sélectionnez votre ville</option>
                     @endif
                     <option value="all">Tous les villes</option>
                     <option value="agadir">Agadir</option>
@@ -223,7 +223,7 @@
                     <div class="fileUploadWrapper">
                       <label for="file">
                         <i class='bx bx-image-add' ></i>
-                        <span class="tooltip">Add an image</span>
+                        <span class="tooltip">ajouter image</span>
                       </label>
                       <input type="file" id="image1" name="image1" required value="{{session('gestionnaire')->image1}}" required/>
                     </div>
@@ -232,7 +232,7 @@
                     <div class="fileUploadWrapper">
                       <label for="file">
                         <i class='bx bx-image-add'></i>
-                        <span class="tooltip">Add an image</span>
+                        <span class="tooltip">ajouter image</span>
                       </label>
                       <input type="file" id="image2" name="image2" value="{{session('gestionnaire')->image2}}" required/>
                     </div>
@@ -241,7 +241,7 @@
                     <div class="fileUploadWrapper">
                       <label for="file">
                         <i class='bx bx-image-add' ></i>
-                        <span class="tooltip">Add an image</span>
+                        <span class="tooltip">ajouter image</span>
                       </label>
                       <input type="file" id="image3" name="image3" value="{{session('gestionnaire')->image3}}" required/>
                     </div>
@@ -250,7 +250,7 @@
                     <div class="fileUploadWrapper">
                       <label for="file">
                         <i class='bx bx-image-add' ></i>
-                        <span class="tooltip">Add an image</span>
+                        <span class="tooltip">ajouter image</span>
                       </label>
                       <input type="file" id="image4" name="image4" value="{{session('gestionnaire')->image4}}" required/>
                     </div>

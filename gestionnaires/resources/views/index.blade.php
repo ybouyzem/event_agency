@@ -34,7 +34,7 @@
     <!-- home section starts  -->
     <section class="home" id="home">
       <div class="content">
-        <h1>evénements <br><span>Hadat</span> <br>où décollent vos idées</h1>
+        <h1 >Evénements <br><span>Hadat</span> <br>Où Décollent Vos Idées</h1>
         <p class="par">Transformons Votre Vision En Une Réalité Minutieusement Planifiée.</p>
         <a href="{{asset('/se-connecter-gestionnaire/account-type')}}">
           <button class="home-btn">
@@ -86,7 +86,7 @@
       <x-slider-promotion :promotions="$promotions"  />
     @endif
     <section class="filter-section">
-      <p class="filter-title">veuillez choisir ce que vous recherchez</p>
+      <p class="filter-title">que cherchez-vous?</p>
       <div class="type-gestionnaire">
         <div>
           {{-- <label>
@@ -106,14 +106,14 @@
       <div class="city-filter">
         {{-- <label for="">Choisis Services :</label> --}}
         <select name="" id="type-service">
-          <option value="all">Services & evenements</option>
+          <option value="all">sélectionnez une categorie</option>
           <option value="Mariages">Mariages</option>
           <option value="Ftour Ramadan">Ftour Ramadan</option>
           <option value="Evenement Prive">Evenement Prive</option>
           <option value="Fiancailles">Fiancailles</option>
           <option value="Buffet">Buffet</option>
           <option value="Pause cafe">Pause cafe</option>
-          <option value="Conferance">Conferance</option>
+          <option value="Conference">Conference</option>
           <option value="Seminaire">Seminaire</option>
           <option value="Soutenance">Soutenance</option>
           <option value="Gala">Gala</option>
@@ -135,7 +135,7 @@
 
       <select name="city" size="1" onfocus="this.size = 8" onchange="this.blur()" onblur="this.size = 1; this.blur()"> --}}
       <select name="city" id="cities" >
-        <option value="all" >Tous les villes</option>
+        <option value="all" >sélectionnez une ville</option>
         <option value="agadir">Agadir</option>
         <option value="ait-melloul">Ait Melloul</option>
         <option value="asilah">Asilah</option>
@@ -215,24 +215,34 @@
     @endif --}}
     <x-slider-agences :gestionnaires="$gestionnaires" :favoriteGests="$favoriteGests" :promotions="$promotions" />
 
-    <!-- service section starts  -->
-    {{-- <section class="service" id="service">
-      <h1 class="heading">Nos <span>services</span></h1>
+    <section class="image-section"></section>
 
-      <div class="box-container">
-       
-          
-          <?php 
-          ?>
-            <div class="box">
-              <img src="img/shooting.jpg" alt="">
-              <h3> titre </h3>
-              </div>
-          <?php
-          ?>
-        
+    <section class="about" id="about">
+      <h1 class="heading"><span>À PROPOS</span><span style="color: pink"> DE NOUS</span></h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="{{asset('img/plaining.jpeg')}}" alt="" />
+        </div>
+
+        <div class="content">
+          <h3>Votre événement mérite une planification méticuleuse.</h3>
+          <p>
+            Sur notre plateforme de gestion
+            d'événements, nous comprenons l'importance de chaque rassemblement,
+            des célébrations intimes aux grandes fonctions corporatives. 
+          </p>
+          <p>
+            Cliquez sur le bouton ci-dessous pour entamer une conversation concernant votre événement,
+            où notre équipe ajustera chaque détail avec soin pour garantir une expérience mémorable.
+            Transformons votre vision en une réalité minutieusement planifiée.
+          </p>
+          <a href="{{asset('/se-connecter-gestionnaire/account-type')}}" class="btn">Rejoins-nous</a>
+        </div>
       </div>
-    </section> --}}
+    </section>
+    <section class="image-section"></section>
+
 
     <!-- contact section starts  -->
     <section class="contact" id="contact">

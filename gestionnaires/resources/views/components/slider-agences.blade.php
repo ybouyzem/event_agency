@@ -32,9 +32,9 @@
           <div class="content">
             <div class="brand">{{$gestionnaire->nom}}</div>
             <div class="other-data">
-              <div class="product-name" >Type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
-              <div class="product-name">Service: <span id="type-service">{{$gestionnaire->service}}</span></div>
-              <div class="product-name">Prix A partir de : 
+              <div class="product-name" >type: <span id="type-gest">{{$gestionnaire->type}}</span></div>
+              <div class="product-name">service: <span id="type-service">{{$gestionnaire->service}}</span></div>
+              <div class="product-name">prix à partir de : 
                 @php
                   $has_promotion = 0;  
                 @endphp
@@ -65,7 +65,7 @@
             </div> --}}
           </div>
           <div class="button-container">
-            <button class="buy-button button" onclick="showDetailGest({{ $gestionnaire->id }})">Lire Plus</button>
+            <button class="buy-button button" onclick="showDetailGest({{ $gestionnaire->id }})">Lire plus</button>
             @if (session('client'))
               <button class="contactbtn" onclick="showPhone({{$gestionnaire->telephone}})"><i class='bx bxs-phone-call' ></i></button>
             @else
@@ -81,5 +81,5 @@
   </section>
 
   <div class="afficher-tous">
-    <a href="{{route('allGest')}}">Afichier tous</a>
+    <a href="{{route('allGest')}}">afichier tous</a>
   </div>
