@@ -30,6 +30,8 @@
 		font-weight: 700;
         }
     </style>
+	    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 
@@ -131,8 +133,7 @@
                 <input type="search" placeholder="Chercher gestionnaire..." id="search-input">
             </div>
         </form>
-        <form action="" method="POST">
-            @csrf
+  
             <div class="table-data">
                 <div class="order">
                     <div class="head">
@@ -166,14 +167,14 @@
                                     	<td>{{$gestionnaire->telephone}}</td>
                                     	<td>{{$gestionnaire->email}}</td>
                                         <td>
-                                            <button  type="button" class="supprimer-button" onclick="deleteGest()"><i class='bx bx-message-square-x'></i> supprimer</button>
-                                        </td>
+											<button type="button" class="supprimer-button" onclick="deleteGest({{ $gestionnaire->id }})"><i class='bx bx-message-square-x'></i> supprimer</button>
+										</td>
                                     </tr>
 									@endforeach
                             </tbody>
                         </table>
                 </div>
-        </form>
+ 
     </main>
     <!-- MAIN -->
 </section>
@@ -192,6 +193,14 @@
                 }
             });
         });
+		function deleteGest(id) {
+  if (confirm('Are you sure you quieren eliminar este gestionnaire?')) { 
+    const finalUrl = '/remove-gestionnaire/' + id;
+
+    window.location.href = finalUrl; // Navigate to the constructed URL
+
+  }
+}
     </script>
 	 <script src="{{asset('script.js')}}"></script>
 	 <script src="{{asset('search-input.js')}}"></script>

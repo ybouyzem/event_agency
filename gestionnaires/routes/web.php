@@ -81,6 +81,8 @@ Route::post('/reset-pwd-gest', [PasswordResetController::class, 'resetPasswordGe
 
 //admin
 Route::get('/staff', [AdminController::class, 'allGest'])->name('admin.allGest');
+// routes/web.php
+Route::get('/remove-gestionnaire/{id}', [GestionnaireController::class, 'destroy'])->name('gestionnaire.destroy');
 
 
 //contact us

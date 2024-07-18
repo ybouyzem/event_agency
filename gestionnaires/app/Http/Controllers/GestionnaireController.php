@@ -185,4 +185,27 @@ class GestionnaireController extends Controller
         
     }
 
+    public function destroy($id)
+    {
+        $gestionnaire = Gestionnaire::find($id);
+    
+        if ($gestionnaire) {
+            // Find associated promotions before deleting the gestionnaire
+            $promotions = Promotion::where('id_gestionnaire', $id)->get();
+    
+            // Delete associated promotions (if any)
+            if ($promotions->isNotEmpty()) {
+                foreach ($promotions as $promotion) {
+                    $promotion->delete();
+                }
+            }
+    
+            $gestionnaire->delete();
+    
+            return redirect()->back()->with("success", 'Gestionnaire deleted successfully');
+        }
+    
+        return response()->json(['message' => 'Gestionnaire not found.'], 404);
+    }
+
 }
