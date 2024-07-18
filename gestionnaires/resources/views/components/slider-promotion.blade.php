@@ -1,7 +1,7 @@
 @props(['promotions'])
 
 <section class="promotion">
-    <h3>promotion</h3>
+    <h3>promotions</h3>
     <div class="slider-agence">
         <div class="slider-track">
         @foreach ($promotions as $promotion)

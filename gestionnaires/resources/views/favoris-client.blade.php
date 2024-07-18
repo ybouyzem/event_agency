@@ -22,13 +22,13 @@
 
   </head>
   <style>
-    .sidebar-client ul li:nth-child(3)
+    .sidebar-client ul li:nth-child(2)
     {
           background-color: #23a5d518;
     }
 
 
-    .sidebar-client ul li:nth-child(3) a
+    .sidebar-client ul li:nth-child(2) a
     {
       width: 100%;
       height: 100%;
@@ -63,7 +63,7 @@
       <div class="sidebar-client">
         <ul>
           <li><a href="{{route('profileClient')}}">Mon Compte</a></li>
-          <li><a href="">Historique des reservations </a></li>
+          {{-- <li><a href="">Historique des reservations </a></li> --}}
           <li><a href="{{route('favorisClient')}}">Ma liste d'envie</a></li>
           <li><a href="{{route('logout')}}">Déconnexion</a></li>
         </ul>

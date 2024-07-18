@@ -66,7 +66,6 @@
 			<a href="#" class="profile">
 				
 				{{-- @if(auth()->check() && auth()->user()->role === 'gestionnaire') --}}
-				<p>Nom: {{ session('gestionnaire')->nom }}</p>
 			</a>
 		</nav>
 		<!-- NAVBAR -->

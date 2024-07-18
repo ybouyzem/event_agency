@@ -81,5 +81,5 @@
   </section>
 
   <div class="afficher-tous">
-    <a href="{{route('allGest')}}">afichier tous</a>
+    <a href="{{route('allGest')}}">afficher tous</a>
   </div>

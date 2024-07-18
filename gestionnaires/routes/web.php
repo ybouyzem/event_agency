@@ -79,6 +79,8 @@ Route::post('/verify-code-gest', [PasswordResetController::class, 'verifyCodeGes
 Route::get('/reset-pwd-gest', [PasswordResetController::class, 'showPasswordResetFormGest'])->name('reset.pwd.gest');
 Route::post('/reset-pwd-gest', [PasswordResetController::class, 'resetPasswordGest'])->name('reset.pwd.gest.submit');
 
+//admin
+Route::get('/staff', [AdminController::class, 'allGest'])->name('admin.allGest');
 
 
 //contact us

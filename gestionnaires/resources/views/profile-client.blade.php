@@ -135,7 +135,7 @@
       <div class="sidebar-client">
         <ul>
           <li><a href="{{route('profileClient')}}">Mon Compte</a></li>
-          <li><a href="">Historique des reservations </a></li>
+          {{-- <li><a href="">Historique des reservations </a></li> --}}
           <li><a href="{{route('favorisClient')}}">Ma liste d'envie</a></li>
           <li><a href="{{route('logout')}}">Déconnexion</a></li>
         </ul>

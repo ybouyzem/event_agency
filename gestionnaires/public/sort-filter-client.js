@@ -1,6 +1,6 @@
 var clientIdFilter = document.querySelector("#client-id i");
 var clientNameFilter = document.querySelector("#client-name i");
-
+console.log('here\n');
 clientIdFilter.parentElement.addEventListener('click', function () {
     if (clientIdFilter.classList.contains("bx-chevron-up")) {
         clientIdFilter.classList.remove("bx-chevron-up");
