@@ -21,7 +21,7 @@
         </ul>
       </li>
       <li>
-        <a href="events.php">agences <i class='bx bx-chevron-down' ></i></a>
+        <a href="{{route('allGest')}}">agences <i class='bx bx-chevron-down' ></i></a>
         <ul class="dropdown">
           <li><a href="">Mariages</a></li>
           <li><a href="">Ftour Ramadan</a></li>
